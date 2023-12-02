@@ -12,3 +12,28 @@ def index(request):
     context = {'user': 'arun'}
     rendered_template = template.render(context)
     return HttpResponse(rendered_template)
+
+
+
+def login(request):
+    template = loader.get_template("result_login.html")
+    # results = VisaGetlist.objects.all()
+    context = {'user': 'arun'}
+    rendered_template = template.render(context)
+    return HttpResponse(rendered_template)
+
+
+def cart(request):
+    template = loader.get_template("result_Cart.html")
+    # results = VisaGetlist.objects.all()
+    context = {'user': 'arun'}
+    rendered_template = template.render(context)
+    return HttpResponse(rendered_template)
+
+
+def details(request):
+    template = loader.get_template("result_Details.html")
+    # results = VisaGetlist.objects.all()
+    context = {'user': 'arun'}
+    rendered_template = template.render(context)
+    return HttpResponse(rendered_template)

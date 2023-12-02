@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Container with Cart Section - Bootstrap</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="style/styel.css">
+    <style>
+        /* Custom styles */
+        .custom-container {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fixied {
+            position: fixed;
+            background-color: #fff;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 6;
+        }
+
+        .main-section-start {
+            margin-top: 10rem;
+        }
+        
+        /* Custom CSS */
+    </style>
+</head>
+
+<body>
+    <nav class="fixied">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="#">
+                <img src="assest/Screenshot 2023-11-24 190645.png" alt="Left Logo">
+            </a>
+            <a class="navbar-brand navbar-brand-centered" href="#">
+                <img src="assest/Screenshot 2023-11-24 190922.png" alt="Center Logo">
+            </a>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" target="_blank">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" target="_blank">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Cart.html" target="_blank">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+            <div class="container ">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-center" id="navbarNav">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                New In
+                            </a>
+                            <div class="dropdown-menu " aria-labelledby="navbarDropdown1">
+
+                                <div class="d-flex align-items-center justify-content-around">
+                                    <div>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Repeat the structure for other lists -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Brands
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <!-- Repeat the structure for other lists -->
+                        <!-- ... List 3 to List 11 ... -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown11" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Men
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown11">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Women
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Kids
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Beauty & Groomimg
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Home
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Gourmet
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Watches & Jewellery
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Eyewear
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Featured Stores
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </nav>
+
+    <!-- main section -->
+
+    <div class="container  position-relative main-section-start">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-3  mt-3">
+                <p class="roboto-font">Home</p>
+                <hr>
+                <!-- Dropdowns for Filters -->
+                <!-- Accordions  -->
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button font-weight-bold" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Department
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body   ">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2"> Man</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed font-weight-bold" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                aria-controls="collapseTwo">
+                                Category
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed font-weight-bold" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                aria-controls="collapseThree">
+                                Brands
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed font-weight-bold" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                                aria-controls="collapseFour">
+                                Price
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse font-weight-bold"
+                            aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed font-weight-bold" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
+                                aria-controls="collapseFive">
+                                Colour
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed font-weight-bold" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false"
+                                aria-controls="collapseSix">
+                                Discount
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button collapsed font-weight-bold" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false"
+                                aria-controls="collapseSeven">
+                                Size
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingEight">
+                            <button class="accordion-button collapsed font-weight-bold" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false"
+                                aria-controls="collapseEight">
+                                All Discount
+                            </button>
+                        </h2>
+                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <span style="align-items: center;">
+                                            <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
+                                        </span>
+
+                                    </div>
+                                    <p>33768</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more dropdowns for other filters (category, brands, price, etc.) -->
+
+
+                <!-- Repeat for other filter dropdowns -->
+
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-9 main-content">
+                <div class="text-center">
+                    <h3>Luxury</h3>
+                    <p>9346</p>
+                </div>
+                <!-- Product Cards -->
+                <div class="row">
+                    <!-- Product Card 1 -->
+                    <div class="col-md-4">
+                        <div class="position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body ">
+                                <img src="assest/addidas.jpeg" class="img-fluid" alt="Product 1 Image">
+                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
+                                <p class="card-text text-center " style="font-weight: 300;">Women's NMD_R1
+                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-3">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="col-md-4">
+                        <div class="position-relative ">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/aldo.jpeg" class="card-img-top" alt="Product 2 Image">
+                                <h5 class="card-title text-center">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001 Embelished
+                                    Black Slide Sandals</p>
+                                <p class="card-text text-center">₹9,999</p> <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="col-md-4">
+                        <div class=" product-card position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/MP000000020061095_658Wx734H_202311120915571.jpg" class="card-img-top"
+                                    alt="Product 3 Image">
+
+                                <h5 class="card-title text-center py-3">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340 Other
+                                    Green Pumps</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-5">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more product cards as needed -->
+                    <div class="col-md-4">
+                        <div class="position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body ">
+                                <img src="assest/addidas.jpeg" class="img-fluid" alt="Product 1 Image">
+                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
+                                <p class="card-text text-center " style="font-weight: 300;">Women's NMD_R1
+                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-3">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="col-md-4">
+                        <div class="position-relative ">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/aldo.jpeg" class="card-img-top" alt="Product 2 Image">
+                                <h5 class="card-title text-center">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001 Embelished
+                                    Black Slide Sandals</p>
+                                <p class="card-text text-center">₹9,999</p> <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="col-md-4">
+                        <div class=" product-card position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/MP000000020061095_658Wx734H_202311120915571.jpg" class="card-img-top"
+                                    alt="Product 3 Image">
+
+                                <h5 class="card-title text-center py-3">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340 Other
+                                    Green Pumps</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-5">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body ">
+                                <img src="assest/addidas.jpeg" class="img-fluid" alt="Product 1 Image">
+                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
+                                <p class="card-text text-center " style="font-weight: 300;">Women's NMD_R1
+                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-3">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="col-md-4">
+                        <div class="position-relative ">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/aldo.jpeg" class="card-img-top" alt="Product 2 Image">
+                                <h5 class="card-title text-center">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001 Embelished
+                                    Black Slide Sandals</p>
+                                <p class="card-text text-center">₹9,999</p> <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="col-md-4">
+                        <div class=" product-card position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/MP000000020061095_658Wx734H_202311120915571.jpg" class="card-img-top"
+                                    alt="Product 3 Image">
+
+                                <h5 class="card-title text-center py-3">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340 Other
+                                    Green Pumps</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-5">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body ">
+                                <img src="assest/addidas.jpeg" class="img-fluid" alt="Product 1 Image">
+                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
+                                <p class="card-text text-center " style="font-weight: 300;">Women's NMD_R1
+                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-3">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="col-md-4">
+                        <div class="position-relative ">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/aldo.jpeg" class="card-img-top" alt="Product 2 Image">
+                                <h5 class="card-title text-center">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001 Embelished
+                                    Black Slide Sandals</p>
+                                <p class="card-text text-center">₹9,999</p> <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="col-md-4">
+                        <div class=" product-card position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/MP000000020061095_658Wx734H_202311120915571.jpg" class="card-img-top"
+                                    alt="Product 3 Image">
+
+                                <h5 class="card-title text-center py-3">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340 Other
+                                    Green Pumps</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-5">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body ">
+                                <img src="assest/addidas.jpeg" class="img-fluid" alt="Product 1 Image">
+                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
+                                <p class="card-text text-center " style="font-weight: 300;">Women's NMD_R1
+                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-3">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="col-md-4">
+                        <div class="position-relative ">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/aldo.jpeg" class="card-img-top" alt="Product 2 Image">
+                                <h5 class="card-title text-center">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001 Embelished
+                                    Black Slide Sandals</p>
+                                <p class="card-text text-center">₹9,999</p> <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="col-md-4">
+                        <div class=" product-card position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/MP000000020061095_658Wx734H_202311120915571.jpg" class="card-img-top"
+                                    alt="Product 3 Image">
+
+                                <h5 class="card-title text-center py-3">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340 Other
+                                    Green Pumps</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-5">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap JS and jQuery (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- costum css -->
+    <script src="style/script.js"></script>
+</body>
+
+</html>
