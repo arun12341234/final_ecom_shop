@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-d!3aadh*^)tnthtkh^d+vbokp!bwa&u@=6*g*qjz#@$o^wobd-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['saasapps.in']
 
 
 # Application definition
@@ -127,7 +127,8 @@ STATIC_DIR = BASE_DIR / 'static'
 MEDIA_DIR = BASE_DIR / 'media'
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
-
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 # xhvv mcmq tfeo pugj
