@@ -10,9 +10,11 @@ from sqlalchemy import text
 import json
 
 
-mydb = create_engine('mysql+pymysql://' + 'root' + ':' + 'password' + '@' + '127.0.0.1' + ':' + str(3306) + '/' + 'shivadb_new' , echo=False)
-conn = mydb.connect()
-
+mydb = create_engine('mysql+pymysql://' + 'root' + ':' + 'password' + '@' + '49.205.199.235' + ':' + str(3306) + '/' + 'shivadb_new' , echo=False)
+try:
+    conn = mydb.connect()
+except Exception as err:
+    print(err)
 
 
 
@@ -83,8 +85,11 @@ def cart(request):
 def list_product(request):
     template = loader.get_template("list_product.html")
     # results = VisaGetlist.objects.all()
-    generated_org_id = request.session['generated_org_id']
-    json_result,json_result_1,item_rows = check_generated_org_id(request)
+    try:
+        generated_org_id = request.session['generated_org_id']
+        json_result,json_result_1,item_rows = check_generated_org_id(request)
+    except:
+        json_result,json_result_1,item_rows = None, None, None
     print(json_result)
     context = {'logo_url': json_result,'org_name': json_result_1,'item_rows':item_rows}
     rendered_template = template.render(context)
@@ -96,8 +101,11 @@ def list_product_details(request):
     template = loader.get_template("result_ProductDetails.html")
     print("result_ProductDetails.html")
     # results = VisaGetlist.objects.all()
-    generated_org_id = request.session['generated_org_id']
-    json_result,json_result_1,item_rows = check_generated_org_id(request)
+    try:
+        generated_org_id = request.session['generated_org_id']
+        json_result,json_result_1,item_rows = check_generated_org_id(request)
+    except:
+        json_result,json_result_1,item_rows = None, None, None
     print(json_result)
     context = {'logo_url': json_result,'org_name': json_result_1,'item_rows':item_rows}
     rendered_template = template.render(context)
@@ -149,7 +157,10 @@ def generated_org_id(request, generated_org_id):
     print("here")
     # Store generated_org_id in session
     request.session['generated_org_id'] = generated_org_id
-    json_result,json_result_1,item_rows = check_generated_org_id(request)
+    try:
+        json_result,json_result_1,item_rows = check_generated_org_id(request)
+    except:
+        json_result,json_result_1,item_rows = None, None, None
     print(json_result)
     context = {'logo_url': json_result,'org_name': json_result_1,'item_rows':item_rows}
     # Redirect to the home page or any other page you desire

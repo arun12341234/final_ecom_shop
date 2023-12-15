@@ -75,14 +75,14 @@ WSGI_APPLICATION = 'ecom_shop.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-   'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ecom_shop',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-    }
+#    'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'ecom_shop',
+#         'USER': 'root',
+#         'PASSWORD': 'password',
+#         'HOST': '49.205.199.235',
+#         'PORT': '3306',
+#     }
 }
 
 
