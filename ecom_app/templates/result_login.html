@@ -2,15 +2,16 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Login Page</title>
-<!-- Bootstrap CSS -->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
-<!--  Custom css style link  -->
-<link href="{% static 'style/styel.css' %}" rel="stylesheet"/>
-<style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <!--  Custom css style link  -->
+    <link href="{% static 'style/style.css' %}" rel="stylesheet" />
+    <style>
         /* Custom Styles */
         body {
             background-color: #f8f9fa;
@@ -26,38 +27,74 @@
         }
     </style>
 </head>
+
 <body>{% csrf_token %}
-<div class="container">
-<div class="login-container">
-<div class="text-center py-2">
-<p>Welcome to</p>
-<img alt="" src="{% static 'assest/lux_logo_new.svg' %}"/>
-</div>
-<form>
-<p class="text-center px-3">Please Enter Your Mobile Number</p>
-<div class="form-group position-relative box">
-<input class="form-control rounded-0 input-box" id="Mail" placeholder="username@email.com" type="text"/>
-<p class="position-absolute position-properties" id="E-mail" style="color: #936917; font-weight: bold;"> USE MOBILE NUMBER</p>
-</div>
-<div class="form-group position-relative box1">
-<input class="form-control rounded-0 input-box" id="number" placeholder="Enter Mobile Number" type="tel"/>
-<p class="position-absolute position-properties" id="Mobile-num" style="color: #936917; font-weight: bold;">USE EMAIL</p>
-</div>
-<div class="text-center py-3">
-<p class="roboto-font" style=" font-size: 14px;">This site is protected by reCAPTCHA and the Google <span class="font-weight-bold" style="color: #936917;"> Privacy Policy </span> and Terms of</p>
-<p class="roboto-font" style=" font-size: 14px;">Service apply. On Clicking Continue, I agree to <span class="font-weight-bold" style="color: #936917;"> Terms of Service </span> &amp; <span class="font-weight-bold" style="color: #936917;"> Privacy Policy </span></p>
-</div>
-<div class="text-center py-3">
-<button class="btn btn-secondary px-5" type="submit">CONTINUE</button>
-</div>
-</form>
-</div>
-</div>
-<!-- custom javascript -->
-<script src="{% static 'style/script.js' %}"></script>
-<!-- Bootstrap JS, jQuery, Popper.js -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <div class="container">
+        <div class="login-container">
+            <div class="text-center py-2">
+                <p>Welcome to</p>
+                <img alt="" src="{% static 'assest/lux_logo_new.svg' %}" />
+            </div>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                
+                <div class="form-group position-relative emailbox">
+                    <p class="text-center px-3">Please Enter Your Mobile Number</p>
+                    <input type="tel" class="form-control rounded-0 input-box" id="number" name="number" placeholder="Enter Your Number" value="{{ form.mobile_number.value }}">
+                    <p class="position-absolute position-properties" id="email" style="color: #936917; font-weight: bold;" onclick="fun1()">USE EMAIL</p>
+                    <!-- Display validation error for mobile number -->
+                    {% if form.errors.mobile_number %}
+                        <div class="alert alert-danger">{{ form.errors.mobile_number }}</div>
+                    {% endif %}
+                </div>
+            
+                <div class="form-group position-relative numbox">
+                    <p class="text-center px-3">Please Enter Your E-mail</p>
+                    <input type="email" class="form-control rounded-0 input-box" id="email" name="email" placeholder="username@email.com" value="{{ form.email.value }}">
+                    <p class="position-absolute position-properties" id="num" style="color: #936917; font-weight: bold;" onclick="fun()">USE MOBILE NUMBER </p>
+                    <!-- Display validation error for email -->
+                    {% if form.errors.email %}
+                        <div class="alert alert-danger">{{ form.errors.email }}</div>
+                    {% endif %}
+                </div>
+            
+                <div class="form-group py-2 position-relative">
+                    <input type="password" class="form-control form-control1 rounded-0 input-box" id="password" name="password" placeholder="Enter password" value="{{ form.password.value }}">
+                    <a href="{% url 'forget_password' %}">
+                        <p class="position-absolute position-properties" id="num" style="color: #936917; font-weight: bold;">Forgot Password? </p>
+                    </a>
+                    <!-- Display validation error for password -->
+                    {% if form.errors.password %}
+                        <div class="alert alert-danger">{{ form.errors.password }}</div>
+                    {% endif %}
+                </div>
+            
+                <div class="text-center py-3">
+                    <p class="roboto-font" style=" font-size: 14px;">This site is protected by reCAPTCHA and the Google
+                        <span class="font-weight-bold" style="color: #936917;"> Privacy Policy </span> and Terms of
+                    </p>
+                    <p class="roboto-font" style=" font-size: 14px;">Service apply. On Clicking Continue, I agree to
+                        <span class="font-weight-bold" style="color: #936917;"> Terms of Service </span> & <span
+                            class="font-weight-bold" style="color: #936917;"> Privacy Policy </span>
+                    </p>
+                </div>
+            
+                <div class="text-center py-3">
+                    <button class="btn btn-secondary px-5 text-decoration-none" type="submit">Login</button>
+                    <button class="btn btn-secondary px-5 text-decoration-none"
+                        style="background-color: white;color: black;">Cancel</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    <!-- custom javascript -->
+    <script src="{% static 'style/script.js' %}"></script>
+    <!-- Bootstrap JS, jQuery, Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

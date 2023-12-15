@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        /* Custom styles */
+        .custom-container {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+       
+
+       
+
+        /* Custom CSS */
+    </style>
+</head>
+
+<body>
+    <nav class="fixied">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="#">
+                <img src="assest/Screenshot 2023-11-24 190645.png" alt="Left Logo">
+            </a>
+            <a class="navbar-brand navbar-brand-centered" href="#">
+                <img src="assest/Screenshot 2023-11-24 190922.png" alt="Center Logo">
+            </a>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" target="_blank">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" target="_blank">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Cart.html" target="_blank">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+            <div class="container ">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-center" id="navbarNav">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                New In
+                            </a>
+                            <div class="dropdown-menu " aria-labelledby="navbarDropdown1">
+
+                                <div class="d-flex align-items-center justify-content-around">
+                                    <div>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Repeat the structure for other lists -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Brands
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <!-- Repeat the structure for other lists -->
+                        <!-- ... List 3 to List 11 ... -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown11" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Men
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown11">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Women
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Kids
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Beauty & Groomimg
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Home
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Gourmet
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Watches & Jewellery
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Eyewear
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Featured Stores
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+
+    </nav>
+
+    <!-- main section -->
+
+    <div class="container  position-relative main-section-start">
+        <div class="text-center">
+            <h4>Luxury</h4>
+            <p>9346</p>
+            <div class="potision-select d-flex align-items-center ">
+                <img src="assest/two-cons.png" alt="">
+                <select name="" id="seleceted" class="border-secondary  bg-white">
+                    <option value="" class="invite " selected>Popularity</option>
+                    <option value="" class="invite ">Price: Low to High</option>
+                    <option value="" class="invite ">Price: High to Low</option>
+                    <option value="" class="invite ">Discount</option>
+                    <option value="" class="invite ">New Arrivals</option>
+                </select>
+            </div>
+        </div>
+        <div class="row ">
+            <!-- Sidebar -->
+            <div class="col-md-4  ">
+
+                <div class=" hover-pointer postion-part">
+                    <h5>Home</h5>
+                    <hr>
+
+                    <button class="accordion font-weight-bold">Department</button>
+                    <div class="panel">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Man</label>
+                                </span>
+
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+
+                    <button class="accordion font-weight-bold">Category</button>
+                    <div class="panel">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
+                                </span>
+
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+
+                    <button class="accordion font-weight-bold">Products Type</button>
+                    <div class="panel">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
+                                </span>
+
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+
+                    <button class="accordion font-weight-bold">Brands</button>
+                    <div class="panel">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
+                                </span>
+
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+
+                    <button class="accordion font-weight-bold">Price</button>
+                    <div class="panel">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
+                                </span>
+
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+
+                    <button class="accordion font-weight-bold">Colour</button>
+                    <div class="panel">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
+                                </span>
+
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+
+                    <button class="accordion font-weight-bold">Discount</button>
+                    <div class="panel">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
+                                </span>
+
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+
+                    <button class="accordion font-weight-bold">Size</button>
+                    <div class="panel">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
+                                </span>
+
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+                    <button class="accordion font-weight-bold">All Discount</button>
+                    <div class="panel">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
+                                </span>
+
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-8 main-content ">
+                <div class="position-relative">
+                    <p class="fa-1x font-weight-bold">Filtered by <sub></sub></p>
+                    <p class=" rounded-1 pl-5 d-inline-block" style="font-size: 15px;"> Men filter <i
+                            class="bi bi-x"></i></p>
+
+                    <p class="clear-all">CLEAR ALL</p>
+
+                </div>
+                <!-- Product Cards -->
+                <div class="row">
+                    <!-- Product Card 1 -->
+                    <div class="col-md-4">
+                        <div class="position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body ">
+                                <img src="assest/addidas.jpeg" class="img-fluid" alt="Product 1 Image">
+                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
+                                <p class="card-text text-center " style="font-weight: 300;">Women's NMD_R1
+                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-3">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="col-md-4">
+                        <div class="position-relative ">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/aldo.jpeg" class="card-img-top" alt="Product 2 Image">
+                                <h5 class="card-title text-center">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001 Embelished
+                                    Black Slide Sandals</p>
+                                <p class="card-text text-center">₹9,999</p> <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="col-md-4">
+                        <div class=" product-card position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/MP000000020061095_658Wx734H_202311120915571.jpg" class="card-img-top"
+                                    alt="Product 3 Image">
+
+                                <h5 class="card-title text-center py-3">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340 Other
+                                    Green Pumps</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-5">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more product cards as needed -->
+                    <div class="col-md-4">
+                        <div class="position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body ">
+                                <img src="assest/addidas.jpeg" class="img-fluid" alt="Product 1 Image">
+                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
+                                <p class="card-text text-center " style="font-weight: 300;">Women's NMD_R1
+                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-3">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="col-md-4">
+                        <div class="position-relative ">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/aldo.jpeg" class="card-img-top" alt="Product 2 Image">
+                                <h5 class="card-title text-center">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001 Embelished
+                                    Black Slide Sandals</p>
+                                <p class="card-text text-center">₹9,999</p> <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="col-md-4">
+                        <div class=" product-card position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/MP000000020061095_658Wx734H_202311120915571.jpg" class="card-img-top"
+                                    alt="Product 3 Image">
+
+                                <h5 class="card-title text-center py-3">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340 Other
+                                    Green Pumps</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-5">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body ">
+                                <img src="assest/addidas.jpeg" class="img-fluid" alt="Product 1 Image">
+                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
+                                <p class="card-text text-center " style="font-weight: 300;">Women's NMD_R1
+                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-3">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="col-md-4">
+                        <div class="position-relative ">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/aldo.jpeg" class="card-img-top" alt="Product 2 Image">
+                                <h5 class="card-title text-center">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001 Embelished
+                                    Black Slide Sandals</p>
+                                <p class="card-text text-center">₹9,999</p> <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="col-md-4">
+                        <div class=" product-card position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/MP000000020061095_658Wx734H_202311120915571.jpg" class="card-img-top"
+                                    alt="Product 3 Image">
+
+                                <h5 class="card-title text-center py-3">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340 Other
+                                    Green Pumps</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-5">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body ">
+                                <img src="assest/addidas.jpeg" class="img-fluid" alt="Product 1 Image">
+                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
+                                <p class="card-text text-center " style="font-weight: 300;">Women's NMD_R1
+                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-3">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="col-md-4">
+                        <div class="position-relative ">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/aldo.jpeg" class="card-img-top" alt="Product 2 Image">
+                                <h5 class="card-title text-center">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001 Embelished
+                                    Black Slide Sandals</p>
+                                <p class="card-text text-center">₹9,999</p> <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="col-md-4">
+                        <div class=" product-card position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/MP000000020061095_658Wx734H_202311120915571.jpg" class="card-img-top"
+                                    alt="Product 3 Image">
+
+                                <h5 class="card-title text-center py-3">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340 Other
+                                    Green Pumps</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-5">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body ">
+                                <img src="assest/addidas.jpeg" class="img-fluid" alt="Product 1 Image">
+                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
+                                <p class="card-text text-center " style="font-weight: 300;">Women's NMD_R1
+                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-3">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="col-md-4">
+                        <div class="position-relative ">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/aldo.jpeg" class="card-img-top" alt="Product 2 Image">
+                                <h5 class="card-title text-center">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001 Embelished
+                                    Black Slide Sandals</p>
+                                <p class="card-text text-center">₹9,999</p> <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="col-md-4">
+                        <div class=" product-card position-relative">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                            <div class="card-body">
+                                <img src="assest/MP000000020061095_658Wx734H_202311120915571.jpg" class="card-img-top"
+                                    alt="Product 3 Image">
+
+                                <h5 class="card-title text-center py-3">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340 Other
+                                    Green Pumps</p>
+                                <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-5">
+                                        ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                                <!-- Product price -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      
+    </div>
+   
+
+
+
+
+    <div class="m-auto text-center mt-5">
+        <a href="" class="bg-black py-2 px-5 text-center text-white rounded-1">Load More</a>
+    </div>
+
+
+
+
+    <!-- footer    above  section -->
+    <main class="footer-above-section mt-5">
+        <div class="container pt-4 pb-1">
+            <div class="row">
+                <!-- Left Side - Select, Search Bar, Button -->
+                <div class="col-md-5">
+                    <h3 class="text-white">CONNECT WITH US</h3>
+                    <p class="text-secondary">Be the first to know about new products, exclusive collections, latest
+                        trends, stories and more.</p>
+                    <div class="input-group ">
+                        <select class="custom-control bg-dark text-white border-secondary rounded-left">
+                            <option selected class="p-4">Men</option>
+                            <option value="1" class="p-4">Women</option>
+
+                        </select>
+                        <input type="text" class="form-control bg-dark text-secondary outline border-secondary"
+                            placeholder="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary rounded-right roboto-font text-white"
+                                type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-1 ">
+                    <div class="vertical-line"></div>
+                </div>
+
+
+                <div class="col-md-6 ">
+                    <div
+                        class="d-flex text-secondary right-secton roboto-font align-items-center justify-content-center mt-4">
+                        <div class="col-md-4 d-flex align-items-center flex-column justify-content-center ">
+                            <img src="assest/foot_autentic_icon.svg" alt="">
+                            <p class="text-center py-3">Authentic and Genuine Brands</p>
+                        </div>
+                        <div class=" col-md-4 d-flex align-items-center flex-column justify-content-center ">
+                            <img src="assest/foot_promise_icon.svg" alt="" class="pb-3">
+                            <p class="text-center pb-5">Tata Promise</p>
+                        </div>
+                        <div class="col-md-4 d-flex align-items-center flex-column justify-content-center">
+                            <img src="assest/foot_return_icon.svg" alt="">
+                            <p class="text-center py-3">Easy Returns And Exchanges</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer    --  section -->
+
+    <footer class="footer-section">
+        <div class="container pt-5">
+            <div class="row roboto-font">
+                <div class="col-md-2 col-sm-4">
+                    <h6>SHOP LUXURY</h6>
+                    <ul class="list-section">
+                        <li>Men</li>
+                        <li>Women</li>
+                        <li>Handbags</li>
+                        <li>Watches</li>
+                        <li>Home</li>
+                        <li>Shoes</li>
+                        <li>Fragrances</li>
+                        <li>Kids</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <h6>SHOP INDILUXE</h6>
+                    <ul class="list-section">
+                        <li>Men</li>
+                        <li>Women</li>
+                        <li>Handbags</li>
+                        <li>Beauty</li>
+                        <li>Watches</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <h6>POPULAR SEARCHES</h6>
+                    <ul class="list-section">
+                        <li>Lacoste</li>
+                        <li>Michael Kors</li>
+                        <li>Coach</li>
+                        <li>Diesel</li>
+                        <li>Watches</li>
+                        <li>Armani Exchange</li>
+                        <li>Polo Tshirts</li>
+                        <li>Wallets</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <h6>USEFUL LINKS</h6>
+                    <ul class="list-section">
+                        <li>Contact Us</li>
+                        <li>FAQ</li>
+                        <li>Shipping</li>
+                        <li>Cancellation</li>
+                        <li>Returns FAQs</li>
+                        <li>Terms & Conditions</li>
+                        <li>Gift Card T&C</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <h6>DOWNLOAD</h6>
+                    <ul class="list-section">
+                        <li><img src="assest/Screenshot 2023-11-20 205940.png" alt="" class="store-icons"></li>
+                        <li><img src="assest/Screenshot 2023-11-20 210033.png" alt="" class="store-icons"></li>
+
+                    </ul>
+                </div>
+                <div class="footer-icons col-md-2 col-sm-4">
+                    <h6>FOLLOW US</h6>
+                    <ul class="d-flex align-items-center follow-icons">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap JS and jQuery (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    
+    <!-- custom css -->
+    <script src="style/script.js"></script>
+
+</body>
+
+</html>

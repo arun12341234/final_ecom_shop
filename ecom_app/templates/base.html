@@ -1,0 +1,455 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
+    <script crossorigin="anonymous" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- custom css -->
+    <link href="{% static 'style/style.css' %}" rel="stylesheet" />
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .carousel-inner>.item>img,
+    .carousel-inner>.item>a>img {
+        width: 70%;
+        margin: auto;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        {% if org_name %}
+        <a class="navbar-brand" href=""
+            style="color: #818181; display: block; font-size: 16px; font-weight: 300; line-height: 28px; padding: 10px 15px 20px; position: relative; text-align: center; text-transform: uppercase; transition: all .05s;">
+            {{org_name}}
+        </a>
+        {% else %}
+        <a class="navbar-brand" href=""
+            style="color: #818181; display: block; font-size: 16px; font-weight: 300; line-height: 28px; padding: 10px 15px 20px; position: relative; text-align: center; text-transform: uppercase; transition: all .05s;">
+            SASCONIT
+        </a>
+        {% endif %}
+
+        <a class="navbar-brand navbar-brand-centered" href="" style="width: 150px; height: 40px; overflow: hidden;">
+            {% if logo_url %}
+            <img alt="Center Logo" style="width: 100%; height: 100%; object-fit: cover; object-position: center center;"
+                src="{{ logo_url }}" />
+            {% else %}
+            <img alt="Center Logo" style="width: 100%; height: 100%; object-fit: cover; object-position: center center;"
+                src="https://saasapps.in:2082/media/documents/SASCONIT_logo.png" />
+            {% endif %}
+        </a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </li> -->
+                {% if request.session.user_id %}
+                <!-- User is authenticated, show a different navigation item or nothing -->
+                <!-- For example, you may want to show a link to the user's profile -->
+
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="nav-link btn btn-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </form>
+                {% else %}
+                <!-- User is not authenticated, show the login link -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cart' %}">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="dropdown-divider"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="navbarNav">
+                <ul class="navbar-nav m-auto">
+                    {% if item_rows %}
+                    {% for brand in item_rows %}
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href=""
+                            id="navbarDropdown2" role="button">
+                            {{brand.ItemType_Name}}
+                        </a>
+                        <div aria-labelledby="navbarDropdown2" class="dropdown-menu">
+                            <a class="dropdown-item" href="">Action</a>
+                            <a class="dropdown-item" href="">Another action</a>
+                            <a class="dropdown-item" href="">Something else here</a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                    {% else %}
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href=""
+                            id="navbarDropdown1" role="button">
+                            New In
+                        </a>
+                        <div aria-labelledby="navbarDropdown1" class="dropdown-menu">
+                            <div class="d-flex align-items-center justify-content-around">
+                                <div>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                </div>
+                                <div>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                </div>
+                                <div>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                    <a class="dropdown-item" href="">Action</a>
+                                    <a class="dropdown-item" href="">Another action</a>
+                                    <a class="dropdown-item" href="">Something else here</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Repeat the structure for other lists -->
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href=""
+                            id="navbarDropdown2" role="button">
+                            Brands
+                        </a>
+                        <div aria-labelledby="navbarDropdown2" class="dropdown-menu">
+                            <a class="dropdown-item" href="">Action</a>
+                            <a class="dropdown-item" href="">Another action</a>
+                            <a class="dropdown-item" href="">Something else here</a>
+                        </div>
+                    </li>
+                    <!-- Repeat the structure for other lists -->
+                    <!-- ... List 3 to List 11 ... -->
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href=""
+                            id="navbarDropdown11" role="button">
+                            Men
+                        </a>
+                        <div aria-labelledby="navbarDropdown11" class="dropdown-menu">
+                            <a class="dropdown-item" href="">Action</a>
+                            <a class="dropdown-item" href="">Another action</a>
+                            <a class="dropdown-item" href="">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href=""
+                            id="navbarDropdown2" role="button">
+                            Women
+                        </a>
+                        <div aria-labelledby="navbarDropdown2" class="dropdown-menu">
+                            <a class="dropdown-item" href="">Action</a>
+                            <a class="dropdown-item" href="">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href=""
+                            id="navbarDropdown2" role="button">
+                            Kids
+                        </a>
+                        <div aria-labelledby="navbarDropdown2" class="dropdown-menu">
+                            <a class="dropdown-item" href="">Action</a>
+                            <a class="dropdown-item" href="">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href=""
+                            id="navbarDropdown2" role="button">
+                            Beauty &amp; Groomimg
+                        </a>
+                        <div aria-labelledby="navbarDropdown2" class="dropdown-menu">
+                            <a class="dropdown-item" href="">Action</a>
+                            <a class="dropdown-item" href="">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href=""
+                            id="navbarDropdown2" role="button">
+                            Home
+                        </a>
+                        <div aria-labelledby="navbarDropdown2" class="dropdown-menu">
+                            <a class="dropdown-item" href="">Action</a>
+                            <a class="dropdown-item" href="">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href=""
+                            id="navbarDropdown2" role="button">
+                            Gourmet
+                        </a>
+                        <div aria-labelledby="navbarDropdown2" class="dropdown-menu">
+                            <a class="dropdown-item" href="">Action</a>
+                            <a class="dropdown-item" href="">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href=""
+                            id="navbarDropdown2" role="button">
+                            Watches &amp; Jewellery
+                        </a>
+                        <div aria-labelledby="navbarDropdown2" class="dropdown-menu">
+                            <a class="dropdown-item" href="">Action</a>
+                            <a class="dropdown-item" href="">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href=""
+                            id="navbarDropdown2" role="button">
+                            Eyewear
+                        </a>
+                        <div aria-labelledby="navbarDropdown2" class="dropdown-menu">
+                            <a class="dropdown-item" href="">Action</a>
+                            <a class="dropdown-item" href="">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href=""
+                            id="navbarDropdown2" role="button">
+                            Featured Stores
+                        </a>
+                        <div aria-labelledby="navbarDropdown2" class="dropdown-menu">
+                            <a class="dropdown-item" href="">Action</a>
+                            <a class="dropdown-item" href="">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="">Something else here</a>
+                        </div>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    {% block content %}{% endblock %}
+
+
+
+
+
+    <!-- footer section -->
+    <!-- footer    above  section -->
+    <main class="footer-above-section mt-5">
+        <div class="container pt-4 pb-1">
+            <div class="row">
+                <!-- Left Side - Select, Search Bar, Button -->
+                <div class="col-md-5">
+                    <h2 class="text-white">CONNECT WITH US</h2>
+                    <p class="text-secondary" style="font-size: 1.5em;">
+                        Be the first to know about new products,exclusive collections, latest trends, stories and more.
+                    </p>
+                    <div class="input-group">
+                        <select class="custom-control bg-dark text-white border-secondary rounded-left"
+                            style="font-size: 2em;">
+                            <option class="p-4" selected="">Men</option>
+                            <option class="p-4" value="1">Women</option>
+                        </select>
+                        <input class="form-control bg-dark text-secondary outline border-secondary" placeholder="Search"
+                            style="font-size: 2em;" type="text" />
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary rounded-right roboto-font text-white"
+                                style="font-size: 2em;" type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="vertical-line"></div>
+                </div>
+                <div class="col-md-6">
+                    <div
+                        class="d-flex text-secondary right-secton roboto-font align-items-center justify-content-center mt-4">
+                        <div class="col-md-4 d-flex align-items-center flex-column justify-content-center">
+                            <img alt="" src="{% static 'assest/foot_autentic_icon.svg' %}" />
+                            <h4 class="text-center py-3">Authentic and Genuine Brands</h4>
+                        </div>
+                        <div class="col-md-4 d-flex align-items-center flex-column justify-content-center">
+                            <img alt="" class="pb-3" src="{% static 'assest/foot_promise_icon.svg' %}" />
+                            <h4 class="text-center pb-5">Tata Promise</h4>
+                        </div>
+                        <div class="col-md-4 d-flex align-items-center flex-column justify-content-center">
+                            <img alt="" src="{% static 'assest/foot_return_icon.svg' %}" />
+                            <h4 class="text-center py-3">Easy Returns And Exchanges</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- footer    --  section -->
+    <footer class="footer-section">
+        <div class="container pt-5">
+            <div class="row roboto-font">
+                <div class="col-md-2 col-sm-4">
+                    <h4>SHOP LUXURY</h4>
+                    <ul class="list-section">
+                        <li>Men</li>
+                        <li>Women</li>
+                        <li>Handbags</li>
+                        <li>Watches</li>
+                        <li>Home</li>
+                        <li>Shoes</li>
+                        <li>Fragrances</li>
+                        <li>Kids</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <h4>SHOP INDILUXE</h4>
+                    <ul class="list-section">
+                        <li>Men</li>
+                        <li>Women</li>
+                        <li>Handbags</li>
+                        <li>Beauty</li>
+                        <li>Watches</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <h4>POPULAR SEARCHES</h4>
+                    <ul class="list-section">
+                        <li>Lacoste</li>
+                        <li>Michael Kors</li>
+                        <li>Coach</li>
+                        <li>Diesel</li>
+                        <li>Watches</li>
+                        <li>Armani Exchange</li>
+                        <li>Polo Tshirts</li>
+                        <li>Wallets</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <h4>USEFUL LINKS</h4>
+                    <ul class="list-section">
+                        <li>Contact Us</li>
+                        <li>FAQ</li>
+                        <li>Shipping</li>
+                        <li>Cancellation</li>
+                        <li>Returns FAQs</li>
+                        <li>Terms &amp; Conditions</li>
+                        <li>Gift Card T&amp;C</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <h4>DOWNLOAD</h4>
+                    <ul class="list-section">
+                        <li><img alt="" class="store-icons"
+                                src="{% static 'assest/Screenshot 2023-11-20 205940.png' %}" /></li>
+                        <li><img alt="" class="store-icons"
+                                src="{% static 'assest/Screenshot 2023-11-20 210033.png' %}" /></li>
+                    </ul>
+                </div>
+                <div class="footer-icons col-md-2 col-sm-4">
+                    <h4>FOLLOW US</h4>
+                    <ul class="d-flex align-items-center follow-icons">
+                        <li><a href=""><i class="fab fa-facebook-f" style="color: white;"></i></a></li>
+                        <li><a href=""><i class="fab fa-instagram" style="color: white;"></i></a></li>
+                        <li><a href=""><i class="fab fa-twitter" style="color: white;"></i></a></li>
+                        <li><a href=""><i class="fab fa-youtube" style="color: white;"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script crossorigin="anonymous" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

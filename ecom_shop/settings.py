@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-d!3aadh*^)tnthtkh^d+vbokp!bwa&u@=6*g*qjz#@$o^wobd-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['saasapps.in']
+ALLOWED_HOSTS = ['saasapps.in','127.0.0.1','49.205.199.235']
 
 
 # Application definition
@@ -75,9 +75,13 @@ WSGI_APPLICATION = 'ecom_shop.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+   'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ecom_shop',
+        'USER': 'root',
+        'PASSWORD': 'password',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 

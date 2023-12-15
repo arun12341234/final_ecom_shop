@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+  <!-- main section -->
+  <div class="container main-section-start position-relative">
+    <div class="m-auto">
+      <a class="text-decoration-none bg-black ml-5 text-white text-center rounded-1 px-3" href="">New</a>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="mt-5 pt-5 postion-part d-flex flex-column">
+          <a href="#1"><i class="bi bi-dot current"></i></a>
+          <a href="#2"> <i class="bi bi-dot"></i></a>
+          <a href="#3"> <i class="bi bi-dot"></i></a>
+          <a href="#4"> <i class="bi bi-dot"></i></a>
+          <a href="#5"> <i class="bi bi-dot"></i></a>
+          <a href="#6"> <i class="bi bi-dot"></i></a>
+          <a href="#7"><i class="bi bi-dot"></i></a>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="d-flex justify-content-around position-relative">
+          <div>
+            <img alt="Shoes" class="shoes-image img-fluid" id="1" src="{% static 'assest/shoesimage.jpeg' %}" />
+            <img alt="Shoes" class="shoes-image img-fluid" id="2" src="{% static 'assest/right-side.webp' %}" />
+            <img alt="Shoes" class="shoes-image img-fluid" id="3" src="{% static 'assest/left-side.webp' %}" />
+            <img alt="Shoes" class="shoes-image img-fluid" id="4" src="{% static 'assest/harf-show.webp' %}" />
+            <img alt="Shoes" class="shoes-image img-fluid" id="5" src="{% static 'assest/full-show.jpeg' %}" />
+            <img alt="Shoes" class="shoes-image img-fluid" id="6" src="{% static 'assest/2-more.jpeg' %}" />
+            <img alt="Shoes" class="shoes-image img-fluid" id="7" src="{% static 'assest/showin-two.jpeg' %}" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 postion-part">
+        <div class="hover-pointer postion-part">
+          <div class="roboto-font" style="font-weight: 300;">
+            <a class="robot-font-style" href="">Luxury <i class="bi bi-chevron-right"></i></a>
+            <a class="robot-font-style" href="">Men <i class="bi bi-chevron-right"></i></a>
+            <a class="robot-font-style" href="">Men Shoes <i class="bi bi-chevron-right"></i></a>
+            <a class="robot-font-style" href="">Men Sports Shoes <i class="bi bi-chevron-right"></i></a>
+            <a class="robot-font-style" href=""> Running</a>
+          </div>
+          <!-- Right side with product information -->
+          <div>
+            <h4>ADIDAS</h4>
+            <p>Men's ULTRABOOST 1.0 Blue Running Shoes</p>
+            <span> <span class="robot-font-style">Sold By</span> ADI SPORTS INDIA PVT. LTD. <i
+                class="bi bi-plus-lg pl-3"></i></span>
+            <p><a class="dark-yellow font-weight-bold" href="http://" rel="noopener noreferrer" >View 2
+                More Sellers</a> starting ₹17999</p>
+            <div class="position-relative">
+              <p class="font-weight-bold">MRP: ₹17,999</p>
+              <div class="postion-setting">
+                <i class="bi bi-heart pr-4"></i>
+                <i class="bi bi-box-arrow-up"></i>
+              </div>
+            </div>
+            <p class="robot-font-style">inclusive of all taxes</p>
+            <p>EMI options starting from <a class="text-decoration-none text-dark font-weight-bold" href="">₹633/month
+                <i class="bi bi-chevron-right"></i></a></p>
+            <div class="bg-light px-4 py-4 rounded-1">
+              <div class="d-flex align-items-center justify-content-between">
+                <p>5 OFFERS</p>
+                <p class="dark-yellow">VIEW ALL</p>
+              </div>
+              <div class="d-flex"><img alt="" class="pr-3" src="{% static 'assest/discount_icon-shop.svg' %}" /><span
+                  style="font-size: 13px;"> Use coupon BOB1500 &amp; get 10% off on Bank of Baroda Debit &amp;
+                  Credit Cards on purchase of Rs.5000 | Max discount Rs.1500</span>
+              </div>
+              <div class="d-flex pt-3"><img alt="" class="pr-3"
+                  src="{% static 'assest/discount_icon-shop.svg' %}" /><span style="font-size: 13px;"> Use coupon
+                  BOB1500 &amp; get 10% off on Bank of Baroda Debit &amp;
+                  Credit Cards on purchase of Rs.5000 | Max discount Rs.1500</span>
+              </div>
+            </div>
+            <hr />
+            <p>Color <span class="robot-font-style">Black</span></p>
+            <hr />
+            <div>
+              <p>Just like LaMelo himself, a famous basketball player, these basketball shoes defy the
+                norms
+                and stand out in ... <span class="dark-yellow">Read More</span></p>
+            </div>
+            <hr />
+            <div>
+              <div class="d-flex justify-content-between align-items-center">
+                <p>SELECT SIZE</p>
+                <p class="dark-yellow">SIZE GUIDE</p>
+              </div>
+              <div class="uk-ind">
+                <p>UK IND-6</p>
+                <p>UK IND-7</p>
+                <p>UK IND-8</p>
+                <p class="border rounded-1 px-3">UK IND-9</p>
+              </div>
+              <div class="uk-ind">
+                <p>UK IND-10</p>
+                <p>UK IND-11</p>
+                <p class="text-decoration-line-through text-secondary">UK IND-12</p>
+              </div>
+              <div class="uk-ind">
+                <button class="bg-transparent px-5 rounded py-1">BUY NOW</button>
+                <button class="btn bg-black text-white px-5">ADD TO BAG</button>
+              </div>
+              <p>DELIVERY OPTIONS</p>
+              <p class="robot-font-style">Please enter your pincode to check for available delivery
+                options.</p>
+              <div class="d-flex align-items-center">
+                <input class="py-1" type="text" />
+                <button class="btn bg-dark text-white py-1 ml-2">Check</button>
+              </div>
+              <p class="pt-3">Delivery By</p>
+              <p>7th Dec</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main class="container m-auto text-center mt-5">
+    <div class="tab">
+      <button class="tablinks showoff text-white" onclick="openCity(event, 'London')">STYLE NOTE &amp; FEATURES</button>
+      <button class="tablinks" onclick="openCity(event, 'Paris')">RETURN POLICY</button>
+      <button class="tablinks" onclick="openCity(event, 'Tokyo')">MANUFACTURER DETAILS</button>
+    </div>
+    <hr />
+    <div class="tabcontent firstshow pt-5" id="London">
+      <h3>WHY IT’S SPECIAL</h3>
+      <p>An icon gets a futuristic refresh in these adidas Ultraboost 1.0 shoes. Designed for uncompromising
+        comfort, they'll keep up with whatever your day brings. The adidas PRIMEKNIT upper hugs your feet for
+        all-day support. A BOOST midsole make every step feel effortless. From work to weekends, these shoes fit
+        whatever mode you're in. This shoe's upper is made with a high-performance yarn.</p>
+    </div>
+    <div class="tabcontent pt-5" id="Paris">
+      <h3>RETURN POLICY</h3>
+      <p>Paris is the capital of France.</p>
+    </div>
+    <div class="tabcontent pt-5" id="Tokyo">
+      <h3>MANUFACTURER DETAILS</h3>
+      <p>adidas India Marketing Private Limited, 6, IInd Floor, Sector- B, Pocket 7, Plot No. 11, Vasant Kunj, New
+        Delhi.</p>
+    </div>
+  </main>
+  <section class="container mt-4">
+    <div class="autoplay">
+      <div class="inner-slider">
+        <img alt="" class="img-fluid image-size" src="{% static 'assest/tallbag-removebg-preview.png' %}" />
+        <div class="text-center">
+          <p>OMMY HILFIGER</p>
+          <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin Trolley</p>
+          <p> ₹6299 <span class="text-decoration-line-through">₹8999</span> <span>30%</span></p>
+        </div>
+      </div>
+      <div class="inner-slider">
+        <img alt="" class="img-fluid image-size" src="{% static 'assest/bag-removebg-preview.png' %}" />
+        <div class="text-center">
+          <p>OMMY HILFIGER</p>
+          <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin Trolley</p>
+          <p> ₹6299 <span class="text-decoration-line-through">₹8999</span> <span>30%</span></p>
+        </div>
+      </div>
+      <div class="inner-slider">
+        <img alt="" class="img-fluid image-size" src="{% static 'assest/shempoo-removebg-preview.png' %}" />
+        <div class="text-center">
+          <p>Dove</p>
+          <p class="robot-font-style">
+            Dove Essential Nourishing Lip Care Lip Balm - 4.8 gm
+          </p>
+          <p>₹189</p>
+        </div>
+      </div>
+      <div class="inner-slider">
+        <img alt="" class="img-fluid image-size" src="{% static 'assest/watch-removebg-preview.png' %}" />
+        <div class="text-center">
+          <p>IWC SCHAFFHAUSEN</p>
+          <p class="robot-font-style">
+            PORTUGIESER AUTOMATIC IW500705 CALVIN KLEIN
+          </p>
+          <p>₹1040000</p>
+        </div>
+      </div>
+      <div class="inner-slider">
+        <img alt="" class="img-fluid image-size" src="{% static 'assest/shempoo-removebg-preview.png' %}" />
+        <div class="text-center">
+          <p>Dove</p>
+          <p class="robot-font-style">
+            Dove Essential Nourishing Lip Care Lip Balm - 4.8 gm
+          </p>
+          <p>₹189</p>
+        </div>
+      </div>
+      <div class="inner-slider">
+        <img alt="" class="img-fluid image-size" src="{% static 'assest/bag-removebg-preview.png' %}" />
+        <div class="text-center">
+          <p>OMMY HILFIGER</p>
+          <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin
+            Trolley</p>
+          <p> ₹6299 <span class="text-decoration-line-through">₹8999</span> <span>30%</span></p>
+        </div>
+      </div>
+      <div class="inner-slider">
+        <img alt="" class="img-fluid image-size" src="{% static 'assest/tallbag-removebg-preview.png' %}" />
+        <div class="text-center">
+          <p>OMMY HILFIGER</p>
+          <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin
+            Trolley</p>
+          <p> ₹6299 <span class="text-decoration-line-through">₹8999</span> <span>30%</span></p>
+        </div>
+      </div>
+      <div class="inner-slider">
+        <img alt="" class="img-fluid image-size" src="{% static 'assest/watch-removebg-preview.png' %}" />
+        <div class="text-center">
+          <p>IWC SCHAFFHAUSEN</p>
+          <p class="robot-font-style">
+            PORTUGIESER AUTOMATIC IW500705 CALVIN KLEIN
+          </p>
+          <p>₹1040000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}

@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- slick slider cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+        integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+
+<body>
+    <nav class="fixied">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="#">
+                <img src="assest/Screenshot 2023-11-24 190645.png" alt="Left Logo">
+            </a>
+            <a class="navbar-brand navbar-brand-centered" href="#">
+                <img src="assest/Screenshot 2023-11-24 190922.png" alt="Center Logo">
+            </a>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" target="_blank">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" target="_blank">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Cart.html" target="_blank">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+            <div class="container ">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-center" id="navbarNav">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                New In
+                            </a>
+                            <div class="dropdown-menu " aria-labelledby="navbarDropdown1">
+
+                                <div class="d-flex align-items-center justify-content-around">
+                                    <div>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Repeat the structure for other lists -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Brands
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <!-- Repeat the structure for other lists -->
+                        <!-- ... List 3 to List 11 ... -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown11" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Men
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown11">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Women
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Kids
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Beauty & Groomimg
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Home
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Gourmet
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Watches & Jewellery
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Eyewear
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Featured Stores
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+
+    </nav>
+    <hr>
+
+    <!-- main section -->
+
+    <div class="container main-section-start position-relative">
+        <div class="m-auto ">
+            <a href="" class="text-decoration-none bg-black ml-5 text-white text-center rounded-1 px-3">New</a>
+        </div>
+        <div class="row ">
+            <div class="col-md-2">
+                <div class="mt-5 pt-5 postion-part d-flex flex-column">
+                    <a href="#1"><i class="bi bi-dot current"></i></a>
+                    <a href="#2"> <i class="bi bi-dot"></i></a>
+                    <a href="#3"> <i class="bi bi-dot"></i></a>
+                    <a href="#4"> <i class="bi bi-dot"></i></a>
+                    <a href="#5"> <i class="bi bi-dot"></i></a>
+                    <a href="#6"> <i class="bi bi-dot"></i></a>
+                    <a href="#7"><i class="bi bi-dot"></i></a>
+                </div>
+            </div>
+            <div class="col-md-5 ">
+
+                <div class="d-flex justify-content-around position-relative">
+
+                    <div>
+                        <img src="assest/shoesimage.jpeg" alt="Shoes" class="shoes-image img-fluid" id="1">
+                        <img src="assest/right-side.webp" alt="Shoes" class="shoes-image img-fluid" id="2">
+                        <img src="assest/left-side.webp" alt="Shoes" class="shoes-image img-fluid" id="3">
+                        <img src="assest/harf-show.webp" alt="Shoes" class="shoes-image img-fluid" id="4">
+                        <img src="assest/full-show.jpeg" alt="Shoes" class="shoes-image img-fluid" id="5">
+                        <img src="assest/2-more.jpeg" alt="Shoes" class="shoes-image img-fluid" id="6">
+                        <img src="assest/showin-two.jpeg" alt="Shoes" class="shoes-image img-fluid" id="7">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 postion-part">
+                <div class="hover-pointer postion-part">
+                    <div class=" roboto-font" style="font-weight: 300;">
+                        <a href="" class="robot-font-style">Luxury <i class="bi bi-chevron-right"></i></a>
+                        <a href="" class="robot-font-style">Men <i class="bi bi-chevron-right"></i></a>
+                        <a href="" class="robot-font-style">Men Shoes <i class="bi bi-chevron-right"></i></a>
+                        <a href="" class="robot-font-style">Men Sports Shoes <i class="bi bi-chevron-right"></i></a>
+                        <a href="" class="robot-font-style"> Running</a>
+                    </div>
+                    <!-- Right side with product information -->
+                    <div>
+                        <h4>ADIDAS</h4>
+                        <p>Men's ULTRABOOST 1.0 Blue Running Shoes</p>
+                        <span> <span class="robot-font-style">Sold By</span> ADI SPORTS INDIA PVT. LTD. <i
+                                class="bi bi-plus-lg pl-3"></i></span>
+                        <p><a href="http://" target="_blank" rel="noopener noreferrer"
+                                class="dark-yellow font-weight-bold">View 2 More Sellers</a> starting ₹17999</p>
+                        <div class=" position-relative">
+                            <p class="font-weight-bold">MRP: ₹17,999</p>
+                            <div class="postion-setting">
+                                <i class="bi bi-heart pr-4"></i>
+                                 <i class="bi bi-box-arrow-up"></i>
+                                </div>
+                        </div>
+                        <p class="robot-font-style">inclusive of all taxes</p>
+                        <p>EMI options starting from <a href=""
+                                class="text-decoration-none text-dark font-weight-bold">₹633/month <i
+                                    class="bi bi-chevron-right "></i></a></p>
+                        <div class="bg-light px-4 py-4 rounded-1">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p>5 OFFERS</p>
+                                <p class="dark-yellow">VIEW ALL</p>
+                            </div>
+                            <div class="d-flex"><img src="assest/discount_icon-shop.svg" alt="" class="pr-3"><span
+                                    style="font-size: 13px;"> Use coupon BOB1500 & get 10% off on Bank of Baroda Debit &
+                                    Credit Cards on purchase of Rs.5000 | Max discount Rs.1500</span>
+                            </div>
+                            <div class="d-flex pt-3"><img src="assest/discount_icon-shop.svg" alt="" class="pr-3"><span
+                                    style="font-size: 13px;"> Use coupon BOB1500 & get 10% off on Bank of Baroda Debit &
+                                    Credit Cards on purchase of Rs.5000 | Max discount Rs.1500</span>
+                            </div>
+                        </div>
+                        <hr>
+                        <p>Color <span class="robot-font-style">Black</span></p>
+                        <hr>
+                        <div>
+                            <p>Just like LaMelo himself, a famous basketball player, these basketball shoes defy the
+                                norms
+                                and stand out in ... <span class="dark-yellow">Read More</span></p>
+                        </div>
+                        <hr>
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>SELECT SIZE</p>
+                                <p class="dark-yellow">SIZE GUIDE</p>
+                            </div>
+                            <div class=" uk-ind">
+                                <p>UK IND-6</p>
+                                <p>UK IND-7</p>
+                                <p>UK IND-8</p>
+                                <p class="border rounded-1 px-3">UK IND-9</p>
+                            </div>
+                            <div class=" uk-ind">
+                                <p>UK IND-10</p>
+                                <p>UK IND-11</p>
+                                <p class="text-decoration-line-through text-secondary">UK IND-12</p>
+
+                            </div>
+                            <div class="uk-ind">
+                                <button class="bg-transparent px-5 rounded py-1">BUY NOW</button>
+                                <button class="btn bg-black text-white px-5">ADD TO BAG</button>
+                            </div>
+                            <p>DELIVERY OPTIONS</p>
+                            <p class="robot-font-style">Please enter your pincode to check for available delivery
+                                options.</p>
+                            <div class="d-flex align-items-center">
+                                <input type="text" class="py-1">
+                                <button class="btn bg-dark text-white py-1 ml-2">Check</button>
+                            </div>
+                            <p class="pt-3">Delivery By</p>
+                            <p>7th Dec</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container m-auto text-center mt-5">
+
+        <div class="tab">
+            <button class="tablinks showoff text-white" onclick="openCity(event, 'London')">STYLE NOTE & FEATURES</button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')">RETURN POLICY</button>
+            <button class="tablinks" onclick="openCity(event, 'Tokyo')">MANUFACTURER DETAILS</button>
+        </div>
+        <hr>
+
+        <div id="London" class="tabcontent firstshow pt-5">
+            <h3>WHY IT’S SPECIAL</h3>
+            <p>An icon gets a futuristic refresh in these adidas Ultraboost 1.0 shoes. Designed for uncompromising
+                comfort, they'll keep up with whatever your day brings. The adidas PRIMEKNIT upper hugs your feet for
+                all-day support. A BOOST midsole make every step feel effortless. From work to weekends, these shoes fit
+                whatever mode you're in. This shoe's upper is made with a high-performance yarn.</p>
+        </div>
+
+        <div id="Paris" class="tabcontent pt-5">
+            <h3>RETURN POLICY</h3>
+            <p>Paris is the capital of France.</p>
+        </div>
+
+        <div id="Tokyo" class="tabcontent pt-5">
+            <h3>MANUFACTURER DETAILS</h3>
+            <p>adidas India Marketing Private Limited, 6, IInd Floor, Sector- B, Pocket 7, Plot No. 11, Vasant Kunj, New
+                Delhi.</p>
+        </div>
+
+    </main>
+
+
+    <section class="container mt-4">
+        <div class="autoplay ">
+            <div class="inner-slider ">
+                <img src="assest/tallbag-removebg-preview.png" alt="" class="img-fluid image-size">
+                <div class="text-center ">
+                    <p>OMMY HILFIGER</p>
+                    <p class="robot-font-style "> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin Trolley</p>
+
+                    <p> ₹6299 <span class="text-decoration-line-through">₹8999</span> <span>30%</span></p>
+                </div>
+            </div>
+            <div class="inner-slider ">
+                <img src="assest/bag-removebg-preview.png" alt="" class="img-fluid image-size">
+                <div class="text-center ">
+                    <p>OMMY HILFIGER</p>
+                    <p class="robot-font-style "> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin Trolley</p>
+
+                    <p> ₹6299 <span class="text-decoration-line-through">₹8999</span> <span>30%</span></p>
+                </div>
+            </div>
+            <div class="inner-slider ">
+                <img src="assest/shempoo-removebg-preview.png" alt="" class="img-fluid image-size">
+                <div class="text-center ">
+                    <p>Dove</p>
+                    <p class="robot-font-style">
+                        Dove Essential Nourishing Lip Care Lip Balm - 4.8 gm
+                    </p>
+                    <p>₹189</p>
+                </div>
+            </div>
+            <div class="inner-slider">
+                <img src="assest/watch-removebg-preview.png" alt="" class="img-fluid image-size">
+                <div class="text-center ">
+                    <p>IWC SCHAFFHAUSEN</p>
+                    <p class="robot-font-style">
+                        PORTUGIESER AUTOMATIC IW500705 CALVIN KLEIN
+                    </p>
+                    <p>₹1040000</p>
+                </div>
+            </div>
+            <div class="inner-slider ">
+                <img src="assest/shempoo-removebg-preview.png" alt="" class="img-fluid image-size">
+                <div class="text-center">
+                    <p>Dove</p>
+                    <p class="robot-font-style">
+                        Dove Essential Nourishing Lip Care Lip Balm - 4.8 gm
+                    </p>
+                    <p>₹189</p>
+                </div>
+            </div>
+            <div class="inner-slider ">
+                <img src="assest/bag-removebg-preview.png" alt="" class="img-fluid image-size">
+                <div class="text-center ">
+                    <p>OMMY HILFIGER</p>
+                    <p class="robot-font-style "> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin
+                        Trolley</p>
+
+                    <p> ₹6299 <span class="text-decoration-line-through">₹8999</span> <span>30%</span></p>
+                </div>
+            </div>
+            <div class="inner-slider ">
+                <img src="assest/tallbag-removebg-preview.png" alt="" class="img-fluid image-size">
+                <div class="text-center ">
+                    <p>OMMY HILFIGER</p>
+                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin
+                        Trolley</p>
+
+                    <p> ₹6299 <span class="text-decoration-line-through">₹8999</span> <span>30%</span></p>
+                </div>
+            </div>
+            <div class="inner-slider ">
+                <img src="assest/watch-removebg-preview.png" alt="" class="img-fluid image-size">
+                <div class="text-center ">
+                    <p>IWC SCHAFFHAUSEN</p>
+                    <p class="robot-font-style" >
+                        PORTUGIESER AUTOMATIC IW500705 CALVIN KLEIN
+                    </p>
+                    <p>₹1040000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  
+
+
+    <!-- footer    above  section -->
+    <main class="footer-above-section mt-5">
+        <div class="container pt-4 pb-1">
+            <div class="row">
+                <!-- Left Side - Select, Search Bar, Button -->
+                <div class="col-md-5">
+                    <h3 class="text-white">CONNECT WITH US</h3>
+                    <p class="text-secondary">Be the first to know about new products, exclusive collections, latest
+                        trends, stories and more.</p>
+                    <div class="input-group ">
+                        <select class="custom-control bg-dark text-white border-secondary rounded-left">
+                            <option selected class="p-4">Men</option>
+                            <option value="1" class="p-4">Women</option>
+
+                        </select>
+                        <input type="text" class="form-control bg-dark text-secondary outline border-secondary"
+                            placeholder="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary rounded-right roboto-font text-white"
+                                type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-1 ">
+                    <div class="vertical-line"></div>
+                </div>
+
+
+                <div class="col-md-6 ">
+                    <div
+                        class="d-flex text-secondary right-secton roboto-font align-items-center justify-content-center mt-4">
+                        <div class="col-md-4 d-flex align-items-center flex-column justify-content-center ">
+                            <img src="assest/foot_autentic_icon.svg" alt="">
+                            <p class="text-center py-3">Authentic and Genuine Brands</p>
+                        </div>
+                        <div class=" col-md-4 d-flex align-items-center flex-column justify-content-center ">
+                            <img src="assest/foot_promise_icon.svg" alt="" class="pb-3">
+                            <p class="text-center pb-5">Tata Promise</p>
+                        </div>
+                        <div class="col-md-4 d-flex align-items-center flex-column justify-content-center">
+                            <img src="assest/foot_return_icon.svg" alt="">
+                            <p class="text-center py-3">Easy Returns And Exchanges</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer    --  section -->
+
+    <footer class="footer-section">
+        <div class="container pt-5">
+            <div class="row roboto-font">
+                <div class="col-md-2 col-sm-4">
+                    <h6>SHOP LUXURY</h6>
+                    <ul class="list-section">
+                        <li>Men</li>
+                        <li>Women</li>
+                        <li>Handbags</li>
+                        <li>Watches</li>
+                        <li>Home</li>
+                        <li>Shoes</li>
+                        <li>Fragrances</li>
+                        <li>Kids</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <h6>SHOP INDILUXE</h6>
+                    <ul class="list-section">
+                        <li>Men</li>
+                        <li>Women</li>
+                        <li>Handbags</li>
+                        <li>Beauty</li>
+                        <li>Watches</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <h6>POPULAR SEARCHES</h6>
+                    <ul class="list-section">
+                        <li>Lacoste</li>
+                        <li>Michael Kors</li>
+                        <li>Coach</li>
+                        <li>Diesel</li>
+                        <li>Watches</li>
+                        <li>Armani Exchange</li>
+                        <li>Polo Tshirts</li>
+                        <li>Wallets</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <h6>USEFUL LINKS</h6>
+                    <ul class="list-section">
+                        <li>Contact Us</li>
+                        <li>FAQ</li>
+                        <li>Shipping</li>
+                        <li>Cancellation</li>
+                        <li>Returns FAQs</li>
+                        <li>Terms & Conditions</li>
+                        <li>Gift Card T&C</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <h6>DOWNLOAD</h6>
+                    <ul class="list-section">
+                        <li><img src="assest/Screenshot 2023-11-20 205940.png" alt="" class="store-icons"></li>
+                        <li><img src="assest/Screenshot 2023-11-20 210033.png" alt="" class="store-icons"></li>
+
+                    </ul>
+                </div>
+                <div class="footer-icons col-md-2 col-sm-4">
+                    <h6>FOLLOW US</h6>
+                    <ul class="d-flex align-items-center follow-icons">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and jQuery (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- custom css -->
+    <script src="style/script.js"></script>
+
+    <!-- slick slider -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="text/javascript">
+
+        // $('.autoplay').slick({
+        //     slidesToShow: 3,
+        //     slidesToScroll: 1,
+        //     autoplay: false,
+        //     autoplaySpeed: 2000,
+        // });
+
+        $('.autoplay').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+	
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,279 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
 {% load static %}
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-<title>Bootstrap Example</title>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
-<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
-<script crossorigin="anonymous" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- custom css -->
-<link href="{% static 'style/styel.css' %}" rel="stylesheet"/>
-</head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    .carousel-inner>.item>img,
-    .carousel-inner>.item>a>img {
-        width: 70%;
-        margin: auto;
-    }
-</style>
-
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
-<a class="navbar-brand" href="#">
-<img alt="Left Logo" src="{% static 'assest/Screenshot 2023-11-24 190645.png' %}"/>
-</a>
-<a class="navbar-brand navbar-brand-centered" href="#">
-<img alt="Center Logo" src="{% static 'assest/Screenshot 2023-11-24 190922.png' %}"/>
-</a>
-<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-<ul class="navbar-nav">
-<li class="nav-item">
-<a class="nav-link" href="#">
-<i class="fas fa-search"></i>
-</a>
-</li>
-<li class="nav-item">
-<a class="nav-link"  href="{% url 'login' %}">
-<i class="fas fa-user"></i>
-</a>
-</li>
-<li class="nav-item">
-<a class="nav-link"  href="{% url 'cart' %}">
-<i class="fas fa-shopping-cart"></i>
-</a>
-</li>
-</ul>
-</div>
-</nav>
-<div class="dropdown-divider"></div>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-<div class="container">
-<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse text-center" id="navbarNav">
-<ul class="navbar-nav m-auto">
-<li class="nav-item dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="navbarDropdown1" role="button">
-    New In
-</a>
-<div aria-labelledby="navbarDropdown1" class="dropdown-menu">
-<div class="d-flex align-items-center justify-content-around">
-<div>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
-<div>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
-<div>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
-</div>
-</div>
-</li>
-<!-- Repeat the structure for other lists -->
-<li class="nav-item dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="navbarDropdown2" role="button">
-                            Brands
-                        </a>
-<div aria-labelledby="navbarDropdown2" class="dropdown-menu">
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
-</li>
-<!-- Repeat the structure for other lists -->
-<!-- ... List 3 to List 11 ... -->
-<li class="nav-item dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="navbarDropdown11" role="button">
-                            Men
-                        </a>
-<div aria-labelledby="navbarDropdown11" class="dropdown-menu">
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
-</li>
-<li class="nav-item dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="navbarDropdown2" role="button">
-                            Women
-                        </a>
-<div aria-labelledby="navbarDropdown2" class="dropdown-menu">
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<div class="dropdown-divider"></div>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
-</li>
-<li class="nav-item dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="navbarDropdown2" role="button">
-                            Kids
-                        </a>
-<div aria-labelledby="navbarDropdown2" class="dropdown-menu">
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<div class="dropdown-divider"></div>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
-</li>
-<li class="nav-item dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="navbarDropdown2" role="button">
-                            Beauty &amp; Groomimg
-                        </a>
-<div aria-labelledby="navbarDropdown2" class="dropdown-menu">
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<div class="dropdown-divider"></div>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
-</li>
-<li class="nav-item dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="navbarDropdown2" role="button">
-                            Home
-                        </a>
-<div aria-labelledby="navbarDropdown2" class="dropdown-menu">
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<div class="dropdown-divider"></div>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
-</li>
-<li class="nav-item dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="navbarDropdown2" role="button">
-                            Gourmet
-                        </a>
-<div aria-labelledby="navbarDropdown2" class="dropdown-menu">
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<div class="dropdown-divider"></div>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
-</li>
-<li class="nav-item dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="navbarDropdown2" role="button">
-                            Watches &amp; Jewellery
-                        </a>
-<div aria-labelledby="navbarDropdown2" class="dropdown-menu">
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<div class="dropdown-divider"></div>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
-</li>
-<li class="nav-item dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="navbarDropdown2" role="button">
-                            Eyewear
-                        </a>
-<div aria-labelledby="navbarDropdown2" class="dropdown-menu">
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<div class="dropdown-divider"></div>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
-</li>
-<li class="nav-item dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="#" id="navbarDropdown2" role="button">
-                            Featured Stores
-                        </a>
-<div aria-labelledby="navbarDropdown2" class="dropdown-menu">
-<a class="dropdown-item" href="#">Action</a>
-<a class="dropdown-item" href="#">Another action</a>
-<div class="dropdown-divider"></div>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</nav>
-<div class="container mt-5">
-<br/>
-<div class="carousel slide" data-ride="carousel" id="myCarousel">
-<!-- Indicators -->
-<div class="carousel-indicators m-auto">
-<button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExampleInterval" type="button"></button>
-<button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleInterval" type="button"></button>
-<button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleInterval" type="button"></button>
-</div>
-<!-- Wrapper for slides -->
-<div class="carousel-inner" role="listbox">
-<div class="item active">
-<img alt="Chania" class="img-rounded" height="345" src="{% static 'assest/house-1477041_1280.jpg' %}" width="460"/>
-</div>
-<div class="item">
-<img alt="Chania" class="img-rounded" height="345" src="{% static 'assest/nature-3082832_1280.jpg' %}" width="460"/>
-</div>
-<div class="item">
-<img alt="Flower" class="img-rounded" height="345" src="{% static 'assest/mountains-1587287_1280.jpg' %}" width="460"/>
-</div>
-</div>
-<!-- Left and right controls -->
-</div>
-</div>
+    <div class="container mt-5">
+        <br />
+        <div class="carousel slide" data-ride="carousel" id="myCarousel">
+            <!-- Indicators -->
+            <div class="carousel-indicators m-auto">
+                <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+                    data-bs-target="#carouselExampleInterval" type="button"></button>
+                <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleInterval"
+                    type="button"></button>
+                <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleInterval"
+                    type="button"></button>
+            </div>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img alt="Chania" class="img-rounded" height="345"
+                        src="{% static 'assest/house-1477041_1280.jpg' %}" width="460" />
+                </div>
+                <div class="item">
+                    <img alt="Chania" class="img-rounded" height="345"
+                        src="{% static 'assest/nature-3082832_1280.jpg' %}" width="460" />
+                </div>
+                <div class="item">
+                    <img alt="Flower" class="img-rounded" height="345"
+                        src="{% static 'assest/mountains-1587287_1280.jpg' %}" width="460" />
+                </div>
+            </div>
+            <!-- Left and right controls -->
+        </div>
+    </div>
 
 
 
@@ -284,328 +41,209 @@
 
 
 
-<!-- 6 image top and bootom  All Access-->
-<div class="container mt-5">
-<div class="text-center py-2" >
-<img alt="" src="{% static 'assest/Screenshot 2023-11-27 155129.png' %}"/>
-</div>
-<div class="row pt-5">
-<div class="col-md-2 col-6 mb-3" >
-    <a href="{% url 'details' %}">
-        <img alt="" class="img-fluid" src="{% static 'assest/49582470561822.jpg' %}"/>
+    <!-- 6 image top and bootom  All Access-->
+    <div class="container mt-5">
+        <div class="text-center py-2">
+            <img alt="" src="{% static 'assest/Screenshot 2023-11-27 155129.png' %}" />
+        </div>
+        <div class="row pt-5">
+            <div class="col-md-2 col-6 mb-3">
+                <a href="{% url 'list_product' %}">
+                    <img alt="" class="img-fluid" src="{% static 'assest/49582470561822.jpg' %}" />
 
-    </a>
-</div>
-<div class="col-md-2 col-6 mb-3">
-    <a href="{% url 'details' %}">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470627358.jpg' %}"/>
+                </a>
+            </div>
+            <div class="col-md-2 col-6 mb-3">
+                <a href="{% url 'list_product' %}">
+                    <img alt="" class="img-fluid" src="{% static 'assest/49582470627358.jpg' %}" />
 
-    </a>
-</div>
-<div class="col-md-2 col-6 mb-3">
-    <a href="{% url 'details' %}">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470692894.jpg' %}"/>
+                </a>
+            </div>
+            <div class="col-md-2 col-6 mb-3">
+                <a href="{% url 'list_product' %}">
+                    <img alt="" class="img-fluid" src="{% static 'assest/49582470692894.jpg' %}" />
 
-    </a>
-</div>
-<div class="col-md-2 col-6 mb-3">
-    <a href="{% url 'details' %}">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470758430.jpg' %}"/>
+                </a>
+            </div>
+            <div class="col-md-2 col-6 mb-3">
+                <a href="{% url 'list_product' %}">
+                    <img alt="" class="img-fluid" src="{% static 'assest/49582470758430.jpg' %}" />
 
-    </a>
-</div>
-<div class="col-md-2 col-6 mb-3">
-    <a href="{% url 'details' %}">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470823966.jpg' %}"/>
+                </a>
+            </div>
+            <div class="col-md-2 col-6 mb-3">
+                <a href="{% url 'list_product' %}">
+                    <img alt="" class="img-fluid" src="{% static 'assest/49582470823966.jpg' %}" />
 
-    </a>
-</div>
-<div class="col-md-2 col-6 mb-3">
-    <a href="{% url 'details' %}">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470889502.jpg' %}"/>
+                </a>
+            </div>
+            <div class="col-md-2 col-6 mb-3">
+                <a href="{% url 'list_product' %}">
+                    <img alt="" class="img-fluid" src="{% static 'assest/49582470889502.jpg' %}" />
 
-    </a>
-</div>
-</div>
-<div class="row" style="margin-top: 10rem;">
-<div class="col-md-2 col-6 mb-3">
-    <a href="{% url 'details' %}">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470561822.jpg' %}"/>
+                </a>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10rem;">
+            <div class="col-md-2 col-6 mb-3">
+                <a href="{% url 'list_product' %}">
+                    <img alt="" class="img-fluid" src="{% static 'assest/49582470561822.jpg' %}" />
 
-    </a>
-</div>
-<div class="col-md-2 col-6 mb-3">
-    <a href="{% url 'details' %}">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470627358.jpg' %}"/>
+                </a>
+            </div>
+            <div class="col-md-2 col-6 mb-3">
+                <a href="{% url 'list_product' %}">
+                    <img alt="" class="img-fluid" src="{% static 'assest/49582470627358.jpg' %}" />
 
-    </a>
-</div>
-<div class="col-md-2 col-6 mb-3">
-    <a href="{% url 'details' %}">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470692894.jpg' %}"/>
+                </a>
+            </div>
+            <div class="col-md-2 col-6 mb-3">
+                <a href="{% url 'list_product' %}">
+                    <img alt="" class="img-fluid" src="{% static 'assest/49582470692894.jpg' %}" />
 
-    </a>
-</div>
-<div class="col-md-2 col-6 mb-3">
-    <a href="{% url 'details' %}">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470758430.jpg' %}"/>
+                </a>
+            </div>
+            <div class="col-md-2 col-6 mb-3">
+                <a href="{% url 'list_product' %}">
+                    <img alt="" class="img-fluid" src="{% static 'assest/49582470758430.jpg' %}" />
 
-    </a>
-</div>
-<div class="col-md-2 col-6 mb-3">
-    <a href="{% url 'details' %}">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470823966.jpg' %}"/>
+                </a>
+            </div>
+            <div class="col-md-2 col-6 mb-3">
+                <a href="{% url 'list_product' %}">
+                    <img alt="" class="img-fluid" src="{% static 'assest/49582470823966.jpg' %}" />
 
-    </a>
-</div>
-<div class="col-md-2 col-6 mb-3">
-    <a href="{% url 'details' %}">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470889502.jpg' %}"/>
+                </a>
+            </div>
+            <div class="col-md-2 col-6 mb-3">
+                <a href="{% url 'list_product' %}">
+                    <img alt="" class="img-fluid" src="{% static 'assest/49582470889502.jpg' %}" />
 
-    </a>
-</div>
-</div>
-</div>
-
-
+                </a>
+            </div>
+        </div>
+    </div>
 
 
 
-<!-- 6 image in row section -->
-<div class="container mt-5">
-<div class="m-auto">
-<img alt="" src="{% static 'assest/48932892508190.jpg' %}"/>
-</div>
-<div class="pt-3">
-<img alt="Responsive Image" class="img-fluid" src="{% static 'assest/45053315874846.jpg' %}"/>
-</div>
-<div class="py-3">
-<img alt="Responsive Image" class="img-fluid" src="{% static 'assest/46297555468318.jpg' %}"/>
-</div>
-<div class="">
-<img alt="Responsive Image" class="img-fluid" src="{% static 'assest/47247369895966.jpg' %}"/>
-</div>
-<div class="py-3">
-<img alt="Responsive Image" class="img-fluid" src="{% static 'assest/48814555070494.png' %}"/>
-</div>
-</div>
-<div class="container mt-5">
-<div class="m-auto">
-<img alt="" src="{% static 'assest/48932892508190.jpg' %}"/>
-</div>
-<div class="row pt-5">
-<div class="col-md-2 col-6">
-<img alt="" class="img-fluid" src="{% static 'assest/48716067242014.jpg' %}" style="height: 75px;"/>
-</div>
-<div class="col-md-2 col-6">
-<img alt="" class="img-fluid" src="{% static 'assest/49594380288030.jpg' %}" style="height: 75px;"/>
-</div>
-<div class="col-md-2 col-6">
-<img alt="" class="img-fluid" src="{% static 'assest/49594380288030.jpg' %}" style="height: 75px;"/>
-</div>
-<div class="col-md-2 col-6">
-<img alt="" class="img-fluid" src="{% static 'assest/48716067242014.jpg' %}" style="height: 75px;"/>
-</div>
-<div class="col-md-2 col-6">
-<img alt="" class="img-fluid" src="{% static 'assest/49594380156958.jpg' %}" style="height: 75px;"/>
-</div>
-<div class="col-md-2 col-6">
-<img alt="" class="img-fluid" src="{% static 'assest/49594380091422.jpg' %}" style="height: 75px;"/>
-</div>
-</div>
-</div>
-<div class="container mt-5">
-<div class="m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/48927764545566.jpg' %}"/>
-</div>
-<div class="row pt-5 m-auto">
-<div class="col-md-6 m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/49601693122590.jpg' %}"/>
-</div>
-<div class="col-md-6 m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/49601693188126.jpg' %}"/>
-</div>
-<div class="row pt-5 m-auto">
-<div class="col-md-6 m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/49601693253662.jpg' %}"/>
-</div>
-<div class="col-md-6 m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/49601693319198.jpg' %}"/>
-</div>
-</div>
-</div>
-</div>
-<div class="container m-auto">
-<div class="m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/48932893491230.jpg' %}"/>
-</div>
-<div class="row pt-5 m-auto">
-<div class="col-md-2 col-6 mb-3 m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470561822.jpg' %}"/>
-</div>
-<div class="col-md-2 col-6 mb-3 m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470627358.jpg' %}"/>
-</div>
-<div class="col-md-2 col-6 mb-3 m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470692894.jpg' %}"/>
-</div>
-<div class="col-md-2 col-6 mb-3 m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470823966.jpg' %}"/>
-</div>
-<div class="col-md-2 col-6 mb-3 m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470889502.jpg' %}"/>
-</div>
-</div>
-</div>
-<div class="container mt-5 m-auto">
-<div class="m-auto pt-5">
-<img alt="" class="img-fluid" src="{% static 'assest/49601694072862.jpg' %}"/>
-</div>
-<div class="row pt-5 m-auto">
-<div class="col-md-2 col-6 mb-3 m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470627358.jpg' %}"/>
-</div>
-<div class="col-md-2 col-6 mb-3 m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470692894.jpg' %}"/>
-</div>
-<div class="col-md-2 col-6 mb-3 m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470823966.jpg' %}"/>
-</div>
-<div class="col-md-2 col-6 mb-3 m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/49582470889502.jpg' %}"/>
-</div>
-</div>
-</div>
-<div class="container mt-5">
-<div class="m-auto">
-<img alt="" src="{% static 'assest/48459435048990.jpg' %}"/>
-</div>
-<div class="row">
-<div class="col-md-12 m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/48932894310430.jpg' %}"/>
-</div>
-<div class="col-md-12 m-auto">
-<img alt="" class="img-fluid" src="{% static 'assest/47465821601822.jpg' %}"/>
-</div>
-</div>
-</div>
-<!-- footer section -->
-<!-- footer    above  section -->
-<main class="footer-above-section mt-5">
-<div class="container pt-4 pb-1">
-<div class="row">
-<!-- Left Side - Select, Search Bar, Button -->
-<div class="col-md-5">
-<h2 class="text-white">CONNECT WITH US</h2>
-<p class="text-secondary" style="font-size: 1.5em;">Be the first to know about new products, exclusive collections, latest
-                        trends, stories and more.</p>
-<div class="input-group">
-<select class="custom-control bg-dark text-white border-secondary rounded-left" style="font-size: 2em;">
-<option class="p-4" selected="">Men</option>
-<option class="p-4" value="1">Women</option>
-</select>
-<input class="form-control bg-dark text-secondary outline border-secondary" placeholder="Search" style="font-size: 2em;" type="text"/>
-<div class="input-group-append">
-<button class="btn btn-outline-secondary rounded-right roboto-font text-white" style="font-size: 2em;" type="button">Subscribe</button>
-</div>
-</div>
-</div>
-<div class="col-md-1">
-<div class="vertical-line"></div>
-</div>
-<div class="col-md-6">
-<div class="d-flex text-secondary right-secton roboto-font align-items-center justify-content-center mt-4">
-<div class="col-md-4 d-flex align-items-center flex-column justify-content-center">
-<img alt="" src="{% static 'assest/foot_autentic_icon.svg' %}"/>
-<h4 class="text-center py-3">Authentic and Genuine Brands</h4>
-</div>
-<div class="col-md-4 d-flex align-items-center flex-column justify-content-center">
-<img alt="" class="pb-3" src="{% static 'assest/foot_promise_icon.svg' %}"/>
-<h4 class="text-center pb-5">Tata Promise</h4>
-</div>
-<div class="col-md-4 d-flex align-items-center flex-column justify-content-center">
-<img alt="" src="{% static 'assest/foot_return_icon.svg' %}"/>
-<h4 class="text-center py-3">Easy Returns And Exchanges</h4>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-<!-- footer    --  section -->
-<footer class="footer-section">
-<div class="container pt-5">
-<div class="row roboto-font">
-<div class="col-md-2 col-sm-4">
-<h4>SHOP LUXURY</h4>
-<ul class="list-section">
-<li>Men</li>
-<li>Women</li>
-<li>Handbags</li>
-<li>Watches</li>
-<li>Home</li>
-<li>Shoes</li>
-<li>Fragrances</li>
-<li>Kids</li>
-</ul>
-</div>
-<div class="col-md-2 col-sm-4">
-<h4>SHOP INDILUXE</h4>
-<ul class="list-section">
-<li>Men</li>
-<li>Women</li>
-<li>Handbags</li>
-<li>Beauty</li>
-<li>Watches</li>
-</ul>
-</div>
-<div class="col-md-2 col-sm-4">
-<h4>POPULAR SEARCHES</h4>
-<ul class="list-section">
-<li>Lacoste</li>
-<li>Michael Kors</li>
-<li>Coach</li>
-<li>Diesel</li>
-<li>Watches</li>
-<li>Armani Exchange</li>
-<li>Polo Tshirts</li>
-<li>Wallets</li>
-</ul>
-</div>
-<div class="col-md-2 col-sm-4">
-<h4>USEFUL LINKS</h4>
-<ul class="list-section">
-<li>Contact Us</li>
-<li>FAQ</li>
-<li>Shipping</li>
-<li>Cancellation</li>
-<li>Returns FAQs</li>
-<li>Terms &amp; Conditions</li>
-<li>Gift Card T&amp;C</li>
-</ul>
-</div>
-<div class="col-md-2 col-sm-4">
-<h4>DOWNLOAD</h4>
-<ul class="list-section">
-<li><img alt="" class="store-icons" src="{% static 'assest/Screenshot 2023-11-20 205940.png' %}"/></li>
-<li><img alt="" class="store-icons" src="{% static 'assest/Screenshot 2023-11-20 210033.png' %}"/></li>
-</ul>
-</div>
-<div class="footer-icons col-md-2 col-sm-4">
-<h4>FOLLOW US</h4>
-<ul class="d-flex align-items-center follow-icons">
-<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-</ul>
-</div>
-</div>
-</div>
-</footer>
-<script crossorigin="anonymous" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-<script crossorigin="anonymous" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+
+
+    <!-- 6 image in row section -->
+    <div class="container mt-5">
+        <div class="m-auto">
+            <img alt="" src="{% static 'assest/48932892508190.jpg' %}" />
+        </div>
+        <div class="pt-3">
+            <img alt="Responsive Image" class="img-fluid" src="{% static 'assest/45053315874846.jpg' %}" />
+        </div>
+        <div class="py-3">
+            <img alt="Responsive Image" class="img-fluid" src="{% static 'assest/46297555468318.jpg' %}" />
+        </div>
+        <div class="">
+            <img alt="Responsive Image" class="img-fluid" src="{% static 'assest/47247369895966.jpg' %}" />
+        </div>
+        <div class="py-3">
+            <img alt="Responsive Image" class="img-fluid" src="{% static 'assest/48814555070494.png' %}" />
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="m-auto">
+            <img alt="" src="{% static 'assest/48932892508190.jpg' %}" />
+        </div>
+        <div class="row pt-5">
+            <div class="col-md-2 col-6">
+                <img alt="" class="img-fluid" src="{% static 'assest/48716067242014.jpg' %}" style="height: 75px;" />
+            </div>
+            <div class="col-md-2 col-6">
+                <img alt="" class="img-fluid" src="{% static 'assest/49594380288030.jpg' %}" style="height: 75px;" />
+            </div>
+            <div class="col-md-2 col-6">
+                <img alt="" class="img-fluid" src="{% static 'assest/49594380288030.jpg' %}" style="height: 75px;" />
+            </div>
+            <div class="col-md-2 col-6">
+                <img alt="" class="img-fluid" src="{% static 'assest/48716067242014.jpg' %}" style="height: 75px;" />
+            </div>
+            <div class="col-md-2 col-6">
+                <img alt="" class="img-fluid" src="{% static 'assest/49594380156958.jpg' %}" style="height: 75px;" />
+            </div>
+            <div class="col-md-2 col-6">
+                <img alt="" class="img-fluid" src="{% static 'assest/49594380091422.jpg' %}" style="height: 75px;" />
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="m-auto">
+            <img alt="" class="img-fluid" src="{% static 'assest/48927764545566.jpg' %}" />
+        </div>
+        <div class="row pt-5 m-auto">
+            <div class="col-md-6 m-auto">
+                <img alt="" class="img-fluid" src="{% static 'assest/49601693122590.jpg' %}" />
+            </div>
+            <div class="col-md-6 m-auto">
+                <img alt="" class="img-fluid" src="{% static 'assest/49601693188126.jpg' %}" />
+            </div>
+            <div class="row pt-5 m-auto">
+                <div class="col-md-6 m-auto">
+                    <img alt="" class="img-fluid" src="{% static 'assest/49601693253662.jpg' %}" />
+                </div>
+                <div class="col-md-6 m-auto">
+                    <img alt="" class="img-fluid" src="{% static 'assest/49601693319198.jpg' %}" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container m-auto">
+        <div class="m-auto">
+            <img alt="" class="img-fluid" src="{% static 'assest/48932893491230.jpg' %}" />
+        </div>
+        <div class="row pt-5 m-auto">
+            <div class="col-md-2 col-6 mb-3 m-auto">
+                <img alt="" class="img-fluid" src="{% static 'assest/49582470561822.jpg' %}" />
+            </div>
+            <div class="col-md-2 col-6 mb-3 m-auto">
+                <img alt="" class="img-fluid" src="{% static 'assest/49582470627358.jpg' %}" />
+            </div>
+            <div class="col-md-2 col-6 mb-3 m-auto">
+                <img alt="" class="img-fluid" src="{% static 'assest/49582470692894.jpg' %}" />
+            </div>
+            <div class="col-md-2 col-6 mb-3 m-auto">
+                <img alt="" class="img-fluid" src="{% static 'assest/49582470823966.jpg' %}" />
+            </div>
+            <div class="col-md-2 col-6 mb-3 m-auto">
+                <img alt="" class="img-fluid" src="{% static 'assest/49582470889502.jpg' %}" />
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 m-auto">
+        <div class="m-auto pt-5">
+            <img alt="" class="img-fluid" src="{% static 'assest/49601694072862.jpg' %}" />
+        </div>
+        <div class="row pt-5 m-auto">
+            <div class="col-md-2 col-6 mb-3 m-auto">
+                <img alt="" class="img-fluid" src="{% static 'assest/49582470627358.jpg' %}" />
+            </div>
+            <div class="col-md-2 col-6 mb-3 m-auto">
+                <img alt="" class="img-fluid" src="{% static 'assest/49582470692894.jpg' %}" />
+            </div>
+            <div class="col-md-2 col-6 mb-3 m-auto">
+                <img alt="" class="img-fluid" src="{% static 'assest/49582470823966.jpg' %}" />
+            </div>
+            <div class="col-md-2 col-6 mb-3 m-auto">
+                <img alt="" class="img-fluid" src="{% static 'assest/49582470889502.jpg' %}" />
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="m-auto">
+            <img alt="" src="{% static 'assest/48459435048990.jpg' %}" />
+        </div>
+        <div class="row">
+            <div class="col-md-12 m-auto">
+                <img alt="" class="img-fluid" src="{% static 'assest/48932894310430.jpg' %}" />
+            </div>
+            <div class="col-md-12 m-auto">
+                <img alt="" class="img-fluid" src="{% static 'assest/47465821601822.jpg' %}" />
+            </div>
+        </div>
+    </div>
+    {% endblock %}

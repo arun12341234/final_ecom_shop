@@ -1,0 +1,616 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>details page</title>
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+<!-- custom css -->
+
+<style>
+    /* Custom styles */
+    .custom-container {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+
+
+    /* Custom CSS */
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- main section -->
+<div class="container position-relative main-section-start">
+    <div class="text-center">
+        <h4>Luxury</h4>
+        <p>9346</p>
+        <div class="potision-select d-flex align-items-center">
+            <img alt="" src="{% static 'assest/two-cons.png' %}" />
+            <select class="border-secondary bg-white" id="seleceted" name="">
+                <option class="invite" selected="" value="">Popularity</option>
+                <option class="invite" value="">Price: Low to High</option>
+                <option class="invite" value="">Price: High to Low</option>
+                <option class="invite" value="">Discount</option>
+                <option class="invite" value="">New Arrivals</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-3">
+            <p class="roboto-font">Home</p>
+            <hr />
+            <!-- Dropdowns for Filters -->
+            <!-- Accordions  -->
+            <div class="mt-3 hover-pointer">
+                <div class="accordi">
+                    <div class="question">
+                        <h6 class="font-weight-bold">Department</h6>
+                        <i class="bi bi-plus icon"></i>
+                    </div>
+                    <div class="answer">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for=""> Man</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordi">
+                    <div class="question">
+                        <h6 class="font-weight-bold">Category</h6>
+                        <i class="bi bi-plus icon"></i>
+                    </div>
+                    <div class="answer">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for=""> Men Sports Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for=""> Men Casual Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for="">Men Formal Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordi">
+                    <div class="question">
+                        <h6 class="font-weight-bold">Brands</h6>
+                        <i class="bi bi-plus icon"></i>
+                    </div>
+                    <div class="answer">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for=""> Men Sports Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for=""> Men Casual Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for="">Men Formal Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordi">
+                    <div class="question">
+                        <h6 class="font-weight-bold">Price</h6>
+                        <i class="bi bi-plus icon"></i>
+                    </div>
+                    <div class="answer">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for=""> Men Sports Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for=""> Men Casual Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for="">Men Formal Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordi">
+                    <div class="question">
+                        <h6 class="font-weight-bold">Colour</h6>
+                        <i class="bi bi-plus icon"></i>
+                    </div>
+                    <div class="answer">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for=""> Men Sports Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for=""> Men Casual Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for="">Men Formal Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordi">
+                    <div class="question">
+                        <h6 class="font-weight-bold">Discount</h6>
+                        <i class="bi bi-plus icon"></i>
+                    </div>
+                    <div class="answer">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for=""> Men Sports Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for=""> Men Casual Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for="">Men Formal Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordi">
+                    <div class="question">
+                        <h6 class="font-weight-bold">Size</h6>
+                        <i class="bi bi-plus icon"></i>
+                    </div>
+                    <div class="answer">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for=""> Men Sports Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for=""> Men Casual Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for="">Men Formal Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordi">
+                    <div class="question">
+                        <h6 class="font-weight-bold">All Discount</h6>
+                        <i class="bi bi-plus icon"></i>
+                    </div>
+                    <div class="answer">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for=""> Discounted Items</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for="">Non - Discounted
+                                        Items</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span style="align-items: center;">
+                                    <input type="checkbox" /><label class="pl-2" for="">Men Formal Shoes</label>
+                                </span>
+                            </div>
+                            <p>33768</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more dropdowns for other filters (category, brands, price, etc.) -->
+            <!-- Repeat for other filter dropdowns -->
+        </div>
+        <!-- Main Content -->
+        <div class="col-lg-9 main-content mt-5">
+            <div>
+                <p class="fa-1x font-weight-bold">Filtered by <sub></sub></p>
+                <p class="rounded-1 pl-5 d-inline-block" style="font-size: 15px;"> Men filter <i class="bi bi-x"></i>
+                </p>
+            </div>
+            <!-- Product Cards -->
+            <div class="row">
+                <!-- Product Card 1 -->
+                <div class="col-md-4">
+                    <div class="position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 1 Image" class="img-fluid" src="{% static 'assest/addidas.jpeg' %}" />
+                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's NMD_R1
+                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                            </a>
+                            <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-3">
+                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                            <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="col-md-4">
+                    <div class="position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 2 Image" class="card-img-top" src="{% static 'assest/aldo.jpeg' %}" />
+                                <h5 class="card-title text-center">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001
+                                    Embelished
+                                    Black Slide Sandals</p>
+                            </a>
+                            <p class="card-text text-center">₹9,999</p> <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="col-md-4">
+                    <div class="product-card position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 3 Image" class="card-img-top"
+                                    src="{% static 'assest/MP000000020061095_658Wx734H_202311120915571.jpg' %}" />
+                                <h5 class="card-title text-center py-3">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340
+                                    Other
+                                    Green Pumps</p>
+                            </a>
+                            <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-5">
+                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                            <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more product cards as needed -->
+                <div class="col-md-4">
+                    <div class="position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 1 Image" class="img-fluid" src="{% static 'assest/addidas.jpeg' %}" />
+                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's NMD_R1
+                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                            </a>
+                            <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-3">
+                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                            <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="col-md-4">
+                    <div class="position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 2 Image" class="card-img-top" src="{% static 'assest/aldo.jpeg' %}" />
+                                <h5 class="card-title text-center">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001
+                                    Embelished
+                                    Black Slide Sandals</p>
+                            </a>
+                            <p class="card-text text-center">₹9,999</p> <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="col-md-4">
+                    <div class="product-card position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 3 Image" class="card-img-top"
+                                    src="{% static 'assest/MP000000020061095_658Wx734H_202311120915571.jpg' %}" />
+                                <h5 class="card-title text-center py-3">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340
+                                    Other
+                                    Green Pumps</p>
+                            </a>
+                            <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-5">
+                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                            <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 1 Image" class="img-fluid" src="{% static 'assest/addidas.jpeg' %}" />
+                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's NMD_R1
+                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                            </a>
+                            <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-3">
+                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                            <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="col-md-4">
+                    <div class="position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 2 Image" class="card-img-top" src="{% static 'assest/aldo.jpeg' %}" />
+                                <h5 class="card-title text-center">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001
+                                    Embelished
+                                    Black Slide Sandals</p>
+                            </a>
+                            <p class="card-text text-center">₹9,999</p> <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="col-md-4">
+                    <div class="product-card position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 3 Image" class="card-img-top"
+                                    src="{% static 'assest/MP000000020061095_658Wx734H_202311120915571.jpg' %}" />
+                                <h5 class="card-title text-center py-3">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340
+                                    Other
+                                    Green Pumps</p>
+                            </a>
+                            <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-5">
+                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                            <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 1 Image" class="img-fluid" src="{% static 'assest/addidas.jpeg' %}" />
+                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's NMD_R1
+                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                            </a>
+                            <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-3">
+                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                            <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="col-md-4">
+                    <div class="position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 2 Image" class="card-img-top" src="{% static 'assest/aldo.jpeg' %}" />
+                                <h5 class="card-title text-center">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001
+                                    Embelished
+                                    Black Slide Sandals</p>
+                            </a>
+                            <p class="card-text text-center">₹9,999</p> <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="col-md-4">
+                    <div class="product-card position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 3 Image" class="card-img-top"
+                                    src="{% static 'assest/MP000000020061095_658Wx734H_202311120915571.jpg' %}" />
+                                <h5 class="card-title text-center py-3">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340
+                                    Other
+                                    Green Pumps</p>
+                            </a>
+                            <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-5">
+                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                            <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 1 Image" class="img-fluid" src="{% static 'assest/addidas.jpeg' %}" />
+                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's NMD_R1
+                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                            </a>
+                            <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-3">
+                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                            <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="col-md-4">
+                    <div class="position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 2 Image" class="card-img-top" src="{% static 'assest/aldo.jpeg' %}" />
+                                <h5 class="card-title text-center">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001
+                                    Embelished
+                                    Black Slide Sandals</p>
+                            </a>
+                            <p class="card-text text-center">₹9,999</p> <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="col-md-4">
+                    <div class="product-card position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart position-absolute icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 3 Image" class="card-img-top"
+                                    src="{% static 'assest/MP000000020061095_658Wx734H_202311120915571.jpg' %}" />
+                                <h5 class="card-title text-center py-3">ALDO</h5>
+                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340
+                                    Other
+                                    Green Pumps</p>
+                            </a>
+                            <p class="card-text text-center">₹8,449 <span class="text-decoration-line-through px-5">
+                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                            <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
