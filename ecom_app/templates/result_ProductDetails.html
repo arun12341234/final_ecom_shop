@@ -1,16 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- slick slider cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+      integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+      integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
   <!-- main section -->
   <div class="container main-section-start position-relative">
     <div class="m-auto">
-      <a class="text-decoration-none bg-black ml-5 text-white text-center rounded-1 px-3" href="">New</a>
+      <a class="text-decoration-none bg-black ml-5 fa-2x text-white text-center rounded-1 px-4" href="">New</a>
     </div>
     <div class="row">
       <div class="col-md-2">
         <div class="mt-5 pt-5 postion-part d-flex flex-column">
           <a href="#1"><i class="bi bi-dot current"></i></a>
-          <a href="#2"> <i class="bi bi-dot"></i></a>
+          <a href="#2"> <i class="bi bi-dot "></i></a>
           <a href="#3"> <i class="bi bi-dot"></i></a>
           <a href="#4"> <i class="bi bi-dot"></i></a>
           <a href="#5"> <i class="bi bi-dot"></i></a>
@@ -31,9 +46,9 @@
           </div>
         </div>
       </div>
-      <div class="col-md-5 postion-part">
+      <div class="col-md-5 ">
         <div class="hover-pointer postion-part">
-          <div class="roboto-font" style="font-weight: 300;">
+          <div>
             <a class="robot-font-style" href="">Luxury <i class="bi bi-chevron-right"></i></a>
             <a class="robot-font-style" href="">Men <i class="bi bi-chevron-right"></i></a>
             <a class="robot-font-style" href="">Men Shoes <i class="bi bi-chevron-right"></i></a>
@@ -42,83 +57,83 @@
           </div>
           <!-- Right side with product information -->
           <div>
-            <h4>ADIDAS</h4>
-            <p>Men's ULTRABOOST 1.0 Blue Running Shoes</p>
-            <span> <span class="robot-font-style">Sold By</span> ADI SPORTS INDIA PVT. LTD. <i
+            <h3>ADIDAS</h3>
+            <h4>Men's ULTRABOOST 1.0 Blue Running Shoes</h4>
+            <span> <span class="">Sold By</span> ADI SPORTS INDIA PVT. LTD. <i
                 class="bi bi-plus-lg pl-3"></i></span>
-            <p><a class="dark-yellow font-weight-bold" href="http://" rel="noopener noreferrer" >View 2
-                More Sellers</a> starting ₹17999</p>
+            <h4><a class="dark-yellow font-weight-bold" href="http://" rel="noopener noreferrer" >View 2
+                More Sellers</a> starting ₹17999</h4>
             <div class="position-relative">
-              <p class="font-weight-bold">MRP: ₹17,999</p>
+              <h4 class="font-weight-bold">MRP: ₹17,999</h4>
               <div class="postion-setting">
-                <i class="bi bi-heart pr-4"></i>
-                <i class="bi bi-box-arrow-up"></i>
+                <i class="bi bi-heart pr-4 fa-2x"></i>
+                <i class="bi bi-box-arrow-up fa-2x"></i>
               </div>
             </div>
             <p class="robot-font-style">inclusive of all taxes</p>
-            <p>EMI options starting from <a class="text-decoration-none text-dark font-weight-bold" href="">₹633/month
-                <i class="bi bi-chevron-right"></i></a></p>
+            <h4>EMI options starting from <a class="text-decoration-none text-dark font-weight-bold" href="">₹633/month
+                <i class="bi bi-chevron-right"></i></a></h4>
             <div class="bg-light px-4 py-4 rounded-1">
               <div class="d-flex align-items-center justify-content-between">
-                <p>5 OFFERS</p>
-                <p class="dark-yellow">VIEW ALL</p>
+                <h4>5 OFFERS</h4>
+                <h4 class="dark-yellow">VIEW ALL</h4>
               </div>
               <div class="d-flex"><img alt="" class="pr-3" src="{% static 'assest/discount_icon-shop.svg' %}" /><span
-                  style="font-size: 13px;"> Use coupon BOB1500 &amp; get 10% off on Bank of Baroda Debit &amp;
+                  style="font-size: 15px;"> Use coupon BOB1500 &amp; get 10% off on Bank of Baroda Debit &amp;
                   Credit Cards on purchase of Rs.5000 | Max discount Rs.1500</span>
               </div>
               <div class="d-flex pt-3"><img alt="" class="pr-3"
-                  src="{% static 'assest/discount_icon-shop.svg' %}" /><span style="font-size: 13px;"> Use coupon
+                  src="{% static 'assest/discount_icon-shop.svg' %}" /><span style="font-size: 15px;"> Use coupon
                   BOB1500 &amp; get 10% off on Bank of Baroda Debit &amp;
                   Credit Cards on purchase of Rs.5000 | Max discount Rs.1500</span>
               </div>
             </div>
             <hr />
-            <p>Color <span class="robot-font-style">Black</span></p>
+            <h4>Color <span class="robot-font-style">Black</span></h4>
             <hr />
             <div>
-              <p>Just like LaMelo himself, a famous basketball player, these basketball shoes defy the
+              <h4>Just like LaMelo himself, a famous basketball player, these basketball shoes defy the
                 norms
-                and stand out in ... <span class="dark-yellow">Read More</span></p>
+                and stand out in ... <span class="dark-yellow">Read More</span></h4>
             </div>
             <hr />
             <div>
               <div class="d-flex justify-content-between align-items-center">
-                <p>SELECT SIZE</p>
-                <p class="dark-yellow">SIZE GUIDE</p>
+                <h4>SELECT SIZE</h4>
+                <h4 class="dark-yellow">SIZE GUIDE</h4>
               </div>
               <div class="uk-ind">
-                <p>UK IND-6</p>
-                <p>UK IND-7</p>
-                <p>UK IND-8</p>
-                <p class="border rounded-1 px-3">UK IND-9</p>
+                <h4>UK IND-6</h4>
+                <h4>UK IND-7</h4>
+                <h4>UK IND-8</h4>
+                <h4 class="border rounded-1 px-3">UK IND-9</h4>
               </div>
               <div class="uk-ind">
-                <p>UK IND-10</p>
-                <p>UK IND-11</p>
-                <p class="text-decoration-line-through text-secondary">UK IND-12</p>
+                <h4>UK IND-10</h4>
+                <h4>UK IND-11</h4>
+                <h4 class="text-decoration-line-through text-secondary">UK IND-12</h4>
               </div>
               <div class="uk-ind">
-                <button class="bg-transparent px-5 rounded py-1">BUY NOW</button>
-                <button class="btn bg-black text-white px-5">ADD TO BAG</button>
+                <button class="bg-transparent px-5 fa-2x rounded py-1">BUY NOW</button>
+                <button class="bg-black text-white px-5 fa-2x rounded py-1">ADD TO BAG</button>
+               
               </div>
-              <p>DELIVERY OPTIONS</p>
-              <p class="robot-font-style">Please enter your pincode to check for available delivery
-                options.</p>
-              <div class="d-flex align-items-center">
-                <input class="py-1" type="text" />
-                <button class="btn bg-dark text-white py-1 ml-2">Check</button>
+              <h4>DELIVERY OPTIONS</h4>
+              <h4 class="robot-font-style">Please enter your pincode to check for available delivery
+                options.</h4>
+              <div class="d-flex align-items-center ">
+                <input class=" px-3 py-3 " type="text" />
+                <button class="bg-black text-white px-5 fa-2x rounded py-2 ml-4">check</button>
               </div>
-              <p class="pt-3">Delivery By</p>
-              <p>7th Dec</p>
+              <h4 class="py-3 ">Delivery By<span>7th Dec</span></h4>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <main class="container m-auto text-center mt-5">
-    <div class="tab">
+  <main class="container m-auto text-center ">
+    <div class="tab top-down">
       <button class="tablinks showoff text-white" onclick="openCity(event, 'London')">STYLE NOTE &amp; FEATURES</button>
       <button class="tablinks" onclick="openCity(event, 'Paris')">RETURN POLICY</button>
       <button class="tablinks" onclick="openCity(event, 'Tokyo')">MANUFACTURER DETAILS</button>
@@ -141,7 +156,10 @@
         Delhi.</p>
     </div>
   </main>
-  <section class="container mt-4">
+
+
+
+  <section class="container mt-5">
     <div class="autoplay">
       <div class="inner-slider">
         <img alt="" class="img-fluid image-size" src="{% static 'assest/tallbag-removebg-preview.png' %}" />

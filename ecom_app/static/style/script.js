@@ -15,6 +15,7 @@ function fun1() {
   hidden.classList.toggle("showff");
 }
 
+
 // mail.addEventListener("click",()=>{
 
 // })
@@ -89,8 +90,8 @@ var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function () {
-    this.classList.toggle("active");
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("visuale");
     var panel = this.nextElementSibling;
     if (panel.style.display === "block") {
       panel.style.display = "none";

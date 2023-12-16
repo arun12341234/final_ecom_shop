@@ -22,7 +22,7 @@ html {
 }
 
 .main-section-start {
-  margin-top: 8rem;
+  margin-top: 1rem;
 }
 
 .roboto-font {
@@ -40,11 +40,10 @@ html {
 }
 
 .nav-link {
+  font-size: 1.5rem !important;
   text-align: center;
   color: #33312e;
   display: block;
-  font-size: 14px;
-  font-weight: 300;
   padding: 15px;
   position: relative;
   text-transform: capitalize;
@@ -75,12 +74,10 @@ html {
 }
 
 .footer-above-section {
-
   background-color: rgba(11, 10, 10, 0.833);
 }
 
 .footer-section {
-
   background-color: #202020;
   color: #a4a3a2;
   font-size: 14px;
@@ -178,9 +175,11 @@ li {
   margin-right: 16px;
 }
 
-
-.icons-heart {
-  right: 10px;
+.icons-heart{
+  top: 4px !important;
+  z-index: 10 !important;
+  position:absolute !important;
+  right: 10px !important;
 }
 
 a {
@@ -194,12 +193,14 @@ a {
 }
 
 #seleceted {
+ font-size: 1.6em !important;
   border-radius: 4px;
   background-color: white !important;
   outline: none;
 }
 
-.invite {
+.invite{
+ 
   margin: 2rem 0;
 }
 
@@ -207,7 +208,7 @@ a {
   height: auto;
   max-width: 100%;
   position: sticky;
-  top: 9rem;
+  top: 4rem;
   transition: none;
 }
 
@@ -232,15 +233,9 @@ a {
   color: #936917 !important;
   text-decoration: none !important;
 }
-
-/* }
- .hideicons.visual{
-  display: none;
- }
- .showicons{
-  display: none;
- } */
-/* accordions design */
+.font-size-save{
+font-size: 1.6em !important;
+}
 .accordion {
   background-color: #fff;
   color: #444;
@@ -258,14 +253,14 @@ a {
   background-color: rgb(88, 85, 85);
 }
 
-@media(max-width:700px) {
+@media (max-width: 700px) {
   .tab {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
 
-  .inner-slider {}
+  
 }
 
 .panel {
@@ -275,18 +270,16 @@ a {
 }
 
 .accordion:after {
-  content: '\02795';
+  content: "\02795";
   /* Unicode character for "plus" sign (+) */
   font-size: 13px;
   color: #953636;
   float: right;
   margin-left: 5px;
-
 }
 
-.active:after {
-  content: "\2796";
-  /* Unicode character for "minus" sign (-) */
+.visuale::after {
+  content: "\2796" !important; /* Unicode character for "minus" sign (-) */
 }
 
 .shoes-image {
@@ -294,35 +287,27 @@ a {
 }
 
 .bi-dot {
-  font-size: 1.7em;
-  color: #777;
-
+  font-size: 3em !important;
+  color: #777 !important;
 }
 
 .current {
   color: #202020;
 }
 
-/* .bi-dot:hover{
-  color: #202020;
-} */
 .uk-ind {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-
 }
-
 
 /* Style the tab */
 .tab {
   overflow: hidden;
-
 }
 
 /* Style the buttons inside the tab */
 .tab button {
-
   float: left;
   border: none;
   outline: none;
@@ -343,7 +328,6 @@ a {
   justify-content: center;
   align-items: center;
   border: none;
-
 }
 
 /* Create an active/current tablink class */
@@ -355,8 +339,6 @@ a {
 .tabcontent {
   display: none;
   padding: 6px 12px;
-
-
 }
 
 .tabcontent.firstshow {
@@ -364,9 +346,15 @@ a {
 }
 
 .slick-arrow {
-
-  padding: 3rem;
-  z-index: 10;
+  
+margin:auto 3rem !important;
+  z-index: 10 !important;
+}
+@media(max-width:500px){
+  /* .slick-arrow {
+    padding:0 4rem !important;
+    
+  } */
 }
 
 .image-size {
@@ -385,10 +373,10 @@ a {
 
 .slick-prev:before,
 .slick-next:before {
-  font-family: 'slick';
+  font-family: "slick";
   font-size: 20px;
   line-height: 1;
-  opacity: .75;
+  opacity: 0.75;
   color: #a53131 !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -427,7 +415,9 @@ a {
 .tablinks1 {
   margin: 1rem 0;
 }
-
+.top-down{
+  margin-top: 12rem !important;
+}
 /* Profile tab section */
 
 /* Style the buttons inside the tab */
@@ -448,20 +438,19 @@ a {
 .tab1 button.active {
   background-color: #0f0e0e;
   color: #fff;
-
 }
 
 .edit-profile input {
   font-size: 16px;
   display: block;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   width: 100%;
   padding: 10px 1px;
   border: 0;
   border-bottom: 1px solid #747474;
   outline: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .edit-fun {
