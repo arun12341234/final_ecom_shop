@@ -175,10 +175,27 @@ li {
   margin-right: 16px;
 }
 
-.icons-heart{
-  top: 4px !important;
+.bg-add-color {
+  cursor: pointer !important;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 60%;
+  margin: auto;
+  padding: 9px 0;
+  background-color: #f0eaea;
+}
+
+.cross-icon {
+  color: #fff !important;
+  font-size: 2em !important;
+  top: 4px;
+  position: absolute;
+  right: 10px;
+}
+
+.icons-heart {
+  top: 6px !important;
   z-index: 10 !important;
-  position:absolute !important;
+  position: absolute !important;
   right: 10px !important;
 }
 
@@ -193,14 +210,13 @@ a {
 }
 
 #seleceted {
- font-size: 1.6em !important;
+  font-size: 1.6em !important;
   border-radius: 4px;
   background-color: white !important;
   outline: none;
 }
 
-.invite{
- 
+.invite {
   margin: 2rem 0;
 }
 
@@ -215,7 +231,6 @@ a {
 .clear-all {
   padding-top: 3rem;
   font-size: large;
-
   color: rgb(187, 187, 10);
   position: absolute;
   top: 0;
@@ -233,8 +248,8 @@ a {
   color: #936917 !important;
   text-decoration: none !important;
 }
-.font-size-save{
-font-size: 1.6em !important;
+.font-size-save {
+  font-size: 1.6em !important;
 }
 .accordion {
   background-color: #fff;
@@ -259,8 +274,6 @@ font-size: 1.6em !important;
     flex-direction: column;
     gap: 1rem;
   }
-
-  
 }
 
 .panel {
@@ -334,7 +347,10 @@ font-size: 1.6em !important;
 .tab button.active {
   background-color: #ccc;
 }
-
+.own-heart {
+  color: rgb(162, 162, 44) !important;
+  transform: scale(2) !important;
+}
 /* Style the tab content */
 .tabcontent {
   display: none;
@@ -346,15 +362,8 @@ font-size: 1.6em !important;
 }
 
 .slick-arrow {
-  
-margin:auto 3rem !important;
+  margin: auto 3rem !important;
   z-index: 10 !important;
-}
-@media(max-width:500px){
-  /* .slick-arrow {
-    padding:0 4rem !important;
-    
-  } */
 }
 
 .image-size {
@@ -415,7 +424,7 @@ margin:auto 3rem !important;
 .tablinks1 {
   margin: 1rem 0;
 }
-.top-down{
+.top-down {
   margin-top: 12rem !important;
 }
 /* Profile tab section */
@@ -458,4 +467,136 @@ margin:auto 3rem !important;
   cursor: pointer;
   position: absolute;
   right: 12px;
+}
+.lg-hidded {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .desktop {
+    display: none !important;
+  }
+  .lg-hidded {
+    display: block !important;
+  }
+  .slick-arrow {
+    display: none !important;
+  }
+}
+
+@media (max-width: 360px) {
+}
+.tabcontent p {
+  font-size: 1.2em !important;
+}
+.position-privcy {
+  padding: 15px 0;
+  position: sticky;
+  bottom: 5rem;
+  z-index: 10;
+}
+/* mobile view design  */
+/** @format */
+
+.main-section-1 {
+  gap: 1rem;
+  display: flex;
+}
+
+.container-inside {
+  box-shadow: 3px 0px 5px -2px #4a4949;
+  cursor: pointer;
+  padding: 0 6px;
+}
+.tab-btn {
+  padding: 10px 0;
+}
+.fles-proprties {
+  padding: 10px 0;
+}
+.inner-items {
+  margin: 12px 0;
+}
+.show-body {
+  width: 60%;
+  display: none;
+}
+.show-body.visit {
+  display: block;
+}
+input[type="checkbox"] {
+  border-radius: 10px;
+  accent-color: black;
+}
+.Beige {
+  width: 15px;
+  height: 15px;
+  background-color: beige;
+  border-radius: 50%;
+}
+
+.fles-proprties {
+  margin: 6px 0;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inner-items {
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-section-remote {
+  position: absolute;
+  background-color: #fff;
+  z-index: 33;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  transition: all 0.5s;
+}
+.top-section-remote.open-close {
+  left: 0;
+}
+.reset-btn {
+  padding: 0.5rem 4rem;
+  border: 1px solid black;
+}
+
+.Apply-btn {
+  position: absolute;
+  bottom: 0;
+  padding: 0.7rem 8rem;
+  background-color: black;
+  color: #fff;
+}
+.cutting {
+  position: absolute;
+  right: 10px;
+}
+
+.search-bar {
+  padding: 10px 2.4rem !important;
+  font-size: 1.6em !important;
+}
+.line {
+  height: 1.5px;
+  width: 100%;
+  background-color: rgb(233, 228, 228);
+}
+
+#scroll-com {
+  z-index: 10;
+  position: sticky;
+  bottom: 14rem;
+}
+
+.show-sort {
+ display: none;
+}
+.text-hover h2:hover{
+  color: rgb(173, 165, 10);
 }

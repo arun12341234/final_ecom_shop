@@ -145,51 +145,69 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 
-// jqury code 
-+ function ($) {
-  $('.palceholder1').click(function () {
-    $(this).siblings('input').focus();
-  });
 
-  $('.form-control1').focus(function () {
-    $(this).parent().addClass("focused");
-  });
+const opacity=document.querySelector("#opacity");
+const footer1=document.querySelector(".footer-above-section");
+const footer2=document.querySelector(".footer-section");
+const topsection=document.querySelector(".top-section-remote");
 
-  $('.form-control1').blur(function () {
-    var $this = $(this);
-    if ($this.val().length == 0)
-      $(this).parent().removeClass("focused");
-  });
-  $('.form-control1').blur();
+function clickoff(){
+  topsection.classList.remove("open-close");
+  opacity.style.display="block";
+  footer1.style.display="block";
+  footer2.style.display="block";
+}
+function clickOnn(){
+  topsection.classList.add("open-close");
+  opacity.style.display="none";
+  footer1.style.display="none";
+  footer2.style.display="none";
+}
 
-  // validetion
-  $.validator.setDefaults({
-    errorElement: 'span',
-    errorClass: 'validate-tooltip'
-  });
+const scrollOpen=document.querySelector(".bg-add-color");
+const cross=document.querySelector(".cross-icon");
 
-  $("#formvalidate").validate({
-    rules: {
-      userName: {
-        required: true,
-        minlength: 6
-      },
+const showsort=document.querySelector(".show-sort");
+cross.addEventListener("click",()=>{
+  showsort.style.display="none";
+  footer1.style.display="block";
+  footer2.style.display="block";
+  opacity.style.opacity="1";
+  scrollOpen.style.opacity="1";
+})
 
-      userPassword: {
-        required: true,
-        minlength: 6
-      }
-    },
-    messages: {
-      userName: {
-        required: "Please enter your username.",
-        minlength: "Please provide valid username."
-      },
-      userPassword: {
-        required: "Enter your password to Login.",
-        minlength: "Incorrect login or password."
-      }
-    }
-  });
 
-}(jQuery);
+
+const clicksort=document.querySelector(".click-sort");
+clicksort.addEventListener("click",()=>{
+  showsort.style.display="block";
+  opacity.style.opacity="0.1";
+  footer1.style.display="none";
+  footer2.style.display="none";
+  scrollOpen.style.opacity="0";
+})
+
+
+
+
+// mobile view list-item design
+
+const showProperties=document.querySelectorAll(".show-body");
+
+
+const tab=document.querySelectorAll(".tab-btn");
+for (let i in tab) {
+tab[i].addEventListener("click",()=>{
+   showProperties.forEach(visual=>{
+    visual.style.display="none";
+   })
+    tab[i].style.color="rgb(45, 45, 45)";
+    showProperties[i].style.display="block";
+    
+})
+}
+
+
+
+
+
