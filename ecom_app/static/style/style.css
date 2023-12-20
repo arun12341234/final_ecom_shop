@@ -98,6 +98,10 @@ li {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
+.follow-icons{
+  display: flex;
+  align-items: center;
+}
 
 .follow-icons li {
   font-size: 1.3em;
@@ -473,6 +477,20 @@ a {
 }
 
 @media (max-width: 760px) {
+  .follow-icons{
+    margin-top: .5rem;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .container.footer-text{
+    text-align: center !important;
+  }
+  .cart-section{
+    margin: 0 auto !important;
+    width: 90% !important;
+    height: 70vh !important;
+    background-color: rgb(189, 182, 182);
+  }
   .desktop {
     display: none !important;
   }

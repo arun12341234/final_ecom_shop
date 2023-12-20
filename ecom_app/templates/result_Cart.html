@@ -1,222 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
 {% load static %}
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
     <!-- Bootstrap CSS -->
+     <!-- bootstrap icons cdn-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
     <script crossorigin="anonymous" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="{% static 'style/style.css' %}" rel="stylesheet" />
-    <style>
-        /* Custom styles */
-        .custom-container {
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
-</head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="">
-            <img alt="Left Logo" src="{% static 'assest/Screenshot 2023-11-24 190645.png' %}" />
-        </a>
-        <a class="navbar-brand navbar-brand-centered" href="">
-            <img alt="Center Logo" src="{% static 'assest/Screenshot 2023-11-24 190922.png' %}" />
-        </a>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="" >
-                        <i class="fas fa-search"></i>
-                    </a>
-                </li>
-                {% if request.session.user_id %}
-                    <!-- User is authenticated, show a different navigation item or nothing -->
-                    <!-- For example, you may want to show a link to the user's profile -->
-                    <form method="post" action="{% url 'logout' %}">
-                        {% csrf_token %}
-                        <button type="submit" class="nav-link btn btn-link">
-                            <i class="fas fa-sign-out-alt"></i>
-                        </button>
-                    </form>
-                {% else %}
-                    <!-- User is not authenticated, show the login link -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="fas fa-user"></i>
-                        </a>
-                    </li>
-                {% endif %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'cart' %}" >
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  
+
     <div class="container-fluid mt-5">
         <div class="row">
             <div class="col-lg-12">
                 <div class="custom-container">
                     <div class="text-center">
-                        <h3>MY BAG</h3>
+                        <h2>MY BAG</h2>
                         <div class="dropdown-divider"></div>
                     </div>
                 </div>
                 <div class="cart-section"></div>
                 <div class="text-center pt-5">
-                    <h2>Your bag is empty</h2>
-                    <p>Let’s fill it up shall we?</p>
-                    <div>
-                        <button class="btn btn-dark mx-5">SHOP GLOBAL LUXURY</button>
-                        <button class="btn btn-dark">SHOP INDILUXE</button>
+                    <h1>Your bag is empty</h1>
+                    <h3>Let’s fill it up shall we?</h3>
+                    <div class="">
+                        <button class="btn btn-dark mx-5 my-3 fa-2x">SHOP GLOBAL LUXURY</button>
+                        <button class="btn btn-dark fa-2x fa-2x">SHOP INDILUXE</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- footer section -->
-    <!-- footer    above  section -->
-    <main class="footer-above-section mt-5">
-        <div class="container pt-4 pb-1">
-            <div class="row">
-                <!-- Left Side - Select, Search Bar, Button -->
-                <div class="col-md-5">
-                    <h2 class="text-white">CONNECT WITH US</h2>
-                    <p class="text-secondary">Be the first to know about new products,
-                        exclusive collections, latest
-                        trends, stories and more.</p>
-                    <div class="input-group">
-                        <select class="custom-control bg-dark text-white border-secondary rounded-left">
-                            <option class="p-4" selected="">Men</option>
-                            <option class="p-4" value="1">Women</option>
-                        </select>
-                        <input class="form-control bg-dark text-secondary outline border-secondary" placeholder="Search"
-                            type="text" />
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary rounded-right roboto-font text-white"
-                                type="button">Subscribe</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-1">
-                    <div class="vertical-line"></div>
-                </div>
-                <div class="col-md-6">
-                    <div
-                        class="d-flex text-secondary right-secton roboto-font align-items-center justify-content-center mt-4">
-                        <div class="col-md-4 d-flex align-items-center flex-column justify-content-center">
-                            <img alt="" src="{% static 'assest/foot_autentic_icon.svg' %}" />
-                            <h6 class="text-center py-3">Authentic and Genuine Brands</h6>
-                        </div>
-                        <div class="col-md-4 d-flex align-items-center flex-column justify-content-center">
-                            <img alt="" class="pb-3" src="{% static 'assest/foot_promise_icon.svg' %}" />
-                            <h6 class="text-center pb-5">Tata Promise</h6>
-                        </div>
-                        <div class="col-md-4 d-flex align-items-center flex-column justify-content-center">
-                            <img alt="" src="{% static 'assest/foot_return_icon.svg' %}" />
-                            <h6 class="text-center py-3">Easy Returns And Exchanges</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <!-- footer    --  section -->
-    <footer class="footer-section">
-        <div class="container pt-5">
-            <div class="row roboto-font">
-                <div class="col-md-2 col-sm-4">
-                    <h6>SHOP LUXURY</h6>
-                    <ul class="list-section">
-                        <li>Men</li>
-                        <li>Women</li>
-                        <li>Handbags</li>
-                        <li>Watches</li>
-                        <li>Home</li>
-                        <li>Shoes</li>
-                        <li>Fragrances</li>
-                        <li>Kids</li>
-                    </ul>
-                </div>
-                <div class="col-md-2 col-sm-4">
-                    <h6>SHOP INDILUXE</h6>
-                    <ul class="list-section">
-                        <li>Men</li>
-                        <li>Women</li>
-                        <li>Handbags</li>
-                        <li>Beauty</li>
-                        <li>Watches</li>
-                    </ul>
-                </div>
-                <div class="col-md-2 col-sm-4">
-                    <h6>POPULAR SEARCHES</h6>
-                    <ul class="list-section">
-                        <li>Lacoste</li>
-                        <li>Michael Kors</li>
-                        <li>Coach</li>
-                        <li>Diesel</li>
-                        <li>Watches</li>
-                        <li>Armani Exchange</li>
-                        <li>Polo Tshirts</li>
-                        <li>Wallets</li>
-                    </ul>
-                </div>
-                <div class="col-md-2 col-sm-4">
-                    <h6>USEFUL LINKS</h6>
-                    <ul class="list-section">
-                        <li>Contact Us</li>
-                        <li>FAQ</li>
-                        <li>Shipping</li>
-                        <li>Cancellation</li>
-                        <li>Returns FAQs</li>
-                        <li>Terms &amp; Conditions</li>
-                        <li>Gift Card T&amp;C</li>
-                    </ul>
-                </div>
-                <div class="col-md-2 col-sm-4">
-                    <h6>DOWNLOAD</h6>
-                    <ul class="list-section">
-                        <li><img alt="" class="store-icons"
-                                src="{% static 'assest/Screenshot 2023-11-20 205940.png' %}" /></li>
-                        <li><img alt="" class="store-icons"
-                                src="{% static 'assest/Screenshot 2023-11-20 210033.png' %}" /></li>
-                    </ul>
-                </div>
-                <div class="footer-icons col-md-2 col-sm-4">
-                    <h6>FOLLOW US</h6>
-                    <ul class="d-flex align-items-center follow-icons">
-                        <li><a href=""><i class="fab fa-facebook-f" style="color: white;"></i></a></li>
-                        <li><a href=""><i class="fab fa-instagram" style="color: white;"></i></a></li>
-                        <li><a href=""><i class="fab fa-twitter" style="color: white;"></i></a></li>
-                        <li><a href=""><i class="fab fa-youtube" style="color: white;"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Bootstrap JS and jQuery (Optional) -->
-    <script crossorigin="anonymous" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script crossorigin="anonymous" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+    {% endblock %}
+    
 
-</html>

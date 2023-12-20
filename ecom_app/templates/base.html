@@ -36,10 +36,25 @@
 </style>
 
 <body>
+
+    <!-- mobile view navbar -->
+    <nav class="lg-hidded">
+        <div class="d-flex align-items-center justify-content-between px-3">
+            <a href="/" class="text-decoration-none text-black"><i class="bi bi-arrow-left fa-2x"></i></a>
+            <a class="navbar-brand" href=""
+            style="color: #818181; display: block; font-size: 16px; font-weight: 300; line-height: 28px; padding: 10px 15px 20px; position: relative; text-align: center; text-transform: uppercase; transition: all .05s;">
+            SASCONIT
+        </a>
+            <a href="result_Cart" class="text-decoration-none text-black"><i class="bi bi-bag-fill fa-2x"></i></a>
+        </div>
+    </nav>
     
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+
+<!-- desktop navbar view -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white desktop ">
         {% if org_name %}
-        <a class="navbar-brand" href=""
+        <a class="navbar-brand " href=""
             style="color: #818181; display: block; font-size: 16px; font-weight: 300; line-height: 28px; padding: 10px 15px 20px; position: relative; text-align: center; text-transform: uppercase; transition: all .05s;">
             {{org_name}}
         </a>
@@ -91,15 +106,12 @@
                 {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'cart' %}">
-                        <i class="fas fa-shopping-cart"></i>
+                        <i class="bi bi-bag-fill"></i>
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
-
-
-    <div class="dropdown-divider"></div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light desktop">
         <div class="container">
@@ -376,7 +388,7 @@
     </main>
     <!-- footer    --  section -->
     <footer class="footer-section ">
-        <div class="container pt-5">
+        <div class="container pt-5 footer-text" >
             <div class="row roboto-font">
                 <div class="col-md-2 col-sm-4">
                     <h4>SHOP LUXURY</h4>
@@ -437,7 +449,7 @@
                 </div>
                 <div class="footer-icons col-md-2 col-sm-4">
                     <h4>FOLLOW US</h4>
-                    <ul class="d-flex align-items-center follow-icons">
+                    <ul class=" follow-icons ">
                         <li><a href=""><i class="fab fa-facebook-f" style="color: white;"></i></a></li>
                         <li><a href=""><i class="fab fa-instagram" style="color: white;"></i></a></li>
                         <li><a href=""><i class="fab fa-twitter" style="color: white;"></i></a></li>
