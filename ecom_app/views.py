@@ -88,16 +88,28 @@ def cart(request):
     return HttpResponse(rendered_template)
 
 
-def list_product(request):
+def list_product(request, item_type_name):
+    print("item-name",item_type_name)
     template = loader.get_template("list_product.html")
     # results = VisaGetlist.objects.all()
     try:
         generated_org_id = request.session['generated_org_id']
         json_result,json_result_1,item_rows,item_sub_row = check_generated_org_id(request)
+
     except:
         json_result,json_result_1,item_rows,item_sub_row  = None, None, None,None
+    try:
+        print(json_result_1)
+        item_query = text("SELECT * FROM shivadb_new.newitemdetailsimage WHERE org_id = :json_result_1 and item_type = :item_type")
+        item_query = item_query.bindparams(json_result_1=json_result_1,item_type=item_type_name)
+        item_result = conn.execute(item_query).fetchall()
+        list_item_row = [dict(row._asdict()) for row in item_result]
+      
+        print("item_result",item_result,list_item_row) 
+    except:
+        print("error")
     print(json_result)
-    context = {'logo_url': json_result,'org_name': json_result_1,'item_rows':item_rows,"item_sub_row":item_sub_row }
+    context = {'logo_url': json_result,'org_name': json_result_1,'item_rows':item_rows,"item_sub_row":item_sub_row,"list_item_row":list_item_row }
     rendered_template = template.render(context)
     return HttpResponse(rendered_template)
 
@@ -108,10 +120,14 @@ def list_product_details(request):
     print("result_ProductDetails.html")
     # results = VisaGetlist.objects.all()
     try:
-        generated_org_id = request.session['generated_org_id']
+       
         json_result,json_result_1,item_rows,item_sub_row = check_generated_org_id(request)
+        
     except:
+        
         json_result,json_result_1,item_rows,item_sub_row = None, None, None,None
+
+
     print(json_result)
     context = {'logo_url': json_result,'org_name': json_result_1,'item_rows':item_rows,"item_sub_row":item_sub_row}
     rendered_template = template.render(context)
@@ -138,9 +154,9 @@ def check_generated_org_id(request):
         # SQL query for user_app_generate_org_id
         user_query = text('SELECT * FROM user_app_generate_org_id WHERE generated_org_id = :org_id')
         user_query = user_query.bindparams(org_id=generated_org_id)
-        print(user_query)
+        # print(user_query)
         user_result = conn.execute(user_query).fetchall()
-        print('user_result',user_result)
+        # print('user_result',user_result)
 
         if not user_result:
             # Handle case where no user_result is found
@@ -157,13 +173,13 @@ def check_generated_org_id(request):
         item_sub_query = text("SELECT * FROM shivadb_new.itemsubtype WHERE org_id = :json_result_1")
         item_sub_query = item_sub_query.bindparams(json_result_1=json_result_1)
         item_sub_result = conn.execute(item_sub_query).fetchall()
-        print("items",item_sub_result)
+        # print("items",item_sub_result)
 
         # Convert the results to lists of dictionaries
         user_rows = [dict(row._asdict()) for row in user_result]
         item_rows = [dict(row._asdict()) for row in item_result]
         item_sub_row=[dict(row._asdict()) for row in item_sub_result]
-        print("item-sub", item_sub_row)
+        # print("item-sub", item_sub_row)
 
         # Convert the list of dictionaries to JSON
         json_result = "https://saasapps.in:2082/media/" + user_rows[0]['src']
@@ -176,14 +192,14 @@ def check_generated_org_id(request):
         return None, None, None,None
 
 def generated_org_id(request, generated_org_id):
-    print("here")
+  #  print("here")
     # Store generated_org_id in session
     request.session['generated_org_id'] = generated_org_id
     try:
         json_result,json_result_1,item_rows,item_sub_row = check_generated_org_id(request)
     except:
         json_result,json_result_1,item_rows,item_sub_row = None, None, None,None
-    print(json_result)
+    # print(json_result)
     context = {'logo_url': json_result,'org_name': json_result_1,'item_rows':item_rows,"item_sub_row":item_sub_row}
     # Redirect to the home page or any other page you desire
     return render(request, 'result_Home.html', context)

@@ -869,6 +869,30 @@
             </div>
             <!-- Product Cards -->
             <div class="row">
+
+                {% if list_item_row %}
+                {% for item in list_item_row %}
+                <div class="col-md-4">
+                    <div class="position-relative">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-heart  icons-heart"></i>
+                        </a>
+                        <div class="card-body">
+                            <a class="nav-link" href="{% url 'list_product_details' %}">
+                                <img alt="Product 1 Image" class="img-fluid" src="{% static 'assest/addidas.jpeg' %}" />
+                                <h4 class="card-title text-center roboto-font">{{item.item_name}}</h4>
+                                <p class="card-text text-center" style="font-weight: 300;">{{item.item_subtype}}</p>
+                            </a>
+                            <p class="card-text text-center font-size-save">₹8,449 <span
+                                    class="text-decoration-line-through px-3">
+                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
+                            <!-- Product price -->
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+               
                 <!-- Product Card 1 -->
                 <div class="col-md-4">
                     <div class="position-relative">
@@ -876,312 +900,28 @@
                             <i class="bi bi-heart  icons-heart"></i>
                         </a>
                         <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-                                <img alt="Product 1 Image" class="img-fluid" src="{% static 'assest/addidas.jpeg' %}" />
-                                <h4 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h4>
-                                <p class="card-text text-center" style="font-weight: 300;">Women's NMD_R1
-                                    CBLACK/ALMYEL/POWRED Sneakers</p>
+                            <a class="nav-link" >
+                                <img alt="Product 2 Image" class="card-img-top" src="{% static 'assest/product-not-found.jpg' %}" />
+                                
                             </a>
-                            <p class="card-text text-center font-size-save">₹8,449 <span
-                                    class="text-decoration-line-through px-3">
-                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
-                            <!-- Product price -->
+                           
                         </div>
                     </div>
                 </div>
-                <!-- Product Card 2 -->
-                <div class="col-md-4">
-                    <div class="position-relative">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-                                <img alt="Product 2 Image" class="card-img-top" src="{% static 'assest/aldo.jpeg' %}" />
-                                <h4 class="card-title text-center roboto-font">ALDO</h4>
-                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001
-                                    Embelished
-                                    Black Slide Sandals</p>
-                            </a>
-                            <p class="card-text text-center font-size-save">₹9,999</p> <!-- Product price -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 3 -->
-                <div class="col-md-4">
-                    <div class="product-card position-relative">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-                                <img alt="Product 3 Image" class="card-img-top"
-                                    src="{% static 'assest/MP000000020061095_658Wx734H_202311120915571.jpg' %}" />
-                                <h4 class="card-title text-center roboto-font ">ALDO</h4>
-                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340
-                                    Other
-                                    Green Pumps</p>
-                            </a>
-                            <p class="card-text text-center font-size-save">₹8,449 <span
-                                    class="text-decoration-line-through px-5">
-                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
-                            <!-- Product price -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more product cards as needed -->
-                <div class="col-md-4">
-                    <div class="position-relative">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-                                <img alt="Product 1 Image" class="img-fluid" src="{% static 'assest/addidas.jpeg' %}" />
-                                <h4 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h4>
-                                <p class="card-text text-center" style="font-weight: 300;">Women's NMD_R1
-                                    CBLACK/ALMYEL/POWRED Sneakers</p>
-                            </a>
-                            <p class="card-text text-center font-size-save">₹8,449 <span
-                                    class="text-decoration-line-through px-3">
-                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
-                            <!-- Product price -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 2 -->
-                <div class="col-md-4">
-                    <div class="position-relative">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-                                <img alt="Product 2 Image" class="card-img-top" src="{% static 'assest/aldo.jpeg' %}" />
-                                <h4 class="card-title text-center roboto-font">ALDO</h4>
-                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001
-                                    Embelished
-                                    Black Slide Sandals</p>
-                            </a>
-                            <p class="card-text text-center font-size-save">₹9,999</p> <!-- Product price -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 3 -->
-                <div class="col-md-4">
-                    <div class="product-card position-relative">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-                                <img alt="Product 3 Image" class="card-img-top"
-                                    src="{% static 'assest/MP000000020061095_658Wx734H_202311120915571.jpg' %}" />
-                                <h4 class="card-title text-center py-3 roboto-font">ALDO</h4>
-                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340
-                                    Other
-                                    Green Pumps</p>
-                            </a>
-                            <p class="card-text text-center font-size-save">₹8,449 <span
-                                    class="text-decoration-line-through px-5">
-                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
-                            <!-- Product price -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="position-relative">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-                                <img alt="Product 1 Image" class="img-fluid" src="{% static 'assest/addidas.jpeg' %}" />
-                                <h4 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h4>
-                                <p class="card-text text-center" style="font-weight: 300;">Women's NMD_R1
-                                    CBLACK/ALMYEL/POWRED Sneakers</p>
-                            </a>
-                            <p class="card-text text-center font-size-save">₹8,449 <span
-                                    class="text-decoration-line-through px-3">
-                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
-                            <!-- Product price -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 2 -->
-                <div class="col-md-4">
-                    <div class="position-relative">
-
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-
-                                <img alt="Product 2 Image" class="card-img-top" src="{% static 'assest/aldo.jpeg' %}" />
-                                <h4 class="card-title text-center roboto-font">ALDO</h4>
-                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001
-                                    Embelished
-                                    Black Slide Sandals</p>
-                            </a>
-                            <p class="card-text text-center font-size-save">₹9,999</p> <!-- Product price -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 3 -->
-                <div class="col-md-4">
-                    <div class="product-card position-relative">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-                                <img alt="Product 3 Image" class="card-img-top"
-                                    src="{% static 'assest/MP000000020061095_658Wx734H_202311120915571.jpg' %}" />
-                                <h4 class="card-title text-center py-3">ALDO</h4>
-                                <p class="card-text text-center roboto-font" style="font-weight: 300;">Women's
-                                    STESSY2.0340
-                                    Other
-                                    Green Pumps</p>
-                            </a>
-                            <p class="card-text text-center font-size-save">₹8,449 <span
-                                    class="text-decoration-line-through px-5">
-                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
-                            <!-- Product price -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="position-relative">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-                                <img alt="Product 1 Image" class="img-fluid" src="{% static 'assest/addidas.jpeg' %}" />
-                                <h4 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h4>
-                                <p class="card-text text-center" style="font-weight: 300;">Women's NMD_R1
-                                    CBLACK/ALMYEL/POWRED Sneakers</p>
-                            </a>
-                            <p class="card-text text-center font-size-save">₹8,449 <span
-                                    class="text-decoration-line-through px-3">
-                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
-                            <!-- Product price -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 2 -->
-                <div class="col-md-4">
-                    <div class="position-relative">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-                                <img alt="Product 2 Image" class="card-img-top" src="{% static 'assest/aldo.jpeg' %}" />
-                                <h5 class="card-title text-center roboto-font">ALDO</h5>
-                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001
-                                    Embelished
-                                    Black Slide Sandals</p>
-                            </a>
-                            <p class="card-text text-center font-size-save">₹9,999</p> <!-- Product price -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 3 -->
-                <div class="col-md-4">
-                    <div class="product-card position-relative">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-                                <img alt="Product 3 Image" class="card-img-top"
-                                    src="{% static 'assest/MP000000020061095_658Wx734H_202311120915571.jpg' %}" />
-                                <h5 class="card-title text-center py-3 roboto-font">ALDO</h5>
-                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340
-                                    Other
-                                    Green Pumps</p>
-                            </a>
-                            <p class="card-text text-center font-size-save">₹8,449 <span
-                                    class="text-decoration-line-through px-5">
-                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
-                            <!-- Product price -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="position-relative">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-                                <img alt="Product 1 Image" class="img-fluid" src="{% static 'assest/addidas.jpeg' %}" />
-                                <h5 class="card-title text-center roboto-font">ADIDAS ORIGINALS</h5>
-                                <p class="card-text text-center" style="font-weight: 300;">Women's NMD_R1
-                                    CBLACK/ALMYEL/POWRED Sneakers</p>
-                            </a>
-                            <p class="card-text text-center font-size-save">₹8,449 <span
-                                    class="text-decoration-line-through px-3">
-                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
-                            <!-- Product price -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 2 -->
-                <div class="col-md-4">
-                    <div class="position-relative">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-                                <img alt="Product 2 Image" class="card-img-top" src="{% static 'assest/aldo.jpeg' %}" />
-                                <h5 class="card-title text-center roboto-font">ALDO</h5>
-                                <p class="card-text text-center" style="font-weight: 300;">Women's TYDEUS001
-                                    Embelished
-                                    Black Slide Sandals</p>
-                            </a>
-                            <p class="card-text text-center font-size-save">₹9,999</p> <!-- Product price -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 3 -->
-                <div class="col-md-4  ">
-
-                    <div class="product-card position-relative">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-                                <img alt="Product 3 Image" class="card-img-top"
-                                    src="{% static 'assest/MP000000020061095_658Wx734H_202311120915571.jpg' %}" />
-                                <h5 class="card-title text-center py-3 roboto-font">ALDO</h5>
-                                <p class="card-text text-center" style="font-weight: 300;">Women's STESSY2.0340
-                                    Other
-                                    Green Pumps</p>
-                            </a>
-                            <p class="card-text text-center font-size-save">₹8,449 <span
-                                    class="text-decoration-line-through px-5">
-                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
-                            <!-- Product price -->
-                        </div>
-                    </div>
-                </div>
+                
+                <!-- Product Card -->
+               
+               
+                {% endif %}
             </div>
         </div>
     </div>
 </div>
+{% if list_item_row %}
 <div class="m-auto text-center my-5 desktop">
     <a href="" class="bg-black py-2 px-5  text-decoration-none fa-2x text-white rounded-1">
         Load More
     </a>
 </div>
+{% endif %}
 {% endblock %}
