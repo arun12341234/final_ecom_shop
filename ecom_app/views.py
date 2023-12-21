@@ -120,38 +120,46 @@ def forget_password(request):
     rendered_template = template.render(context)
     return HttpResponse(rendered_template)
 
-def check_generated_org_id(_request):
-
+def check_generated_org_id(request):
     # Get generated_org_id from session
-    generated_org_id = _request.session.get('generated_org_id')
-    print(
-        generated_org_id
-    )
-    # SQL query
-    # SQL query for user_app_generate_org_id
-    user_query = text(f'SELECT * FROM user_app_generate_org_id WHERE generated_org_id = {generated_org_id}')
-    # Execute the queries
-    user_result = conn.execute(user_query).fetchall() 
-    # Convert the results to lists of dictionaries
-    user_rows = [dict(row) for row in user_result]
-    json_result_1 = user_rows[0]['org_name']
-    # SQL query for itemtype
-    item_query = text("SELECT * FROM shivadb_new.itemtype WHERE org_id = :org_id")
-    item_result = conn.execute(item_query, org_id=json_result_1).fetchall()
-    
+    generated_org_id = request.session.get('generated_org_id')
 
-    item_rows = [dict(row) for row in item_result]
+    if not generated_org_id:
+        # Handle case where generated_org_id is not found
+        return None, None, None
 
-    # Convert the list of dictionaries to JSON
-    json_result = "https://saasapps.in:2082/media/"+user_rows[0]['src']
+    try:
+        # SQL query for user_app_generate_org_id
+        user_query = text('SELECT * FROM user_app_generate_org_id WHERE generated_org_id = :org_id')
+        user_query = user_query.bindparams(org_id=generated_org_id)
+        print(user_query)
+        user_result = conn.execute(user_query).fetchall()
+        print('user_result',user_result)
 
-    # Convert the list of dictionaries to JSON
-    
-    print(item_rows)
+        if not user_result:
+            # Handle case where no user_result is found
+            return None, None, None
 
+        json_result_1 = user_result[0][5]
 
-    # You can now return the JSON result or use it as needed
-    return json_result, json_result_1, item_rows
+        # SQL query for itemtype
+        item_query = text("SELECT * FROM shivadb_new.itemtype WHERE org_id = :json_result_1")
+        item_query = item_query.bindparams(json_result_1=json_result_1)
+        item_result = conn.execute(item_query).fetchall()
+
+        # Convert the results to lists of dictionaries
+        user_rows = [dict(row._asdict()) for row in user_result]
+        item_rows = [dict(row._asdict()) for row in item_result]
+
+        # Convert the list of dictionaries to JSON
+        json_result = "https://saasapps.in:2082/media/" + user_rows[0]['src']
+
+        return json_result, json_result_1, item_rows
+
+    except Exception as e:
+        # Handle any exceptions that may occur during execution
+        print(f"Error: {e}")
+        return None, None, None
 
 def generated_org_id(request, generated_org_id):
     print("here")
