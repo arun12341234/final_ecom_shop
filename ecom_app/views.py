@@ -16,9 +16,29 @@ try:
 except Exception as err:
     print(err)
 
+def get_org_id(request):
+    current_url = request.build_absolute_uri()
+    parsed_url = urlparse(current_url)
+    input_org = parsed_url.netloc
 
+    item_query = text("SELECT * FROM shivadb_new.user_app_generate_org_id")
+    item_query = item_query.bindparams()
+    item_result = conn.execute(item_query).fetchall()
+    list_item_row = [dict(row._asdict()) for row in item_result]
+
+    print("item_result", item_result, list_item_row)
+    
+    result_dict = None
+    for item in list_item_row:
+        print(input_org.lower(), item['org_name'].lower())
+        if input_org.lower() in item['org_name'].lower() or item['org_name'].lower() in input_org.lower():
+            result_dict = item
+            request.session['generated_org_id'] = result_dict.generated_org_id
+            break
+    print(result_dict.generated_org_id)
 
 def index(request):
+    get_org_id(request)
     template = loader.get_template("result_Home.html")
     # results = VisaGetlist.objects.all()
     try:
