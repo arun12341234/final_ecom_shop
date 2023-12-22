@@ -148,7 +148,7 @@ def list_product_details(request):
         json_result,json_result_1,item_rows,item_sub_row = None, None, None,None
 
 
-    print(json_result)
+    print(json_result,list_item_row)
     context = {'logo_url': json_result,'org_name': json_result_1,'item_rows':item_rows,"item_sub_row":item_sub_row}
     rendered_template = template.render(context)
     return HttpResponse(rendered_template)
@@ -199,7 +199,7 @@ def check_generated_org_id(request):
         user_rows = [dict(row._asdict()) for row in user_result]
         item_rows = [dict(row._asdict()) for row in item_result]
         item_sub_row=[dict(row._asdict()) for row in item_sub_result]
-        # print("item-sub", item_sub_row)
+        print("item-sub", item_rows)
 
         # Convert the list of dictionaries to JSON
         json_result = "https://saasapps.in:2082/media/" + user_rows[0]['src']
