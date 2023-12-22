@@ -109,7 +109,9 @@ def cart(request):
 
 
 def list_product(request, item_type_name):
-    print("item-name",item_type_name)
+    # print("item-name",item_type_name)
+    item_subtype = request.GET.get('item_subtype', None)
+    print("item_subtype",item_subtype)
     template = loader.get_template("list_product.html")
     # results = VisaGetlist.objects.all()
     try:
@@ -119,16 +121,20 @@ def list_product(request, item_type_name):
     except:
         json_result,json_result_1,item_rows,item_sub_row  = None, None, None,None
     try:
-        print(json_result_1)
-        item_query = text("SELECT * FROM shivadb_new.newitemdetailsimage WHERE org_id = :json_result_1 and item_type = :item_type")
-        item_query = item_query.bindparams(json_result_1=json_result_1,item_type=item_type_name)
+        # print(item_subtype)
+        if item_subtype:
+            item_query = text("SELECT * FROM shivadb_new.newitemdetailsimage WHERE org_id = :json_result_1 and item_type = :item_type and item_subtype= :item_subtype")
+            item_query = item_query.bindparams(json_result_1=json_result_1,item_type=item_type_name,item_subtype=item_subtype)
+        else:
+            item_query = text("SELECT * FROM shivadb_new.newitemdetailsimage WHERE org_id = :json_result_1 and item_type = :item_type")
+            item_query = item_query.bindparams(json_result_1=json_result_1,item_type=item_type_name)
         item_result = conn.execute(item_query).fetchall()
         list_item_row = [dict(row._asdict()) for row in item_result]
       
-        print("item_result",item_result,list_item_row) 
+        print("item_result",list_item_row) 
     except:
         print("error")
-    print(json_result)
+    # print(json_result)
     context = {'logo_url': json_result,'org_name': json_result_1,'item_rows':item_rows,"item_sub_row":item_sub_row,"list_item_row":list_item_row }
     rendered_template = template.render(context)
     return HttpResponse(rendered_template)
@@ -137,7 +143,7 @@ def list_product(request, item_type_name):
 
 def list_product_details(request):
     template = loader.get_template("result_ProductDetails.html")
-    print("result_ProductDetails.html")
+    # print("result_ProductDetails.html")
     # results = VisaGetlist.objects.all()
     try:
        
@@ -199,7 +205,7 @@ def check_generated_org_id(request):
         user_rows = [dict(row._asdict()) for row in user_result]
         item_rows = [dict(row._asdict()) for row in item_result]
         item_sub_row=[dict(row._asdict()) for row in item_sub_result]
-        print("item-sub", item_rows)
+        # print("item-sub", item_rows)
 
         # Convert the list of dictionaries to JSON
         json_result = "https://saasapps.in:2082/media/" + user_rows[0]['src']

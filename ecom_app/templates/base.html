@@ -132,7 +132,7 @@
                             {% for sub_brand in item_sub_row %}
 
                             {% if brand.ItemType_Name == sub_brand.ItemType_Name %}
-                            <a class="dropdown-item" href="">{{sub_brand.ItemSubType_Name}}</a>
+                            <a class="dropdown-item" href="{% url "list_product" brand.ItemType_Name  %}?item_subtype={{ sub_brand.ItemSubType_Name }}">{{sub_brand.ItemSubType_Name}}</a>
                             {% endif %}
 
                             {% endfor %}
