@@ -33,9 +33,9 @@ def get_org_id(request):
         print(input_org.lower(), item['org_name'].lower())
         if input_org.lower() in item['org_name'].lower() or item['org_name'].lower() in input_org.lower():
             result_dict = item
-            request.session['generated_org_id'] = result_dict.generated_org_id
+            request.session['generated_org_id'] = result_dict['generated_org_id']
             break
-    print(result_dict.generated_org_id)
+    print(result_dict)
 
 def index(request):
     get_org_id(request)
