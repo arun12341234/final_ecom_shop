@@ -8,7 +8,7 @@ import pymysql
 from sqlalchemy import create_engine
 from sqlalchemy import text
 import json
-
+from urllib.parse import urlparse
 
 mydb = create_engine('mysql+pymysql://' + 'root' + ':' + 'password' + '@' + '49.205.199.235' + ':' + str(3306) + '/' + 'shivadb_new' , echo=False)
 try:
