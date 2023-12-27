@@ -113,7 +113,7 @@
         </div>
     </nav>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light desktop">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
                 class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button">
@@ -128,11 +128,11 @@
                             id="navbarDropdown2" role="button">
                             {{brand.ItemType_Name}}
                         </a>
-                        <div aria-labelledby="navbarDropdown2" class="dropdown-menu">
+                        <div aria-labelledby="navbarDropdown2" class="dropdown-menu ">
                             {% for sub_brand in item_sub_row %}
 
                             {% if brand.ItemType_Name == sub_brand.ItemType_Name %}
-                            <a class="dropdown-item" href="{% url "list_product" brand.ItemType_Name  %}?item_subtype={{ sub_brand.ItemSubType_Name }}">{{sub_brand.ItemSubType_Name}}</a>
+                            <a class="dropdown-item text-center" href="{% url "list_product" brand.ItemType_Name  %}?item_subtype={{ sub_brand.ItemSubType_Name }}">{{sub_brand.ItemSubType_Name}}</a>
                             {% endif %}
 
                             {% endfor %}
@@ -216,7 +216,7 @@
                             id="navbarDropdown2" role="button">
                             Brands
                         </a>
-                        <div aria-labelledby="navbarDropdown2" class="dropdown-menu">
+                        <div aria-labelledby="navbarDropdown2" class="dropdown-menu text-center">
                             <a class="dropdown-item" href="">Action</a>
                             <a class="dropdown-item" href="">Another action</a>
                             <a class="dropdown-item" href="">Something else here</a>
@@ -519,5 +519,7 @@
 
     </script>
 </body>
-
-</html>
+{% comment %}
+    
+    
+{% endcomment %}</html>

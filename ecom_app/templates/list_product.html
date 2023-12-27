@@ -1,927 +1,892 @@
-{% extends 'base.html' %}
-{% block content %}
-{% load static %}
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- @format -->
+
+{% extends 'base.html' %} {% block content %} {% load static %}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>details page</title>
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+<link
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  rel="stylesheet" />
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet" />
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+  crossorigin="anonymous" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+  crossorigin="anonymous"></script>
 <!-- custom css -->
 
 <style>
-    /* Custom styles */
-    .custom-container {
+  /* Custom styles */
+  .custom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-
-
-
-
-    /* Custom CSS */
+  /* Custom CSS */
 </style>
-
 
 <!-- mobile view area -->
 
 <div id="opacity">
-    <div class="container lg-hidded mt-5 ">
-        <h3>9187 Products</h3>
-        <hr>
-        <div class="d-flex align-items-center justify-content-between ">
-            <div class="inner-slider position-relative ">
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/pinkshoes.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹9000</h5>
-                </div>
-            </div>
-
-
-            <div class="inner-slider position-relative">
-                <span class="bg-warning px-4 py-1 text-white">On Offer</span>
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/whitepink.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹11000 </h5>
-                </div>
-            </div>
+  <div class="container lg-hidded mt-5">
+    <h3>9187 Products</h3>
+    <hr />
+    <div class="d-flex align-items-center justify-content-between">
+      {% if list_item_row %} {% for item in list_item_row %}
+      <div class="inner-slider position-relative">
+        <a class="nav-link" href="{% url 'login' %}">
+        <i class="bi bi-heart icons-heart own-heart"></i>
+        </a>
+        <a class="nav-link" href="{% url 'list_product_details' %}">
+            <img
+            alt="Product 1 Image"
+            class="img-fluid"
+            src="https://saasapps.in:2082/media/{{item.image_front}}" />
+        <div class="text-center">
+          <h3 class="font-weight-bold"> {{item.item_name}}</h3>
+          <p class="robot-font-style">
+            {{item.item_subtype}}
+          </p>
+        </a>
+          <h5>₹9000</h5>
+       
         </div>
-        <div class="d-flex align-items-center justify-content-between pt-5">
-            <div class="inner-slider position-relative">
-                <span class="bg-warning px-4 py-1 text-white">On Offer</span>
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/pinkshoes.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹9000</h5>
-                </div>
-            </div>
-
-
-            <div class="inner-slider position-relative">
-                <span class="bg-warning px-4 py-1 text-white">On Offer</span>
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/whitepink.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹11000 </h5>
-                </div>
-            </div>
+      </div>
+    {% endfor %}
+    {% else %}
+      <div class="inner-slider position-relative">
+        <span class="bg-warning px-4 py-1 text-white">On Offer</span>
+        <i class="bi bi-heart icons-heart own-heart"></i>
+        <img
+          alt=""
+          class="img-fluid image-size"
+          src="{% static 'assest/whitepink.webp' %}" />
+        <div class="text-center">
+          <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
+          <p class="robot-font-style">
+            Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin
+          </p>
+          <h5>₹11000</h5>
         </div>
-
+      </div>
     </div>
-
-    <div class="container lg-hidded mt-5 ">
-        <div class="d-flex align-items-center justify-content-between ">
-            <div class="inner-slider position-relative ">
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/pinkshoes.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹9000</h5>
-                </div>
-            </div>
-
-
-            <div class="inner-slider position-relative">
-                <span class="bg-warning px-4 py-1 text-white">On Offer</span>
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/whitepink.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹11000 </h5>
-                </div>
-            </div>
+    <div class="d-flex align-items-center justify-content-between pt-5">
+      <div class="inner-slider position-relative">
+        <span class="bg-warning px-4 py-1 text-white">On Offer</span>
+        <i class="bi bi-heart icons-heart own-heart"></i>
+        <img
+          alt=""
+          class="img-fluid image-size"
+          src="{% static 'assest/pinkshoes.webp' %}" />
+        <div class="text-center">
+          <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
+          <p class="robot-font-style">
+            Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin
+          </p>
+          <h5>₹9000</h5>
         </div>
-        <div class="d-flex align-items-center justify-content-between pt-5">
-            <div class="inner-slider position-relative">
-                <span class="bg-warning px-4 py-1 text-white">On Offer</span>
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/pinkshoes.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹9000</h5>
-                </div>
-            </div>
+      </div>
 
-
-            <div class="inner-slider position-relative">
-                <span class="bg-warning px-4 py-1 text-white">On Offer</span>
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/whitepink.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹11000 </h5>
-                </div>
-            </div>
+      <div class="inner-slider position-relative">
+        <span class="bg-warning px-4 py-1 text-white">On Offer</span>
+        <i class="bi bi-heart icons-heart own-heart"></i>
+        <img
+          alt=""
+          class="img-fluid image-size"
+          src="{% static 'assest/whitepink.webp' %}" />
+        <div class="text-center">
+          <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
+          <p class="robot-font-style">
+            Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin
+          </p>
+          <h5>₹11000</h5>
         </div>
-
+      </div>
+      {% endif %}
     </div>
+  </div>
 
-    <div class="container lg-hidded mt-5">
-
-        <div class="d-flex align-items-center justify-content-between ">
-            <div class="inner-slider position-relative ">
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/pinkshoes.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹9000</h5>
-                </div>
-            </div>
-
-
-            <div class="inner-slider position-relative">
-                <span class="bg-warning px-4 py-1 text-white">On Offer</span>
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/whitepink.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹11000 </h5>
-                </div>
-            </div>
+  <div class="container lg-hidded mt-5">
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="inner-slider position-relative">
+        <i class="bi bi-heart icons-heart own-heart"></i>
+        <img
+          alt=""
+          class="img-fluid image-size"
+          src="{% static 'assest/pinkshoes.webp' %}" />
+        <div class="text-center">
+          <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
+          <p class="robot-font-style">
+            Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin
+          </p>
+          <h5>₹9000</h5>
         </div>
-        <div class="d-flex align-items-center justify-content-between pt-5">
-            <div class="inner-slider position-relative">
-                <span class="bg-warning px-4 py-1 text-white">On Offer</span>
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/pinkshoes.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹9000</h5>
-                </div>
-            </div>
+      </div>
 
-
-            <div class="inner-slider position-relative">
-                <span class="bg-warning px-4 py-1 text-white">On Offer</span>
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/whitepink.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹11000 </h5>
-                </div>
-            </div>
+      <div class="inner-slider position-relative">
+        <span class="bg-warning px-4 py-1 text-white">On Offer</span>
+        <i class="bi bi-heart icons-heart own-heart"></i>
+        <img
+          alt=""
+          class="img-fluid image-size"
+          src="{% static 'assest/whitepink.webp' %}" />
+        <div class="text-center">
+          <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
+          <p class="robot-font-style">
+            Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin
+          </p>
+          <h5>₹11000</h5>
         </div>
-
+      </div>
     </div>
-    <div class="container lg-hidded mt-5 ">
-
-        <div class="d-flex align-items-center justify-content-between ">
-            <div class="inner-slider position-relative ">
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/pinkshoes.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹9000</h5>
-                </div>
-            </div>
-
-
-            <div class="inner-slider position-relative">
-                <span class="bg-warning px-4 py-1 text-white">On Offer</span>
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/whitepink.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹11000 </h5>
-                </div>
-            </div>
+    <div class="d-flex align-items-center justify-content-between pt-5">
+      <div class="inner-slider position-relative">
+        <span class="bg-warning px-4 py-1 text-white">On Offer</span>
+        <i class="bi bi-heart icons-heart own-heart"></i>
+        <img
+          alt=""
+          class="img-fluid image-size"
+          src="{% static 'assest/pinkshoes.webp' %}" />
+        <div class="text-center">
+          <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
+          <p class="robot-font-style">
+            Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin
+          </p>
+          <h5>₹9000</h5>
         </div>
-        <div class="d-flex align-items-center justify-content-between pt-5">
-            <div class="inner-slider position-relative">
-                <span class="bg-warning px-4 py-1 text-white">On Offer</span>
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/pinkshoes.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹9000</h5>
-                </div>
-            </div>
+      </div>
 
-
-            <div class="inner-slider position-relative">
-                <span class="bg-warning px-4 py-1 text-white">On Offer</span>
-                <i class="bi bi-heart icons-heart own-heart"></i>
-                <img alt="" class="img-fluid image-size" src="{% static 'assest/whitepink.webp' %}" />
-                <div class="text-center">
-                    <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
-                    <p class="robot-font-style"> Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin</p>
-                    <h5> ₹11000 </h5>
-                </div>
-            </div>
+      <div class="inner-slider position-relative">
+        <span class="bg-warning px-4 py-1 text-white">On Offer</span>
+        <i class="bi bi-heart icons-heart own-heart"></i>
+        <img
+          alt=""
+          class="img-fluid image-size"
+          src="{% static 'assest/whitepink.webp' %}" />
+        <div class="text-center">
+          <h3 class="font-weight-bold">ONITSUKA TIGER</h3>
+          <p class="robot-font-style">
+            Tommy Hilfiger Grey Hummer Plus Small Hard Case Cabin
+          </p>
+          <h5>₹11000</h5>
         </div>
-
+      </div>
     </div>
+  </div>
 </div>
-
 
 <!-- sort and filter section -->
 <div id="scroll-com">
-<div class="lg-hidded" >
-    <div class="d-flex align-items-center  mt-5  justify-content-center bg-add-color">
-        <h2 class="mx-4 click-sort"> <i class="bi bi-arrow-down-up"></i> Sort</h2>
-        <h2 id="click-open" onclick="clickOnn()"><i class="bi bi-sliders"></i> Filter</h2>
+  <div class="lg-hidded">
+    <div
+      class="d-flex align-items-center mt-5 justify-content-center bg-add-color">
+      <h2 class="mx-4 click-sort"><i class="bi bi-arrow-down-up"></i> Sort</h2>
+      <h2 id="click-open" onclick="clickOnn()">
+        <i class="bi bi-sliders"></i> Filter
+      </h2>
     </div>
-</div>
+  </div>
 
+  <!-- details of sort -->
 
-
-<!-- details of sort -->
-
-<div class="lg-hidded ">
+  <div class="lg-hidded">
     <div class="show-sort">
-        <div class="container lg-hidded bg-white">
-            <div class="position-relative bg-black py-3 text-white">
-                <h2 class="text-center text-white">Sort By</h2>
-                <i class="bi bi-twitter-x  fa-2x cross-icon"></i>
-            </div>
-            <div class="text-center pt-4 text-hover">
-                <h2>Popularity</h2>
-                <h2 class="py-3">Price: Low To High</h2>
-                <h2>Price:High To Low</h2>
-                <h2 class="py-3">Discount</h2>
-                <h2>New Arrivals</h2>
-            </div>
-
-
+      <div class="container lg-hidded bg-white">
+        <div class="position-relative bg-black py-3 text-white">
+          <h2 class="text-center text-white">Sort By</h2>
+          <i class="bi bi-twitter-x fa-2x cross-icon"></i>
         </div>
+        <div class="text-center pt-4 text-hover">
+          <h2>Popularity</h2>
+          <h2 class="py-3">Price: Low To High</h2>
+          <h2>Price:High To Low</h2>
+          <h2 class="py-3">Discount</h2>
+          <h2>New Arrivals</h2>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 </div>
 
+<!-- filter Properties section mobile view -->
 
-<!-- filter Properties section -->
-
-<section class="  top-section-remote">
-    <div id="proper-off" onclick="clickoff()">
-        <i class="bi bi-twitter-x  fa-2x cutting"></i>
-        <h2 class="text-center py-3">Filters</h2>
+<section class="top-section-remote">
+  <div id="proper-off" onclick="clickoff()">
+    <i class="bi bi-twitter-x fa-2x cutting"></i>
+    <h2 class="text-center py-3">Filters</h2>
+  </div>
+  <div class="line"></div>
+  <div class="main-section-1">
+    <div class="container-inside">
+      <div>
+        <div class="tab-btn bydefualt">
+          <h3>Catogories</h3>
+        </div>
+        <hr />
+        <div class="tab-btn">
+          <h3>Brand</h3>
+        </div>
+        <hr />
+        <div class="tab-btn">
+          <h3>Price</h3>
+        </div>
+        <hr />
+        <div class="tab-btn">
+          <h3>Color</h3>
+        </div>
+        <hr />
+        <div class="tab-btn">
+          <h3>Discount</h3>
+        </div>
+        <hr />
+        <div class="tab-btn">
+          <h3>Size</h3>
+        </div>
+        <hr />
+        <div class="tab-btn">
+          <h3>All Discount</h3>
+        </div>
+        <hr />
+        <div class="tab-btn reset-btn">
+          <h3>Reset</h3>
+        </div>
+      </div>
     </div>
-    <div class="line"></div>
-    <div class="main-section-1 ">
+    <!-- Catogories section -->
 
-        <div class="container-inside">
-            <div>
-                <div class="tab-btn bydefualt">
-
-                    <h3>Catogories</h3>
-                </div>
-                <hr>
-                <div class="tab-btn">
-                    <h3>Brand</h3>
-                </div>
-                <hr>
-                <div class="tab-btn">
-                    <h3>Price</h3>
-                </div>
-                <hr>
-                <div class="tab-btn">
-                    <h3>Color</h3>
-                </div>
-                <hr>
-                <div class="tab-btn">
-                    <h3>Discount</h3>
-                </div>
-                <hr>
-                <div class="tab-btn">
-                    <h3>Size</h3>
-
-                </div>
-                <hr>
-                <div class="tab-btn">
-                    <h3>All Discount</h3>
-
-                </div>
-                <hr>
-                <div class="tab-btn reset-btn">
-                    <h3>Reset</h3>
-
-                </div>
-            </div>
-        </div>
-        <!-- Catogories section -->
-
-        <div class="show-body visit">
-            <div class="fles-proprties">
-                <h3>Men</h3>
-                <h4>3047</h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>Men Shoes</h3>
-                <h4>3047</h4>
-            </div>
-            <div class="inner-items">
-                <h3>Men Sports Shoes</h3>
-                <h4>3047</h4>
-            </div>
-            <div class="inner-items">
-                <h3>Football</h3>
-                <h4>3047</h4>
-            </div>
-            <div class="inner-items">
-                <h3>Outdoor</h3>
-                <h4>3047</h4>
-            </div>
-            <div class="inner-items">
-                <h3>Running</h3>
-                <h4>3047</h4>
-            </div>
-            <div class="inner-items">
-                <h3>Traning</h3>
-                <h4>3047</h4>
-            </div>
-            <div class="inner-items">
-                <h3>Men Casual shoes</h3>
-                <h4>3047</h4>
-            </div>
-            <div class="inner-items">
-                <h3>Boot</h3>
-                <h4>3047</h4>
-            </div>
-            <!-- btn -->
-            <div class="Apply-btn">
-                <h3>Apply</h3>
-            </div>
-        </div>
-
-        <!-- brand section -->
-
-
-        <div class="show-body">
-            <input type="search" placeholder="Search by brand" class="search-bar ">
-            <div class="fles-proprties">
-                <h3>7-10</h3>
-                <h4>5 <input type="checkbox" value="first" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>BUGATTI</h3>
-                <h4>556<input type="checkbox" value="sec" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>CALVIN KLEIN</h3>
-                <h4>12<input type="checkbox" value="third" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>CALVIN KLEIN JEANS</h3>
-                <h4>51<input type="checkbox" value="fourth" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>COLUMBIA</h3>
-                <h4>109<input type="checkbox" value="five" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>Demodot</h3>
-                <h4>40<input type="checkbox" value="first" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>FILA</h3>
-                <h4>3<input type="checkbox" value="first" name="first"></h4>
-            </div>
-            <!-- btn -->
-            <div class="Apply-btn">
-                <h3>Apply</h3>
-            </div>
-        </div>
-
-
-        <!-- price section -->
-
-        <div class="show-body">
-            <div class="fles-proprties">
-                <h3>₹10,001-₹15,000</h3>
-                <h4>16<input type="checkbox" value="first" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>₹10,001-₹15,000</h3>
-                <h4>2<input type="checkbox" value="sec" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>₹10,001-₹15,000</h3>
-                <h4>27<input type="checkbox" value="third" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>₹2,000-₹5,000</h3>
-                <h4>27<input type="checkbox" value="fourth" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>₹5,000-10,001</h3>
-                <h4>196<input type="checkbox" value="five" name="first"></h4>
-            </div>
-            <!-- btn -->
-            <div class="Apply-btn">
-                <h3>Apply</h3>
-            </div>
-        </div>
-
-
-        <!-- color section -->
-
-        <div class="show-body">
-            <div class="fles-proprties">
-                <div style="display: flex; align-items:center; gap: .5rem;">
-                    <div class="Beige"></div>
-                    <h3>Beige</h3>
-                </div>
-                <h4>16<input type="checkbox" value="first" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <div style="display: flex; align-items:center; gap: .5rem;">
-                    <div class="Beige"></div>
-                    <h3>Beige</h3>
-                </div>
-                <h4>16<input type="checkbox" value="first" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <div style="display: flex; align-items:center; gap: .5rem;">
-                    <div class="Beige"></div>
-                    <h3>Beige</h3>
-                </div>
-                <h4>16<input type="checkbox" value="first" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <div style="display: flex; align-items:center; gap: .5rem;">
-                    <div class="Beige"></div>
-                    <h3>Beige</h3>
-                </div>
-                <h4>16<input type="checkbox" value="first" name="first"></h4>
-            </div>
-            <!-- btn -->
-            <div class="Apply-btn">
-                <h3>Apply</h3>
-            </div>
-
-        </div>
-
-
-        <!-- discount section -->
-
-        <div class="show-body">
-            <div class="fles-proprties">
-                <h3>10%-30%</h3>
-                <h4>42<input type="checkbox" value="first" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>30%-50%</h3>
-                <h4>188<input type="checkbox" value="sec" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>50%-70%</h3>
-                <h4>10<input type="checkbox" value="third" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>Upto-10%</h3>
-                <h4>270<input type="checkbox" value="fourth" name="first"></h4>
-            </div>
-            <!-- btn -->
-            <div class="Apply-btn">
-                <h3>Apply</h3>
-            </div>
-
-        </div>
-
-
-
-        <!-- size section -->
-        <div class="show-body">
-            <div class="fles-proprties">
-                <h3>UK/IND-10</h3>
-                <h4>20<input type="checkbox" value="first" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>UK/IND-11</h3>
-                <h4>21<input type="checkbox" value="sec" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>UK/IND-13</h3>
-                <h4>1<input type="checkbox" value="third" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>UK/IND-3</h3>
-                <h4>1<input type="checkbox" value="fourth" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>UK/IND-4</h3>
-                <h4>4<input type="checkbox" value="fourth" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>UK/IND-5</h3>
-                <h4>9<input type="checkbox" value="fourth" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>UK/IND-6</h3>
-                <h4>16<input type="checkbox" value="fourth" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>UK/IND-6.5</h3>
-                <h4>1<input type="checkbox" value="fourth" name="first"></h4>
-            </div>
-            <div class="fles-proprties">
-                <h3>UK/IND-7</h3>
-                <h4>41<input type="checkbox" value="fourth" name="first"></h4>
-            </div>
-
-
-            <!-- btn -->
-            <div class="Apply-btn">
-                <h3>Apply</h3>
-            </div>
-
-        </div>
-
-
-        <!-- all discount -->
-        <div class="show-body">
-            <div class="fles-proprties">
-                <h3>Discounted Items</h3>
-                <h4>105<input type="checkbox" value="first" name="first"></h4>
-            </div>
-
-            <!-- btn -->
-            <div class="Apply-btn">
-                <h3>Apply</h3>
-            </div>
-
-        </div>
-
-
-
+    <div class="show-body visit">
+      <div class="fles-proprties">
+        <h3>Men</h3>
+        <h4>3047</h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>Men Shoes</h3>
+        <h4>3047</h4>
+      </div>
+      <div class="inner-items">
+        <h3>Men Sports Shoes</h3>
+        <h4>3047</h4>
+      </div>
+      <div class="inner-items">
+        <h3>Football</h3>
+        <h4>3047</h4>
+      </div>
+      <div class="inner-items">
+        <h3>Outdoor</h3>
+        <h4>3047</h4>
+      </div>
+      <div class="inner-items">
+        <h3>Running</h3>
+        <h4>3047</h4>
+      </div>
+      <div class="inner-items">
+        <h3>Traning</h3>
+        <h4>3047</h4>
+      </div>
+      <div class="inner-items">
+        <h3>Men Casual shoes</h3>
+        <h4>3047</h4>
+      </div>
+      <div class="inner-items">
+        <h3>Boot</h3>
+        <h4>3047</h4>
+      </div>
+      <!-- btn -->
+      <div class="Apply-btn">
+        <h3>Apply</h3>
+      </div>
     </div>
 
+    <!-- brand section -->
 
+    <div class="show-body">
+      <input type="search" placeholder="Search by brand" class="search-bar" />
+      <div class="fles-proprties">
+        <h3>7-10</h3>
+        <h4>5 <input type="checkbox" value="first" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>BUGATTI</h3>
+        <h4>556<input type="checkbox" value="sec" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>CALVIN KLEIN</h3>
+        <h4>12<input type="checkbox" value="third" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>CALVIN KLEIN JEANS</h3>
+        <h4>51<input type="checkbox" value="fourth" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>COLUMBIA</h3>
+        <h4>109<input type="checkbox" value="five" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>Demodot</h3>
+        <h4>40<input type="checkbox" value="first" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>FILA</h3>
+        <h4>3<input type="checkbox" value="first" name="first" /></h4>
+      </div>
+      <!-- btn -->
+      <div class="Apply-btn">
+        <h3>Apply</h3>
+      </div>
+    </div>
 
+    <!-- price section -->
 
+    <div class="show-body">
+      <div class="fles-proprties">
+        <h3>₹10,001-₹15,000</h3>
+        <h4>16<input type="checkbox" value="first" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>₹10,001-₹15,000</h3>
+        <h4>2<input type="checkbox" value="sec" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>₹10,001-₹15,000</h3>
+        <h4>27<input type="checkbox" value="third" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>₹2,000-₹5,000</h3>
+        <h4>27<input type="checkbox" value="fourth" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>₹5,000-10,001</h3>
+        <h4>196<input type="checkbox" value="five" name="first" /></h4>
+      </div>
+      <!-- btn -->
+      <div class="Apply-btn">
+        <h3>Apply</h3>
+      </div>
+    </div>
 
+    <!-- color section -->
+
+    <div class="show-body">
+      <div class="fles-proprties">
+        <div style="display: flex; align-items: center; gap: 0.5rem">
+          <div class="Beige"></div>
+          <h3>Beige</h3>
+        </div>
+        <h4>16<input type="checkbox" value="first" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <div style="display: flex; align-items: center; gap: 0.5rem">
+          <div class="Beige"></div>
+          <h3>Beige</h3>
+        </div>
+        <h4>16<input type="checkbox" value="first" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <div style="display: flex; align-items: center; gap: 0.5rem">
+          <div class="Beige"></div>
+          <h3>Beige</h3>
+        </div>
+        <h4>16<input type="checkbox" value="first" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <div style="display: flex; align-items: center; gap: 0.5rem">
+          <div class="Beige"></div>
+          <h3>Beige</h3>
+        </div>
+        <h4>16<input type="checkbox" value="first" name="first" /></h4>
+      </div>
+      <!-- btn -->
+      <div class="Apply-btn">
+        <h3>Apply</h3>
+      </div>
+    </div>
+
+    <!-- discount section -->
+
+    <div class="show-body">
+      <div class="fles-proprties">
+        <h3>10%-30%</h3>
+        <h4>42<input type="checkbox" value="first" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>30%-50%</h3>
+        <h4>188<input type="checkbox" value="sec" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>50%-70%</h3>
+        <h4>10<input type="checkbox" value="third" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>Upto-10%</h3>
+        <h4>270<input type="checkbox" value="fourth" name="first" /></h4>
+      </div>
+      <!-- btn -->
+      <div class="Apply-btn">
+        <h3>Apply</h3>
+      </div>
+    </div>
+
+    <!-- size section -->
+    <div class="show-body">
+      <div class="fles-proprties">
+        <h3>UK/IND-10</h3>
+        <h4>20<input type="checkbox" value="first" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>UK/IND-11</h3>
+        <h4>21<input type="checkbox" value="sec" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>UK/IND-13</h3>
+        <h4>1<input type="checkbox" value="third" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>UK/IND-3</h3>
+        <h4>1<input type="checkbox" value="fourth" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>UK/IND-4</h3>
+        <h4>4<input type="checkbox" value="fourth" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>UK/IND-5</h3>
+        <h4>9<input type="checkbox" value="fourth" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>UK/IND-6</h3>
+        <h4>16<input type="checkbox" value="fourth" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>UK/IND-6.5</h3>
+        <h4>1<input type="checkbox" value="fourth" name="first" /></h4>
+      </div>
+      <div class="fles-proprties">
+        <h3>UK/IND-7</h3>
+        <h4>41<input type="checkbox" value="fourth" name="first" /></h4>
+      </div>
+
+      <!-- btn -->
+      <div class="Apply-btn">
+        <h3>Apply</h3>
+      </div>
+    </div>
+
+    <!-- all discount -->
+    <div class="show-body">
+      <div class="fles-proprties">
+        <h3>Discounted Items</h3>
+        <h4>105<input type="checkbox" value="first" name="first" /></h4>
+      </div>
+
+      <!-- btn -->
+      <div class="Apply-btn">
+        <h3>Apply</h3>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-
-<!-- main section -->
+<!-- main section  -->
 <div class="container position-relative main-section-start desktop">
-    <div class="text-center">
-        <h1>Luxury</h1>
-        <h3>9346</h3>
+  <div class="text-center">
+    <h1>Luxury</h1>
+    <h3>9346</h3>
+  </div>
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-lg-3">
+      <!-- Dropdowns for Filters -->
+      <!-- Accordions  -->
+      <div class="hover-pointer postion-part">
+        <h3>Home</h3>
+        <hr />
 
-    </div>
-    <div class="row">
-        <!-- Sidebar -->
-        <div class="col-lg-3">
-
-            <!-- Dropdowns for Filters -->
-            <!-- Accordions  -->
-            <div class=" hover-pointer postion-part">
-                <h3>Home</h3>
-                <hr>
-
-                <button class="accordion font-weight-bold">Department</button>
-                <div class="panel">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Man</label>
-                            </span>
-
-                        </div>
-                        <p>33768</p>
-                    </div>
-                </div>
-
-                <button class="accordion font-weight-bold">Category</button>
-                <div class="panel">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
-                            </span>
-
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                </div>
-
-                <button class="accordion font-weight-bold">Products Type</button>
-                <div class="panel">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
-                            </span>
-
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                </div>
-
-                <button class="accordion font-weight-bold">Brands</button>
-                <div class="panel">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
-                            </span>
-
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                </div>
-
-                <button class="accordion font-weight-bold">Price</button>
-                <div class="panel">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
-                            </span>
-
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                </div>
-
-                <button class="accordion font-weight-bold">Colour</button>
-                <div class="panel">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
-                            </span>
-
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                </div>
-
-                <button class="accordion font-weight-bold">Discount</button>
-                <div class="panel">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
-                            </span>
-
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                </div>
-
-                <button class="accordion font-weight-bold">Size</button>
-                <div class="panel">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
-                            </span>
-
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                </div>
-                <button class="accordion font-weight-bold">All Discount</button>
-                <div class="panel">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Sports Shoes</label>
-                            </span>
-
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2"> Men Casual Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <span style="align-items: center;">
-                                <input type="checkbox"><label for="" class="pl-2">Men Formal Shoes</label>
-                            </span>
-                        </div>
-                        <p>33768</p>
-                    </div>
-                </div>
+        <button class="accordion font-weight-bold">Department</button>
+        <div class="panel">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2"> Man</label>
+              </span>
             </div>
-
-            <!-- Add more dropdowns for other filters (category, brands, price, etc.) -->
-            <!-- Repeat for other filter dropdowns -->
+            <p>33768</p>
+          </div>
         </div>
-        <!-- Main Content -->
-        <div class="col-lg-9 main-content mt-5">
-            <div class="potision-select d-flex align-items-center">
-                <img alt="" src="{% static 'assest/two-cons.png' %}" />
-                <select class="border-secondary bg-white fa-2x" id="seleceted">
-                    <option class="invite" value="0" selected>Popularity</option>
-                    <option class="invite" value="1">Price: Low to High</option>
-                    <option class="invite" value="2">Price: High to Low</option>
-                    <option class="invite" value="3">Discount</option>
-                    <option class="invite" value="4">New Arrivals</option>
-                </select>
+
+        <button class="accordion font-weight-bold">Category</button>
+        <div class="panel">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Sports Shoes</label
+                >
+              </span>
             </div>
-            <div>
-                <h4 class=" font-weight-bold">Filtered by <sub></sub></h4>
-                <p class="rounded-1 pl-5 d-inline-block" style="font-size: 15px;"> Men filter <i class="bi bi-x"></i>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Casual Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2"
+                  >Men Formal Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+        </div>
+
+        <button class="accordion font-weight-bold">Products Type</button>
+        <div class="panel">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Sports Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Casual Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2"
+                  >Men Formal Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+        </div>
+
+        <button class="accordion font-weight-bold">Brands</button>
+        <div class="panel">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Sports Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Casual Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2"
+                  >Men Formal Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+        </div>
+
+        <button class="accordion font-weight-bold">Price</button>
+        <div class="panel">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Sports Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Casual Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2"
+                  >Men Formal Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+        </div>
+
+        <button class="accordion font-weight-bold">Colour</button>
+        <div class="panel">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Sports Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Casual Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2"
+                  >Men Formal Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+        </div>
+
+        <button class="accordion font-weight-bold">Discount</button>
+        <div class="panel">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Sports Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Casual Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2"
+                  >Men Formal Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+        </div>
+
+        <button class="accordion font-weight-bold">Size</button>
+        <div class="panel">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Sports Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Casual Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2"
+                  >Men Formal Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+        </div>
+        <button class="accordion font-weight-bold">All Discount</button>
+        <div class="panel">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Sports Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2">
+                  Men Casual Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <span style="align-items: center">
+                <input type="checkbox" /><label for="" class="pl-2"
+                  >Men Formal Shoes</label
+                >
+              </span>
+            </div>
+            <p>33768</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more dropdowns for other filters (category, brands, price, etc.) -->
+      <!-- Repeat for other filter dropdowns -->
+    </div>
+    <!-- Main Content -->
+    <div class="col-lg-9 main-content mt-5">
+      <div class="potision-select d-flex align-items-center">
+        <img alt="" src="{% static 'assest/two-cons.png' %}" />
+        <select class="border-secondary bg-white fa-2x" id="seleceted">
+          <option class="invite" value="0" selected>Popularity</option>
+          <option class="invite" value="1">Price: Low to High</option>
+          <option class="invite" value="2">Price: High to Low</option>
+          <option class="invite" value="3">Discount</option>
+          <option class="invite" value="4">New Arrivals</option>
+        </select>
+      </div>
+      <div>
+        <h4 class="font-weight-bold">Filtered by <sub></sub></h4>
+        <p class="rounded-1 pl-5 d-inline-block" style="font-size: 15px">
+          Men filter <i class="bi bi-x"></i>
+        </p>
+      </div>
+      <!-- Product Cards -->
+      <div class="row">
+        {% if list_item_row %} 
+        {% for item in list_item_row %}
+        <div class="col-md-4">
+          <div class="position-relative">
+            <a class="nav-link" href="{% url 'login' %}">
+              <i class="bi bi-heart icons-heart"></i>
+            </a>
+            <div class="card-body">
+              <a class="nav-link" href="{% url 'list_product_details' %}">
+                <img
+                  alt="Product 1 Image"
+                  class="img-fluid"
+                  src="https://saasapps.in:2082/media/{{item.image_front}}" />
+                <h4 class="card-title text-center roboto-font">
+                  {{item.item_name}}
+                </h4>
+                <p class="card-text text-center" style="font-weight: 300">
+                  {{item.item_subtype}}
                 </p>
+              </a>
+              <p class="card-text text-center font-size-save">
+                ₹8,449
+                <span class="text-decoration-line-through px-3"> ₹12,999 </span>
+                <span class="text-danger">35% Off</span>
+              </p>
+              <!-- Product price -->
             </div>
-            <!-- Product Cards -->
-            <div class="row">
-
-                {% if list_item_row %}
-                {% for item in list_item_row %}
-                <div class="col-md-4">
-                    <div class="position-relative">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'list_product_details' %}">
-                                <img alt="Product 1 Image" class="img-fluid" src="https://saasapps.in:2082/media/{{item.image_front}}" />
-                                <h4 class="card-title text-center roboto-font">{{item.item_name}}</h4>
-                                <p class="card-text text-center" style="font-weight: 300;">{{item.item_subtype}}</p>
-                            </a>
-                            <p class="card-text text-center font-size-save">₹8,449 <span
-                                    class="text-decoration-line-through px-3">
-                                    ₹12,999 </span> <span class="text-danger">35% Off</span> </p>
-                            <!-- Product price -->
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-                {% else %}
-               
-                <!-- Product Card 1 -->
-                <div class="col-md-4">
-                    <div class="position-relative">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-heart  icons-heart"></i>
-                        </a>
-                        <div class="card-body">
-                            <a class="nav-link" >
-                                <img alt="Product 2 Image" class="card-img-top" src="{% static 'assest/product-not-found.jpg' %}" />
-                                
-                            </a>
-                           
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product Card -->
-               
-               
-                {% endif %}
-            </div>
+          </div>
         </div>
+        {% endfor %} {% else %}
+
+        <!-- Product Card 1 -->
+        <div class="col-md-4">
+          <div class="position-relative">
+            <a class="nav-link" href="{% url 'login' %}">
+              <i class="bi bi-heart icons-heart"></i>
+            </a>
+            <div class="card-body">
+              <a class="nav-link">
+                <img
+                  alt="Product 2 Image"
+                  class="card-img-top"
+                  src="{% static 'assest/product-not-found.jpg' %}" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card -->
+
+        {% endif %}
+      </div>
     </div>
+  </div>
 </div>
+
+
 {% if list_item_row %}
 <div class="m-auto text-center my-5 desktop">
-    <a href="" class="bg-black py-2 px-5  text-decoration-none fa-2x text-white rounded-1">
-        Load More
-    </a>
+  <a
+    href=""
+    class="bg-black py-2 px-5 text-decoration-none fa-2x text-white rounded-1">
+    Load More
+  </a>
 </div>
 {% endif %}
+
 {% endblock %}
