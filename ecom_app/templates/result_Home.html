@@ -43,10 +43,11 @@
         <div class="col-md-2 col-6 mb-3 position-relative overflow-hidden">
             <a href="{% url 'list_product' item_type_name=brand.ItemType_Name %}">
                 <img alt="" class="img-fluid" src="https://saasapps.in:2082/media/{{brand.item_image}}" />
-            </a>
+            
             <div class="text-over-image ">
                 <p class="text-black ">{{brand.ItemType_Name}}</p>
             </div>
+            </a>
         </div>
         {% endfor %}
         {% else %}
