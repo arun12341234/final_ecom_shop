@@ -24,7 +24,7 @@ def use_sqlalchemy(query,params={}):
 
         _query = text(f"{query}")
         _result = conn.execute(_query,params).fetchall()
-        print('#_result',_result)
+        # print('#_result',_result)
         _rows = [dict(row._asdict()) for row in _result]
 
         print("item_result", _result, _rows)
@@ -51,7 +51,7 @@ def get_org_id(request):
             result_dict = item
             request.session['generated_org_id'] = result_dict['generated_org_id']
             break
-    print(result_dict)
+    # print(result_dict)
 
 def index(request):
     get_org_id(request)
@@ -62,7 +62,7 @@ def index(request):
         json_result,json_result_1,item_rows,item_sub_row = check_generated_org_id(request)
     except:
         json_result,json_result_1,item_rows,item_sub_row  = None, None, None,None
-    print(json_result)
+    # print(json_result)
     context = {'logo_url': json_result,'org_name': json_result_1,'item_rows':item_rows,"item_sub_row":item_sub_row }
     rendered_template = template.render(context)
     return HttpResponse(rendered_template)
@@ -127,7 +127,7 @@ def cart(request):
 def list_product(request, item_type_name):
     # print("item-name",item_type_name)
     item_subtype = request.GET.get('item_subtype', None)
-    print("item_subtype",item_subtype)
+    # print("item_subtype",item_subtype)
     template = loader.get_template("list_product.html")
     # results = VisaGetlist.objects.all()
     try:
@@ -137,17 +137,41 @@ def list_product(request, item_type_name):
     except:
         json_result,json_result_1,item_rows,item_sub_row  = None, None, None,None
     try:
-        print("######",item_subtype)
+        # print("######",item_subtype)
         if item_subtype:
-            item_query = text("SELECT * FROM newitemdetailsimage WHERE org_id = :org_id and item_type = :item_type and item_subtype = :item_subtype")
+            item_query = text(
+                """
+                SELECT *,nd.Selling_Price-nd.Selling_Price*nd.Item_Discount/100 as discount_price
+                FROM shivadb_new.newitemdetails AS nd
+                JOIN newitemdetailsimage AS ni ON nd.org_id = ni.org_id
+                                            AND nd.item_type = ni.item_type
+                                            AND nd.item_subtype = ni.item_subtype
+                                            AND nd.Item_Name = ni.item_name
+                WHERE nd.org_id = :org_id
+                AND nd.item_type = :item_type
+                AND nd.item_subtype = :item_subtype;
+                """
+            )
+            # text("SELECT * FROM newitemdetails WHERE org_id = :org_id and item_type = :item_type and item_subtype = :item_subtype")
             params = {'org_id': json_result_1, 'item_type': item_type_name, 'item_subtype': item_subtype}
         else:
-            print("####", 'item_query')
-            item_query = text("SELECT * FROM newitemdetailsimage WHERE org_id = :org_id and item_type = :item_type")
+            # print("####", 'item_query')
+            item_query = text(
+                """
+                SELECT *,nd.Selling_Price-nd.Selling_Price*nd.Item_Discount/100 as discount_price
+                FROM shivadb_new.newitemdetails AS nd
+                LEFT JOIN shivadb_new.newitemdetailsimage AS ni ON nd.org_id = ni.org_id
+                                            AND nd.item_type = ni.item_type
+                                            AND nd.item_name = ni.item_name
+                WHERE nd.org_id = :org_id
+                AND nd.item_type = :item_type;
+                """
+            )
+            # text("SELECT * FROM newitemdetails WHERE org_id = :org_id and item_type = :item_type")
             params = {'org_id': json_result_1, 'item_type': item_type_name}
         list_item_row = use_sqlalchemy(item_query,params)
       
-        print("item_result",list_item_row) 
+        # print("item_result",list_item_row) 
     except:
         print("error")
     # print(json_result)

@@ -694,19 +694,24 @@
             </a>
             <div class="card-body">
               <a class="nav-link" href="{% url 'list_product_details' %}?item_name={{ item.item_name|urlencode }}&item_subtype={{ item.item_subtype|urlencode }}">
+                  {% if item.image_front %}
                 <img alt="Product 1 Image" class="img-fluid"
                   src="https://saasapps.in:2082/media/{{item.image_front}}" />
+                  {% else %}
+                <img alt="Product 1 Image" class="img-fluid"
+                  src="{% static 'assest/no_img.jpg' %}" />
+                  {% endif %}
                 <h4 class="card-title text-center roboto-font">
-                  {{item.item_name}}
+                  {{item.Item_Name}}
                 </h4>
                 <p class="card-text text-center" style="font-weight: 300">
-                  {{item.item_subtype}}
+                  {{item.Item_SubType}}
                 </p>
               </a>
               <p class="card-text text-center font-size-save">
-                ₹8,449
-                <span class="text-decoration-line-through px-3"> ₹12,999 </span>
-                <span class="text-danger">35% Off</span>
+                ₹{{item.discount_price}}
+                <span class="text-decoration-line-through px-3"> ₹{{item.Selling_Price}} </span>
+                <span class="text-danger">{{item.Item_Discount}}% Off</span>
               </p>
               <!-- Product price -->
             </div>
