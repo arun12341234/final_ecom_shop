@@ -42,7 +42,8 @@
       {% if list_item_row %}
       {% for item in list_item_row %}
       <div class=" position-relative">
-        <a  href="{% url 'list_product_details' %}?item_name={{ item.item_name|urlencode }}&item_subtype={{ item.item_subtype|urlencode }}">
+        <a
+          href="{% url 'list_product_details' %}?item_name={{ item.item_name|urlencode }}&item_type={{ item.item_type|urlencode }}&item_subtype={{ item.item_subtype|urlencode }}">
           <span class="bg-warning px-4 py-1 text-white">On Offer</span>
           <i class="bi bi-heart icons-heart own-heart"></i>
           <img alt="" class="img-fluid image-size" src="https://saasapps.in:2082/media/{{item.image_front}}" />
@@ -395,9 +396,9 @@
     <h1>Luxury</h1>
     <h3>
       {% if list_item_row %}
-        {{list_item_row|length}} Products
+      {{list_item_row|length}} Products
       {% else %}
-        0 Products
+      0 Products
       {% endif %}
     </h3>
   </div>
@@ -693,14 +694,14 @@
               <i class="bi bi-heart icons-heart"></i>
             </a>
             <div class="card-body">
-              <a class="nav-link" href="{% url 'list_product_details' %}?item_name={{ item.item_name|urlencode }}&item_subtype={{ item.item_subtype|urlencode }}">
-                  {% if item.image_front %}
+              <a class="nav-link"
+                href="{% url 'list_product_details' %}?item_name={{ item.item_name|urlencode }}&item_type={{ item.item_type|urlencode }}&item_subtype={{ item.item_subtype|urlencode }}">
+                {% if item.image_front %}
                 <img alt="Product 1 Image" class="img-fluid"
                   src="https://saasapps.in:2082/media/{{item.image_front}}" />
-                  {% else %}
-                <img alt="Product 1 Image" class="img-fluid"
-                  src="{% static 'assest/no_img.jpg' %}" />
-                  {% endif %}
+                {% else %}
+                <img alt="Product 1 Image" class="img-fluid" src="{% static 'assest/no_img.jpg' %}" />
+                {% endif %}
                 <h4 class="card-title text-center roboto-font">
                   {{item.Item_Name}}
                 </h4>

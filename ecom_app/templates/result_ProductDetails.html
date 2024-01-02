@@ -82,6 +82,23 @@
           <div class="col-md-7 ">
             <div class="d-flex justify-content-around position-relative ">
               <div>
+                {% if item %}
+                <!-- {{ item }} -->
+                <!-- 'image_left': 'documents/SLJN0088_3.jpg', 
+                  'image_right': 'documents/SLJN0088_5.png', 
+                  'image_top': 'documents/SLJN0088_4.png', 
+                  'image_bottom': 'documents/SLJN0088_6.png', 
+                  'image_front': 'documents/SLJN0088_1.jpg', 
+                  'image_back': 'documents/SLJN0088_2.jpg',  -->
+                <img alt="Shoes" class="shoes-image img-fluid" id="5" src="https://saasapps.in:2082/media/{{item.image_front}}" />
+                <img alt="Shoes" class="shoes-image img-fluid" id="1" src="https://saasapps.in:2082/media/{{item.image_left}}" />
+                <img alt="Shoes" class="shoes-image img-fluid" id="2" src="https://saasapps.in:2082/media/{{item.image_right}}" />
+                <img alt="Shoes" class="shoes-image img-fluid" id="3" src="https://saasapps.in:2082/media/{{item.image_top}}" />
+                <img alt="Shoes" class="shoes-image img-fluid" id="4" src="https://saasapps.in:2082/media/{{item.image_bottom}}" />
+                
+                <img alt="Shoes" class="shoes-image img-fluid" id="6" src="https://saasapps.in:2082/media/{{item.image_back}}" />
+                
+                {% else %}
                 <img alt="Shoes" class="shoes-image img-fluid" id="1" src="{% static 'assest/shoesimage.jpeg' %}" />
                 <img alt="Shoes" class="shoes-image img-fluid" id="2" src="{% static 'assest/right-side.webp' %}" />
                 <img alt="Shoes" class="shoes-image img-fluid" id="3" src="{% static 'assest/left-side.webp' %}" />
@@ -89,6 +106,7 @@
                 <img alt="Shoes" class="shoes-image img-fluid" id="5" src="{% static 'assest/full-show.jpeg' %}" />
                 <img alt="Shoes" class="shoes-image img-fluid" id="6" src="{% static 'assest/2-more.jpeg' %}" />
                 <img alt="Shoes" class="shoes-image img-fluid" id="7" src="{% static 'assest/showin-two.jpeg' %}" />
+                {% endif %}
               </div>
             </div>
           </div>
@@ -105,6 +123,104 @@
           <a class="robot-font-style" href=""> Running</a>
         </div>
         <!-- Right side with product information -->
+        {% if item %}
+
+          <div>
+            <h3 class="desktop">{{item.Item_Type}}</h3>
+            <h2 class="text-center font-weight-bold lg-hidded">{{item.Item_Type}}</h2>
+            <h4 class="desktop">{{item.Item_Name}}</h4>
+            <h3 class="text-center font-weight-bold lg-hidded">{{item.Item_Name}}</h3>
+            <span class="desktop"> <span class="">Sold By</span> ADI SPORTS INDIA PVT. LTD. <i
+                class="bi bi-plus-lg pl-3"></i></span>
+            <h4 class="desktop"><a class="dark-yellow font-weight-bold" href="http://" rel="noopener noreferrer">View 2
+                More Sellers</a> starting ₹{{item.Selling_Price}}</h4>
+            <div class="position-relative">
+              <h2 class="font-weight-bold">MRP: ₹{{item.discount_price}}</h2>
+              <div class="postion-setting">
+                <i class="bi bi-heart pr-4 fa-2x"></i>
+                <i class="bi bi-box-arrow-up fa-2x"></i>
+              </div>
+            </div>
+            <p class="robot-font-style">inclusive of all taxes</p>
+            <!-- <h4>EMI options starting from <a class="text-decoration-none text-dark font-weight-bold" href="">₹633/month
+                <i class="bi bi-chevron-right"></i></a></h4> -->
+            <!-- <div class="bg-light px-4 py-4 rounded-1">
+              <div class="d-flex align-items-center justify-content-between">
+                <h4>5 OFFERS</h4>
+                <h4 class="dark-yellow">VIEW ALL</h4>
+              </div>
+              <div class="d-flex"><img alt="" class="pr-3" src="{% static 'assest/discount_icon-shop.svg' %}" /><span
+                  style="font-size: 15px;"> Use coupon BOB1500 &amp; get 10% off on Bank of Baroda Debit &amp;
+                  Credit Cards on purchase of Rs.5000 | Max discount Rs.1500</span>
+              </div>
+              <div class="d-flex pt-3"><img alt="" class="pr-3" src="{% static 'assest/discount_icon-shop.svg' %}" /><span
+                  style="font-size: 15px;"> Use coupon
+                  BOB1500 &amp; get 10% off on Bank of Baroda Debit &amp;
+                  Credit Cards on purchase of Rs.5000 | Max discount Rs.1500</span>
+              </div>
+  
+            </div> -->
+            <h4 class="lg-hidded roboto-font">Cash On Delivery</h4>
+            <hr />
+            <h3 class="lg-hidded text-center">sold by viswa Business Pvt Ltd +</h3>
+            <hr />
+            <div class="text-center lg-hidded">
+              <h1>STYLE NOTES</h1>
+              <h5 class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quasi voluptas alias iste
+                nulla
+                dolores provident odit aut possimus, ducimus temporibus praesentium, autem quidem porro.</h5>
+            </div>
+            <h4>Color <span class="robot-font-style">{{item.Color}}</span></h4>
+            <hr />
+            <div>
+              <h4 class="desktop">{{item.Item_Desc}}<span class="dark-yellow">Read More</span></h4>
+            </div>
+            <hr class="desktop" />
+            <div>
+              <div class="d-flex justify-content-between align-items-center">
+                <h4>SELECT SIZE</h4>
+                <h4 class="dark-yellow">SIZE GUIDE</h4>
+              </div>
+              <div class="uk-ind">
+                <h4>UK IND-6</h4>
+                <h4>UK IND-7</h4>
+                <h4>UK IND-8</h4>
+                <h4 class="border rounded-1 px-3">UK IND-9</h4>
+              </div>
+              <div class="uk-ind mt-3">
+                <h4>UK IND-10</h4>
+                <h4>UK IND-11</h4>
+                <h4 class="text-decoration-line-through text-secondary">UK IND-12</h4>
+              </div>
+              <div class="uk-ind desktop">
+                <button class="bg-transparent px-5 fa-2x rounded py-1">BUY NOW</button>
+                <button class="bg-black text-white px-5 fa-2x rounded py-1">ADD TO BAG</button>
+              </div>
+              <hr>
+              <h3>DELIVERY OPTIONS</h3>
+              <h4 class="robot-font-style">Please enter your pincode to check for available delivery
+                options.</h4>
+              <div class="d-flex align-items-center ">
+                <input class=" px-3 py-3 " type="text" />
+                <button class="bg-black text-white px-5 fa-2x rounded py-2 ml-4">check</button>
+              </div>
+              <h4 class="py-3 "> <span class="font-weight-bold">Delivery By</span>7th Dec</span></h4>
+            </div>
+          </div>
+
+
+
+
+
+
+          
+        {% else %}
+
+          hi
+
+
+
+
         <div>
           <h3 class="desktop">ADIDAS</h3>
           <h2 class="text-center font-weight-bold lg-hidded">ADIDAS</h2>
@@ -189,6 +305,7 @@
             <h4 class="py-3 "> <span class="font-weight-bold">Delivery By</span>7th Dec</span></h4>
           </div>
         </div>
+        {% endif %}
       </div>
     </div>
   </div>

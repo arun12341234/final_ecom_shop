@@ -19,7 +19,7 @@ from urllib.parse import urlparse
 def use_sqlalchemy(query,params={}):
     try:
         # Using SQLAlchemy for a specific task
-        engine = create_engine('mysql+pymysql://root:password@127.0.0.1:3306/shivadb_new', echo=False)
+        engine = create_engine('mysql+pymysql://root:Snc&!123@127.0.0.1:3306/shivadb_new', echo=False)
         conn = engine.connect()
 
         _query = text(f"{query}")
@@ -143,10 +143,9 @@ def list_product(request, item_type_name):
                 """
                 SELECT *,nd.Selling_Price-nd.Selling_Price*nd.Item_Discount/100 as discount_price
                 FROM shivadb_new.newitemdetails AS nd
-                JOIN newitemdetailsimage AS ni ON nd.org_id = ni.org_id
+                LEFT JOIN shivadb_new.newitemdetailsimage AS ni ON nd.org_id = ni.org_id
                                             AND nd.item_type = ni.item_type
-                                            AND nd.item_subtype = ni.item_subtype
-                                            AND nd.Item_Name = ni.item_name
+                                            AND nd.item_name = ni.item_name
                 WHERE nd.org_id = :org_id
                 AND nd.item_type = :item_type
                 AND nd.item_subtype = :item_subtype;
@@ -183,19 +182,63 @@ def list_product(request, item_type_name):
 
 def list_product_details(request):
     template = loader.get_template("result_ProductDetails.html")
-    # print("result_ProductDetails.html")
-    # results = VisaGetlist.objects.all()
     try:
-       
         json_result,json_result_1,item_rows,item_sub_row = check_generated_org_id(request)
-        
     except:
-        
         json_result,json_result_1,item_rows,item_sub_row = None, None, None,None
+    
+    item_name = request.GET.get('item_name', None)
+    item_type_name = request.GET.get('item_type', None)
+    item_subtype = request.GET.get('item_subtype', None)
+    print(
+        item_name,"$",
+        item_type_name,"$",
+        item_subtype,"$",
+    )
+    try:
+        # print("######",item_subtype)
+        if item_subtype:
+            item_query = text(
+                """
+                SELECT *,nd.Selling_Price-nd.Selling_Price*nd.Item_Discount/100 as discount_price
+                FROM shivadb_new.newitemdetails AS nd
+                LEFT JOIN shivadb_new.newitemdetailsimage AS ni ON nd.org_id = ni.org_id
+                                            AND nd.item_type = ni.item_type
+                                            AND nd.item_name = ni.item_name
+                WHERE nd.org_id = :org_id
+                AND nd.item_type = :item_type
+                AND nd.item_subtype = :item_subtype
+                AND nd.item_name = :item_name;
+                """
+            )
+            # text("SELECT * FROM newitemdetails WHERE org_id = :org_id and item_type = :item_type and item_subtype = :item_subtype")
+            params = {'org_id': json_result_1, 'item_type': item_type_name, 'item_subtype': item_subtype,'item_name':item_name}
+        else:
+            # print("####", 'item_query')
+            item_query = text(
+                """
+                SELECT *,nd.Selling_Price-nd.Selling_Price*nd.Item_Discount/100 as discount_price
+                FROM shivadb_new.newitemdetails AS nd
+                LEFT JOIN shivadb_new.newitemdetailsimage AS ni ON nd.org_id = ni.org_id
+                                            AND nd.item_type = ni.item_type
+                                            AND nd.item_name = ni.item_name
+                WHERE nd.org_id = :org_id
+                AND nd.item_type = :item_type
+                AND nd.item_name = :item_name;
+                """
+            )
+            # text("SELECT * FROM newitemdetails WHERE org_id = :org_id and item_type = :item_type")
+            params = {'org_id': json_result_1, 'item_type': item_type_name,'item_name':item_name}
+        list_item_detail = use_sqlalchemy(item_query,params)
+      
+        # print("item_result",list_item_row) 
+        context = {'item':list_item_detail[0],'logo_url': json_result,'org_name': json_result_1,'item_rows':item_rows,"item_sub_row":item_sub_row}
+    except:
+        print("error")
 
 
-    print(json_result)
-    context = {'logo_url': json_result,'org_name': json_result_1,'item_rows':item_rows,"item_sub_row":item_sub_row}
+
+        context = {'logo_url': json_result,'org_name': json_result_1,'item_rows':item_rows,"item_sub_row":item_sub_row}
     rendered_template = template.render(context)
     return HttpResponse(rendered_template)
 
