@@ -26,10 +26,39 @@
       <div class="lg-hidded position-relative">
 
         <div class="autoplay">
+          {% if item %}
+
+          <div class="inner-slider">
+            <img alt="Shoes" class="shoes-image img-fluid" id="5" src="https://saasapps.in:2082/media/{{item.image_front}}" />
+
+          </div>
+          <div class="inner-slider">
+            <img alt="Shoes" class="shoes-image img-fluid" id="1" src="https://saasapps.in:2082/media/{{item.image_left}}" />
+    
+          </div>
+          <div class="inner-slider">
+            <img alt="Shoes" class="shoes-image img-fluid" id="2" src="https://saasapps.in:2082/media/{{item.image_right}}" />
+      
+          </div>
+          <div class="inner-slider">
+            <img alt="Shoes" class="shoes-image img-fluid" id="3" src="https://saasapps.in:2082/media/{{item.image_top}}" />
+        
+          </div>
+          <div class="inner-slider">
+            <img alt="Shoes" class="shoes-image img-fluid" id="4" src="https://saasapps.in:2082/media/{{item.image_bottom}}" />
+ 
+          </div>
+          <div class="inner-slider">
+            
+            <img alt="Shoes" class="shoes-image img-fluid" id="6" src="https://saasapps.in:2082/media/{{item.image_back}}" />
+            
+          </div>
+          {% else %}
           <div class="inner-slider">
             <img alt="" class="img-fluid image-size" src="{% static 'assest/shoesimage.jpeg' %}" />
 
           </div>
+
           <div class="inner-slider">
             <img alt="" class="img-fluid image-size" src="{% static 'assest/right-side.webp' %}" />
 
@@ -54,6 +83,7 @@
             <img alt="" class="img-fluid image-size" src="{% static 'assest/showin-two.jpeg' %}" />
 
           </div>
+          {% endif %}
         </div>
 
         <!-- Full-width images with caption text -->
